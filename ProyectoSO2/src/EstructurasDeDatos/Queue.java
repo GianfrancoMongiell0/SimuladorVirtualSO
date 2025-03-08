@@ -1,8 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package EstructurasDeDatos;
+
+import Exception.ColaVaciaException;
 
 /**
  *
@@ -48,10 +46,9 @@ public class Queue<T> {
     }
 
     // Metodo para elliminar y retonar el elemnto de alfrente de la cola
-    public T dequeue() {
+    public T dequeue() throws ColaVaciaException { // Lanza ColaVaciaException
         if (isEmpty()) {
-            System.out.println("La cola está vacía.");
-            return null;
+            throw new ColaVaciaException(); // Lanza la excepción si la cola está vacía
         }
         T data = first.getData();
         first = first.getNext();
@@ -62,11 +59,10 @@ public class Queue<T> {
         return data;
     }
 
-    // MEtodo que retorna el elemento de alfrente sin eliminarlo 
-    public T peek() {
+    // MEtodo que retorna el elemento de alfrente sin eliminarlo
+    public T peek() throws ColaVaciaException { // Lanza ColaVaciaException
         if (isEmpty()) {
-            System.out.println("La cola está vacía.");
-            return null;
+            throw new ColaVaciaException(); // Lanza la excepción si la cola está vacía
         }
         return first.getData();
     }

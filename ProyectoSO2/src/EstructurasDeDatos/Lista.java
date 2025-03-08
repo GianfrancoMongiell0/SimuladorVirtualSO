@@ -36,14 +36,6 @@ public class Lista<T> {
         this.length = length;
     }
 
-    public int getLenght() {
-        return length;
-    }
-
-    public void setLenght(int length) {
-        this.length = length;
-    }
-
     // Metodo para saber si esta vacio
     public boolean esVacio() {
         return getHead() == null;
@@ -136,6 +128,28 @@ public class Lista<T> {
             pointer.setNext(aux.getNext());
             aux.setNext(null);
             length--;
+        }
+    }
+
+    public void deleteContent(T data) {
+        if (head == null) {
+            return;
+        }
+
+        if (head.getData().equals(data)) {
+            head = head.getNext();
+            length--;
+            return;
+        }
+
+        Nodo<T> actual = head;
+        while (actual.getNext() != null) {
+            if (actual.getNext().getData().equals(data)) {
+                actual.setNext(actual.getNext().getNext());
+                length--;
+                return;
+            }
+            actual = actual.getNext();
         }
     }
 
