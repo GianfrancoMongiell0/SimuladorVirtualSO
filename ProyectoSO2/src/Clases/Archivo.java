@@ -8,7 +8,7 @@ import EstructurasDeDatos.Lista;
 import java.time.LocalDateTime;
 
 /**
- *
+ * 
  * @author gianf
  */
 public class Archivo { 
@@ -24,6 +24,12 @@ public class Archivo {
         this.fechaCreacion = LocalDateTime.now();
         this.bloquesAsignados = new Lista<>();
         this.permisos = "rw-"; // Permisos por defecto: lectura/escritura
+    }
+
+    // Constructor con tamaño especificado
+    public Archivo(String nombre, int tamano) {
+        this(nombre); // Llama al constructor base
+        this.tamañoBloques = tamano;
     }
 
     // Getters y Setters
@@ -54,5 +60,17 @@ public class Archivo {
 
     public LocalDateTime getFechaCreacion() {
         return fechaCreacion;
+    }
+    
+    public int getTamañoBloques() {
+        return tamañoBloques;
+    }
+
+    // Método para mostrar información del archivo
+    public void mostrarInformacion() {
+        System.out.println("Nombre: " + nombre);
+        System.out.println("Tamaño en bloques: " + tamañoBloques);
+        System.out.println("Fecha de Creación: " + fechaCreacion);
+        System.out.println("Permisos: " + permisos);
     }
 }
