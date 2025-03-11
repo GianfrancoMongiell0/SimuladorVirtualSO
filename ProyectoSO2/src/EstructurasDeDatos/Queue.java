@@ -1,6 +1,5 @@
 package EstructurasDeDatos;
 
-import Exception.ColaVaciaException;
 
 /**
  *
@@ -45,10 +44,14 @@ public class Queue<T> {
         length++;
     }
 
-    // Metodo para elliminar y retonar el elemnto de alfrente de la cola
-    public T dequeue() throws ColaVaciaException { // Lanza ColaVaciaException
+  /**
+     * Elimina y retorna el elemento del frente de la cola 
+     * @return El dato eliminado o null si la cola está vacía.
+     */
+    public T dequeue() {
         if (isEmpty()) {
-            throw new ColaVaciaException(); // Lanza la excepción si la cola está vacía
+            System.out.println("La cola está vacía.");
+            return null;
         }
         T data = first.getData();
         first = first.getNext();
@@ -59,10 +62,14 @@ public class Queue<T> {
         return data;
     }
 
-    // MEtodo que retorna el elemento de alfrente sin eliminarlo
-    public T peek() throws ColaVaciaException { // Lanza ColaVaciaException
+    /**
+     * Retorna el elemento del frente sin eliminarlo (peek).
+     * @return El dato en el frente de la cola o null si la cola está vacía.
+     */
+    public T peek() {
         if (isEmpty()) {
-            throw new ColaVaciaException(); // Lanza la excepción si la cola está vacía
+            System.out.println("La cola está vacía.");
+            return null;
         }
         return first.getData();
     }
