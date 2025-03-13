@@ -4,19 +4,83 @@
  */
 package Interfaces;
 
+import Clases.Archivo;
+import Clases.Directorio;
+import Clases.SistemaArchivo;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.GridLayout;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTree;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
 /**
  *
  * @author LENOVO
  */
 public class Simulador extends javax.swing.JFrame {
-
+    SistemaArchivo sistema= new SistemaArchivo();
     /**
      * Creates new form SistemaArchivo
      */
     public Simulador() {
         initComponents();
         setTitle("Simulador Sistema de Archivos");
+         // Configurar el JPanel donde se mostrarán los bloques
+        
+        // Inicializar el modelo de árbol para el JTree
+        DefaultMutableTreeNode raiz = new DefaultMutableTreeNode("Raíz");
+        DefaultTreeModel treeModel = new DefaultTreeModel(raiz);
+        jTree1.setModel(treeModel);  // Asignamos el modelo al JTree
+        
+         
+        configurarPanelSD();
+        btnCrear.setVisible(false);
+        btnEliminar.setVisible(false);
+        btnCrear1.setVisible(false);
+        btnModificar1.setVisible(false);
+        btnEliminar1.setVisible(false);
     }
+    
+    private void configurarPanelSD() {
+        // Establecer el Layout en el JPanel (suponiendo que se llame panelSD en el GUI)
+        panelsd.setLayout(new GridLayout(10, 10)); // 10 filas x 10 columnas
+        int totalBloques = 100; // Número de bloques en el sistema (10x10 en este caso)
+        for (int i = 0; i < totalBloques; i++) {
+            JPanel bloque = new JPanel();
+            bloque.setPreferredSize(new Dimension(50, 50));
+            bloque.setBackground(Color.GREEN); // Bloque libre por defecto
+
+            // Agregar interacción (clic para marcar como ocupado/libre)
+            bloque.addMouseListener(new MouseAdapter() {
+                @Override
+                public void mouseClicked(MouseEvent e) {
+                    if (bloque.getBackground() == Color.GREEN) {
+                        bloque.setBackground(Color.RED); // Marcar como ocupado
+                    } else {
+                        bloque.setBackground(Color.GREEN); // Liberar bloque
+                    }
+                }
+            });
+
+            panelsd.add(bloque); // Agregar cada bloque al panel
+        }
+
+        // Refrescar la interfaz
+        panelsd.revalidate();
+        panelsd.repaint();
+    }
+    
+    public void actualizarJTree() {
+        DefaultTreeModel model = (DefaultTreeModel) jTree1.getModel();
+        model.reload();
+    }
+    
+    
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -31,8 +95,8 @@ public class Simulador extends javax.swing.JFrame {
         Modo = new javax.swing.ButtonGroup();
         jPanel4 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
+        modoAdmi = new javax.swing.JRadioButton();
+        modoUsuario = new javax.swing.JRadioButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTree1 = new javax.swing.JTree();
         jLabel1 = new javax.swing.JLabel();
@@ -40,10 +104,12 @@ public class Simulador extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        panelsd = new javax.swing.JPanel();
+        btnCrear = new javax.swing.JButton();
+        btnEliminar = new javax.swing.JButton();
+        btnCrear1 = new javax.swing.JButton();
+        btnModificar1 = new javax.swing.JButton();
+        btnEliminar1 = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -61,29 +127,31 @@ public class Simulador extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(153, 204, 255));
         jPanel1.setForeground(new java.awt.Color(153, 255, 102));
 
-        Modo.add(jRadioButton1);
-        jRadioButton1.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
-        jRadioButton1.setText("Modo Administrador");
-        jRadioButton1.setNextFocusableComponent(jRadioButton1);
-        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+        Modo.add(modoAdmi);
+        modoAdmi.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        modoAdmi.setText("Modo Administrador");
+        modoAdmi.setNextFocusableComponent(modoAdmi);
+        modoAdmi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton1ActionPerformed(evt);
+                modoAdmiActionPerformed(evt);
             }
         });
 
-        Modo.add(jRadioButton3);
-        jRadioButton3.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
-        jRadioButton3.setText("Modo Usuario");
-        jRadioButton3.setNextFocusableComponent(jRadioButton1);
-        jRadioButton3.addActionListener(new java.awt.event.ActionListener() {
+        Modo.add(modoUsuario);
+        modoUsuario.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        modoUsuario.setText("Modo Usuario");
+        modoUsuario.setNextFocusableComponent(modoAdmi);
+        modoUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton3ActionPerformed(evt);
+                modoUsuarioActionPerformed(evt);
             }
         });
 
         jTree1.setBackground(new java.awt.Color(208, 223, 239));
         jTree1.setBorder(null);
         jTree1.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("root");
+        jTree1.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
         jScrollPane1.setViewportView(jTree1);
 
         jLabel1.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
@@ -110,37 +178,58 @@ public class Simulador extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         jLabel3.setText("Tabla de Asignaciones");
 
-        jPanel2.setBackground(new java.awt.Color(208, 223, 239));
+        panelsd.setBackground(new java.awt.Color(208, 223, 239));
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout panelsdLayout = new javax.swing.GroupLayout(panelsd);
+        panelsd.setLayout(panelsdLayout);
+        panelsdLayout.setHorizontalGroup(
+            panelsdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 400, Short.MAX_VALUE)
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        panelsdLayout.setVerticalGroup(
+            panelsdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 403, Short.MAX_VALUE)
         );
 
-        jButton1.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        jButton1.setText("Crear Archivo");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnCrear.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        btnCrear.setText("Crear Archivo");
+        btnCrear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnCrearActionPerformed(evt);
             }
         });
 
-        jButton2.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        jButton2.setText("Modificar Archivo");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnEliminar.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        btnEliminar.setText("Eliminar Archivo");
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnEliminarActionPerformed(evt);
             }
         });
 
-        jButton3.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        jButton3.setText("Eliminar Archivo");
+        btnCrear1.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        btnCrear1.setText("Crear Directorio");
+        btnCrear1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCrear1ActionPerformed(evt);
+            }
+        });
+
+        btnModificar1.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        btnModificar1.setText("Modificar ");
+        btnModificar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModificar1ActionPerformed(evt);
+            }
+        });
+
+        btnEliminar1.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        btnEliminar1.setText("Eliminar Directorio");
+        btnEliminar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminar1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -152,48 +241,60 @@ public class Simulador extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                            .addComponent(panelsd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 106, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(27, 27, 27))
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jScrollPane1)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(297, 297, 297)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(modoAdmi)
+                                    .addComponent(modoUsuario)))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jScrollPane1)
                                 .addGap(52, 52, 52)
-                                .addComponent(jButton1)
-                                .addGap(31, 31, 31)
-                                .addComponent(jButton2)
-                                .addGap(19, 19, 19)))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jRadioButton3)
-                            .addComponent(jRadioButton1)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(8, 8, 8)
-                                .addComponent(jButton3)))
-                        .addGap(16, 16, 16))))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnCrear1)
+                                    .addComponent(btnCrear))
+                                .addGap(17, 17, 17)
+                                .addComponent(btnModificar1)
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnEliminar)
+                                    .addComponent(btnEliminar1))))
+                        .addGap(28, 28, 28))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton1)
+                    .addComponent(modoAdmi)
                     .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jRadioButton3)
-                        .addGap(61, 61, 61)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton1)
-                            .addComponent(jButton2)
-                            .addComponent(jButton3)))
+                        .addComponent(modoUsuario)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(61, 61, 61)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(btnCrear)
+                                    .addComponent(btnEliminar))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(btnCrear1)
+                                    .addComponent(btnEliminar1)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(73, 73, 73)
+                                .addComponent(btnModificar1))))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -202,19 +303,17 @@ public class Simulador extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(panelsd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jRadioButton1.getAccessibleContext().setAccessibleDescription("");
+        modoAdmi.getAccessibleContext().setAccessibleDescription("");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -224,21 +323,83 @@ public class Simulador extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton1ActionPerformed
+    private void modoAdmiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modoAdmiActionPerformed
+        btnCrear.setVisible(true);
+        btnEliminar.setVisible(true);
+        btnCrear1.setVisible(true);
+        btnModificar1.setVisible(true);
+        btnEliminar1.setVisible(true);
+    }//GEN-LAST:event_modoAdmiActionPerformed
+        
+    private void modoUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modoUsuarioActionPerformed
+        btnCrear.setVisible(false);
+        btnEliminar.setVisible(false);
+        btnCrear1.setVisible(false);
+        btnModificar1.setVisible(false);
+        btnEliminar1.setVisible(false);
+    }//GEN-LAST:event_modoUsuarioActionPerformed
 
-    private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton3ActionPerformed
+    private void btnCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearActionPerformed
+        CrearArchivo creararchivo = new CrearArchivo(this);
+        creararchivo.setVisible(true);
+    }//GEN-LAST:event_btnCrearActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void btnCrear1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrear1ActionPerformed
+        CrearDirectorio creardirec = new CrearDirectorio(this);
+        creardirec.setVisible(true);
+    }//GEN-LAST:event_btnCrear1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnModificar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificar1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnModificar1ActionPerformed
+
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        // Obtener el nodo seleccionado en el JTree
+    DefaultMutableTreeNode nodoSeleccionado = (DefaultMutableTreeNode) jTree1.getLastSelectedPathComponent();
+
+    if (nodoSeleccionado != null) {
+        // Verificar si el nodo seleccionado es un archivo
+        Object usuarioObjeto = nodoSeleccionado.getUserObject();
+        if (usuarioObjeto instanceof Archivo) {
+            // El nodo es un archivo, eliminamos el archivo
+            Archivo archivo = (Archivo) usuarioObjeto;
+            String nombreArchivo = archivo.getNombre();
+            String nombreDirectorio = ((Directorio) nodoSeleccionado.getParent()).getNombre();
+
+            // Llamar al método de eliminación del archivo
+            sistema.eliminarArchivo(nombreDirectorio, nombreArchivo);
+
+            // Actualizar la vista
+            actualizarJTree();
+        } else {
+            JOptionPane.showMessageDialog(null, "Seleccione un archivo para eliminar.");
+        }
+    }
+    }//GEN-LAST:event_btnEliminarActionPerformed
+
+    private void btnEliminar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminar1ActionPerformed
+        // Obtener el nodo seleccionado en el JTree
+        DefaultMutableTreeNode nodoSeleccionado = (DefaultMutableTreeNode) jTree1.getLastSelectedPathComponent();
+
+        if (nodoSeleccionado != null) {
+            // Verificar si el nodo seleccionado es un directorio
+            Object usuarioObjeto = nodoSeleccionado.getUserObject();
+            if (usuarioObjeto instanceof Directorio) {
+                // El nodo es un directorio, eliminamos el directorio y su contenido
+                Directorio directorio = (Directorio) usuarioObjeto;
+                String nombreDirectorio = directorio.getNombre();
+                String nombreDirectorioPadre = ((Directorio) nodoSeleccionado.getParent()).getNombre();
+
+                // Llamar al método para eliminar el directorio y su contenido
+                sistema.eliminarDirectorio(nombreDirectorioPadre, nombreDirectorio);
+
+                // Actualizar la vista
+                actualizarJTree();
+            } else {
+                JOptionPane.showMessageDialog(null, "Seleccione un directorio para eliminar.");
+            }
+        }
+    }//GEN-LAST:event_btnEliminar1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -278,21 +439,23 @@ public class Simulador extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup Modo;
+    private javax.swing.JButton btnCrear;
+    private javax.swing.JButton btnCrear1;
+    private javax.swing.JButton btnEliminar;
+    private javax.swing.JButton btnEliminar1;
+    private javax.swing.JButton btnModificar1;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTree jTree1;
+    public javax.swing.JTree jTree1;
+    private javax.swing.JRadioButton modoAdmi;
+    private javax.swing.JRadioButton modoUsuario;
+    private javax.swing.JPanel panelsd;
     // End of variables declaration//GEN-END:variables
 }

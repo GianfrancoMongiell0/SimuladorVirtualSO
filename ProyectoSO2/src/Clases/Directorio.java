@@ -11,8 +11,9 @@ import EstructurasDeDatos.Lista;
 
 public class Directorio {
     private String nombre;
-    private Lista<String> archivos;
     private Lista<Directorio> subdirectorios;
+    private Lista<Archivo> archivos;
+
 
     // Constructor
     public Directorio(String nombre) {
@@ -21,26 +22,36 @@ public class Directorio {
         this.subdirectorios = new Lista<>();
     }
 
-    // Métodos para manejar archivos
-    public void agregarArchivo(String nombreArchivo) {
-        if (!archivos.contains(nombreArchivo)) {
-            archivos.insertLast(nombreArchivo);
+   public void agregarArchivo(Archivo archivo1) {
+        if (!archivos.contains(archivo1)) {
+            archivos.insertLast(archivo1);
         } else {
-            System.out.println("El archivo '" + nombreArchivo + "' ya existe en el directorio.");
+            System.out.println("El archivo '" + archivo1.getNombre() + "' ya existe en el directorio.");
         }
     }
+
+    public Archivo buscarArchivo(String nombreArchivo) {
+        for (int i = 0; i < archivos.getLength(); i++) {
+            if (archivos.get(i).getNombre().equals(nombreArchivo)) {
+                return archivos.get(i);
+            }
+        }
+        return null;
+    }
+
 
     public void eliminarArchivo(String nombreArchivo) {
-        if (archivos.contains(nombreArchivo)) {
-            archivos.deleteContent(nombreArchivo);
-        } else {
-            System.out.println("El archivo '" + nombreArchivo + "' no existe en el directorio.");
+        for (int i = 0; i < archivos.getLength(); i++) {
+            if (archivos.get(i).getNombre().equals(nombreArchivo)) {
+                archivos.deleteIndex(i);
+                return;
+            }
         }
+        System.out.println("El archivo '" + nombreArchivo + "' no existe en el directorio.");
     }
 
-    public boolean buscarArchivo(String nombreArchivo) {
-        return archivos.contains(nombreArchivo);
-    }
+
+   
 
     // Métodos para manejar subdirectorios
     public void agregarSubdirectorio(Directorio subdirectorio) {
@@ -90,11 +101,14 @@ public class Directorio {
         this.nombre = nombre;
     }
 
-    public Lista<String> getArchivos() {
-        return archivos;
-    }
 
     public Lista<Directorio> getSubdirectorios() {
         return subdirectorios;
     }
+
+    public Lista<Archivo> getArchivos() {
+        return archivos;
+    }
+    
+    
 }

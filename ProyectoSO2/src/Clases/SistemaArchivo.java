@@ -16,19 +16,25 @@ public class SistemaArchivo {
     public SistemaArchivo() {
         this.raiz = new Directorio("/" );
     }
+
+    public Directorio getRaiz() {
+        return raiz;
+    }
     
-    // Crear un archivo en un directorio dado
+
+    
+   // Crear un archivo en un directorio dado
     public void crearArchivo(String nombreDirectorio, String nombreArchivo, int tamano) {
         Directorio dir = buscarDirectorio(raiz, nombreDirectorio);
         if (dir != null) {
             Archivo archivo = new Archivo(nombreArchivo, tamano);
-            dir.agregarArchivo(nombreArchivo);
+            dir.agregarArchivo(archivo); // Pasar el objeto Archivo en lugar de un String
             System.out.println("Archivo '" + nombreArchivo + "' creado en '" + nombreDirectorio + "'.");
         } else {
             System.out.println("Directorio no encontrado: " + nombreDirectorio);
         }
     }
-    
+
     // Eliminar un archivo de un directorio dado
     public void eliminarArchivo(String nombreDirectorio, String nombreArchivo) {
         Directorio dir = buscarDirectorio(raiz, nombreDirectorio);
@@ -40,6 +46,11 @@ public class SistemaArchivo {
         }
     }
     
+   public Archivo buscarArchivo(String nombreDirectorio, String nombreArchivo) {
+        Directorio dir = buscarDirectorio(raiz, nombreDirectorio);
+        return (dir != null) ? dir.buscarArchivo(nombreArchivo) : null;
+    }
+
     // Crear un subdirectorio dentro de otro
     public void crearDirectorio(String nombrePadre, String nombreDirectorio) {
         Directorio padre = buscarDirectorio(raiz, nombrePadre);
@@ -64,7 +75,7 @@ public class SistemaArchivo {
     }
     
     // Buscar un directorio por su nombre en la estructura jerárquica
-    private Directorio buscarDirectorio(Directorio actual, String nombre) {
+    public Directorio buscarDirectorio(Directorio actual, String nombre) {
         if (actual.getNombre().equals(nombre)) {
             return actual;
         }
@@ -87,7 +98,4 @@ public class SistemaArchivo {
         }
     }
 
-    void setVisible(boolean b) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 }
