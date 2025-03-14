@@ -66,6 +66,11 @@ public class Archivo {
         return tamañoBloques;
     }
 
+    @Override
+    public String toString() {
+        return this.nombre; // Devuelve el nombre del archivo
+    }
+
     // Método para mostrar información del archivo
     public void mostrarInformacion() {
         System.out.println("Nombre: " + nombre);

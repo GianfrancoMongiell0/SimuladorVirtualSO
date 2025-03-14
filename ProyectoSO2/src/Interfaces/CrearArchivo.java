@@ -5,6 +5,8 @@
 package Interfaces;
 
 import Clases.Archivo;
+import Clases.Directorio;
+import Clases.SistemaArchivo;
 
 /**
  *
@@ -12,16 +14,30 @@ import Clases.Archivo;
  */
 public class CrearArchivo extends javax.swing.JFrame {
     private Simulador simulador;  // Referencia al simulador principal
-
+    private SistemaArchivo sistema;
     /**
      * Creates new form CrearArchivo
      */
-    public CrearArchivo(Simulador simulador) {
+    public CrearArchivo(Simulador simulador, SistemaArchivo sistema) {
         this.simulador = simulador;
+        this.sistema = sistema;
         initComponents();
         setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
+        cargarDirectorios();
     }
 
+    private void cargarDirectorios() {
+        directorios.removeAllItems();  // Limpiar elementos previos
+        listarDirectorios(sistema.getRaiz());
+    }
+
+    // Método recursivo para listar todos los directorios en la estructura
+    private void listarDirectorios(Directorio dir) {
+        directorios.addItem(dir.getNombre()); // Agregar directorio al ComboBox
+        for (int i = 0; i < dir.getSubdirectorios().getLength(); i++) {
+            listarDirectorios(dir.getSubdirectorios().get(i)); // Recorrer subdirectorios
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -38,6 +54,8 @@ public class CrearArchivo extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         tamañoBloque = new javax.swing.JSpinner();
         crear = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        directorios = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -62,6 +80,16 @@ public class CrearArchivo extends javax.swing.JFrame {
             }
         });
 
+        jLabel4.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jLabel4.setText("Nombre del directorio:");
+
+        directorios.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        directorios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                directoriosActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -74,7 +102,14 @@ public class CrearArchivo extends javax.swing.JFrame {
                 .addContainerGap(28, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(crear)
+                        .addGap(17, 17, 17))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(directorios, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -83,10 +118,7 @@ public class CrearArchivo extends javax.swing.JFrame {
                                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(tamañoBloque)))
-                        .addGap(42, 42, 42))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(crear)
-                        .addGap(14, 14, 14))))
+                        .addGap(42, 42, 42))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -102,8 +134,12 @@ public class CrearArchivo extends javax.swing.JFrame {
                     .addComponent(jLabel3)
                     .addComponent(tamañoBloque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(directorios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
                 .addComponent(crear)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addGap(17, 17, 17))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -114,7 +150,9 @@ public class CrearArchivo extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -123,11 +161,19 @@ public class CrearArchivo extends javax.swing.JFrame {
     private void crearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearActionPerformed
         String nombreArchivo = nameArchivo.getText();
         int tamañoBloques = (int) tamañoBloque.getValue();
-        Archivo nuevoArchivo = new Archivo(nombreArchivo, tamañoBloques);
-        nuevoArchivo.mostrarInformacion();
-         // Si es necesario, actualizar el JTree después de crear el archivo
-        simulador.actualizarJTree();  // Llamar al método para actualizar el JTree
+        String nombreDirectorio = (String) directorios.getSelectedItem();  // Obtener el directorio seleccionado
+    
+    if (nombreDirectorio != null) {
+        simulador.sistema.crearArchivo(nombreDirectorio, nombreArchivo, tamañoBloques);
+        simulador.actualizarJTree();  // Actualizar la interfaz
+    } else {
+        System.out.println("Seleccione un directorio antes de crear el archivo.");
+    }
     }//GEN-LAST:event_crearActionPerformed
+
+    private void directoriosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_directoriosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_directoriosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -161,9 +207,11 @@ public class CrearArchivo extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton crear;
+    private javax.swing.JComboBox<String> directorios;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField nameArchivo;
     private javax.swing.JSpinner tamañoBloque;

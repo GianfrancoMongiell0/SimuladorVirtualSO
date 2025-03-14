@@ -62,14 +62,14 @@ public class Directorio {
         }
     }
 
-    public void eliminarSubdirectorio(String nombreSubdirectorio) {
+    public boolean eliminarSubdirectorio(String nombreSubdirectorio) {
         for (int i = 0; i < subdirectorios.getLength(); i++) {
             if (subdirectorios.get(i).getNombre().equals(nombreSubdirectorio)) {
                 subdirectorios.deleteIndex(i);
-                return;
+                return true;
             }
         }
-        System.out.println("El subdirectorio '" + nombreSubdirectorio + "' no existe.");
+        return false;
     }
 
     public boolean buscarSubdirectorio(String nombreSubdirectorio) {
@@ -110,5 +110,9 @@ public class Directorio {
         return archivos;
     }
     
-    
+    @Override
+    public String toString() {
+        return this.nombre; // Devuelve el nombre del directorio
+    }
+
 }

@@ -14,11 +14,13 @@ import Clases.SistemaArchivo;
  */
 public class CrearDirectorio extends javax.swing.JFrame {
     private Simulador simulador;  // Referencia al simulador principal
+     private SistemaArchivo sistema; 
     /**
      * Creates new form CrearArchivo
      */
-    public CrearDirectorio(Simulador simulador) {
+    public CrearDirectorio(Simulador simulador, SistemaArchivo sistema) {
         this.simulador = simulador;
+        this.sistema = sistema;
         initComponents();
         setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
     }
@@ -140,7 +142,6 @@ public class CrearDirectorio extends javax.swing.JFrame {
         String directorioPadre = nameDirectorioPadre.getText(); // Obtener nombre de directorio padre
 
         // Crear subdirectorio y agregarlo al directorio padre
-        SistemaArchivo sistema = new SistemaArchivo();
         sistema.crearDirectorio(directorioPadre, nombreDirec);
 
         // Actualizar el JTree después de crear el directorio

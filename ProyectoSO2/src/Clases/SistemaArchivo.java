@@ -4,6 +4,8 @@
  */
 package Clases;
 
+import java.util.Random;
+
 
 /**
  *
@@ -14,7 +16,7 @@ public class SistemaArchivo {
     private Directorio raiz;
     
     public SistemaArchivo() {
-        this.raiz = new Directorio("/" );
+        this.raiz = new Directorio("Raíz" );
     }
 
     public Directorio getRaiz() {
@@ -64,11 +66,15 @@ public class SistemaArchivo {
     }
     
     // Eliminar un subdirectorio
-    public void eliminarDirectorio(String nombrePadre, String nombreDirectorio) {
+   public void eliminarDirectorio(String nombrePadre, String nombreDirectorio) {
         Directorio padre = buscarDirectorio(raiz, nombrePadre);
         if (padre != null) {
-            padre.eliminarSubdirectorio(nombreDirectorio);
-            System.out.println("Directorio '" + nombreDirectorio + "' eliminado de '" + nombrePadre + "'.");
+            boolean eliminado = padre.eliminarSubdirectorio(nombreDirectorio);
+            if (eliminado) {
+                System.out.println("Directorio '" + nombreDirectorio + "' eliminado de '" + nombrePadre + "'.");
+            } else {
+                System.out.println("No se pudo eliminar el directorio '" + nombreDirectorio + "'.");
+            }
         } else {
             System.out.println("Directorio padre no encontrado: " + nombrePadre);
         }
@@ -95,6 +101,26 @@ public class SistemaArchivo {
             dir.listarContenido();
         } else {
             System.out.println("Directorio no encontrado: " + nombreDirectorio);
+        }
+    }
+    
+    // Método para crear 5 directorios y 10 archivos aleatorios
+    public void crearDirectoriosYArchivosAleatorios() {
+        Random rand = new Random();
+
+        // Crear 5 directorios aleatorios
+        for (int i = 1; i <= 5; i++) {
+            String nombreDirectorio = "Directorio_" + i;
+            // Crear directorio en la raíz
+            crearDirectorio("Raíz", nombreDirectorio);
+
+            // Crear entre 1 y 3 archivos aleatorios por directorio
+            int numArchivos = rand.nextInt(3) + 1;
+            for (int j = 1; j <= numArchivos; j++) {
+                String nombreArchivo = "Archivo_" + rand.nextInt(1000);
+                int tamano = rand.nextInt(500) + 1;  // Tamaño aleatorio entre 1 y 500 KB
+                crearArchivo(nombreDirectorio, nombreArchivo, tamano);
+            }
         }
     }
 

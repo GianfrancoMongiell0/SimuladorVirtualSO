@@ -75,10 +75,53 @@ public class Simulador extends javax.swing.JFrame {
     }
     
     public void actualizarJTree() {
+        DefaultMutableTreeNode raizNodo = new DefaultMutableTreeNode(sistema.getRaiz().getNombre());
+        construirArbol(sistema.getRaiz(), raizNodo);
+
         DefaultTreeModel model = (DefaultTreeModel) jTree1.getModel();
+        model.setRoot(raizNodo);
         model.reload();
     }
-    
+
+    // Método recursivo para construir el árbol
+    private void construirArbol(Directorio dir, DefaultMutableTreeNode nodoPadre) {
+        for (int i = 0; i < dir.getSubdirectorios().getLength(); i++) {
+            Directorio subdir = dir.getSubdirectorios().get(i);
+            DefaultMutableTreeNode nodoHijo = new DefaultMutableTreeNode(subdir); // Guardar el objeto Directorio
+            nodoPadre.add(nodoHijo);
+            construirArbol(subdir, nodoHijo);
+        }
+
+        for (int i = 0; i < dir.getArchivos().getLength(); i++) {
+            Archivo archivo = dir.getArchivos().get(i);
+            DefaultMutableTreeNode nodoArchivo = new DefaultMutableTreeNode(archivo); // Guardar el objeto Archivo
+            nodoPadre.add(nodoArchivo);
+        }
+    }
+
+   private void modificarNombreArchivo(Archivo archivo, DefaultMutableTreeNode nodo) {
+        String nuevoNombre = JOptionPane.showInputDialog(this, "Ingrese el nuevo nombre para el archivo:", archivo.getNombre());
+
+        if (nuevoNombre != null && !nuevoNombre.trim().isEmpty()) {
+            archivo.setNombre(nuevoNombre);
+            ((DefaultTreeModel) jTree1.getModel()).nodeChanged(nodo);
+            JOptionPane.showMessageDialog(this, "Nombre del archivo modificado correctamente.");
+        } else {
+            JOptionPane.showMessageDialog(this, "El nombre no puede estar vacío.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+    private void modificarNombreDirectorio(Directorio directorio, DefaultMutableTreeNode nodo) {
+        String nuevoNombre = JOptionPane.showInputDialog(this, "Ingrese el nuevo nombre para el directorio:", directorio.getNombre());
+
+        if (nuevoNombre != null && !nuevoNombre.trim().isEmpty()) {
+            directorio.setNombre(nuevoNombre);
+            ((DefaultTreeModel) jTree1.getModel()).nodeChanged(nodo);
+            JOptionPane.showMessageDialog(this, "Nombre del directorio modificado correctamente.");
+        } else {
+            JOptionPane.showMessageDialog(this, "El nombre no puede estar vacío.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
     
 
 
@@ -110,6 +153,7 @@ public class Simulador extends javax.swing.JFrame {
         btnCrear1 = new javax.swing.JButton();
         btnModificar1 = new javax.swing.JButton();
         btnEliminar1 = new javax.swing.JButton();
+        btnCrearAleatorio = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -231,6 +275,14 @@ public class Simulador extends javax.swing.JFrame {
             }
         });
 
+        btnCrearAleatorio.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        btnCrearAleatorio.setText("Crear Directorios/Archivos Aleatorios");
+        btnCrearAleatorio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCrearAleatorioActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -258,14 +310,17 @@ public class Simulador extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(52, 52, 52)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnCrear1)
-                                    .addComponent(btnCrear))
-                                .addGap(17, 17, 17)
-                                .addComponent(btnModificar1)
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnEliminar)
-                                    .addComponent(btnEliminar1))))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(btnCrear1)
+                                            .addComponent(btnCrear))
+                                        .addGap(17, 17, 17)
+                                        .addComponent(btnModificar1)
+                                        .addGap(18, 18, 18)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(btnEliminar)
+                                            .addComponent(btnEliminar1)))
+                                    .addComponent(btnCrearAleatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(28, 28, 28))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -282,9 +337,11 @@ public class Simulador extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(modoUsuario)
+                        .addGap(8, 8, 8)
+                        .addComponent(btnCrearAleatorio)
+                        .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(61, 61, 61)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(btnCrear)
                                     .addComponent(btnEliminar))
@@ -293,7 +350,7 @@ public class Simulador extends javax.swing.JFrame {
                                     .addComponent(btnCrear1)
                                     .addComponent(btnEliminar1)))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(73, 73, 73)
+                                .addGap(24, 24, 24)
                                 .addComponent(btnModificar1))))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -340,66 +397,126 @@ public class Simulador extends javax.swing.JFrame {
     }//GEN-LAST:event_modoUsuarioActionPerformed
 
     private void btnCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearActionPerformed
-        CrearArchivo creararchivo = new CrearArchivo(this);
+        CrearArchivo creararchivo = new CrearArchivo(this, sistema);
         creararchivo.setVisible(true);
     }//GEN-LAST:event_btnCrearActionPerformed
 
     private void btnCrear1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrear1ActionPerformed
-        CrearDirectorio creardirec = new CrearDirectorio(this);
+        CrearDirectorio creardirec = new CrearDirectorio(this, sistema);
         creardirec.setVisible(true);
     }//GEN-LAST:event_btnCrear1ActionPerformed
 
     private void btnModificar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificar1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnModificar1ActionPerformed
-
-    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-        // Obtener el nodo seleccionado en el JTree
-    DefaultMutableTreeNode nodoSeleccionado = (DefaultMutableTreeNode) jTree1.getLastSelectedPathComponent();
-
-    if (nodoSeleccionado != null) {
-        // Verificar si el nodo seleccionado es un archivo
-        Object usuarioObjeto = nodoSeleccionado.getUserObject();
-        if (usuarioObjeto instanceof Archivo) {
-            // El nodo es un archivo, eliminamos el archivo
-            Archivo archivo = (Archivo) usuarioObjeto;
-            String nombreArchivo = archivo.getNombre();
-            String nombreDirectorio = ((Directorio) nodoSeleccionado.getParent()).getNombre();
-
-            // Llamar al método de eliminación del archivo
-            sistema.eliminarArchivo(nombreDirectorio, nombreArchivo);
-
-            // Actualizar la vista
-            actualizarJTree();
-        } else {
-            JOptionPane.showMessageDialog(null, "Seleccione un archivo para eliminar.");
-        }
-    }
-    }//GEN-LAST:event_btnEliminarActionPerformed
-
-    private void btnEliminar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminar1ActionPerformed
         // Obtener el nodo seleccionado en el JTree
         DefaultMutableTreeNode nodoSeleccionado = (DefaultMutableTreeNode) jTree1.getLastSelectedPathComponent();
 
-        if (nodoSeleccionado != null) {
-            // Verificar si el nodo seleccionado es un directorio
-            Object usuarioObjeto = nodoSeleccionado.getUserObject();
-            if (usuarioObjeto instanceof Directorio) {
-                // El nodo es un directorio, eliminamos el directorio y su contenido
-                Directorio directorio = (Directorio) usuarioObjeto;
-                String nombreDirectorio = directorio.getNombre();
-                String nombreDirectorioPadre = ((Directorio) nodoSeleccionado.getParent()).getNombre();
-
-                // Llamar al método para eliminar el directorio y su contenido
-                sistema.eliminarDirectorio(nombreDirectorioPadre, nombreDirectorio);
-
-                // Actualizar la vista
-                actualizarJTree();
-            } else {
-                JOptionPane.showMessageDialog(null, "Seleccione un directorio para eliminar.");
-            }
+        if (nodoSeleccionado == null) {
+            JOptionPane.showMessageDialog(this, "Por favor, seleccione un archivo o directorio.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
         }
+
+        // Obtener el objeto asociado al nodo seleccionado
+        Object objeto = nodoSeleccionado.getUserObject();
+
+        if (objeto instanceof Archivo) {
+            Archivo archivo = (Archivo) objeto;
+            modificarNombreArchivo(archivo, nodoSeleccionado);
+        } else if (objeto instanceof Directorio) {
+            Directorio directorio = (Directorio) objeto;
+            modificarNombreDirectorio(directorio, nodoSeleccionado);
+        } else {
+            JOptionPane.showMessageDialog(this, "Seleccione un archivo o directorio válido.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnModificar1ActionPerformed
+
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        DefaultMutableTreeNode nodoSeleccionado = (DefaultMutableTreeNode) jTree1.getLastSelectedPathComponent();
+
+        if (nodoSeleccionado == null) {
+            System.out.println("No se ha seleccionado ningún nodo.");
+            return;
+        }
+
+        Object objeto = nodoSeleccionado.getUserObject();
+        System.out.println("Nodo seleccionado: " + objeto); // Verifica si realmente se está seleccionando algo
+
+        if (objeto instanceof Archivo) {
+            Archivo archivo = (Archivo) objeto;
+            System.out.println("Archivo a eliminar: " + archivo.getNombre());
+
+            DefaultMutableTreeNode nodoPadre = (DefaultMutableTreeNode) nodoSeleccionado.getParent();
+            if (nodoPadre != null) {
+                Object objetoPadre = nodoPadre.getUserObject();
+                if (objetoPadre instanceof Directorio) {
+                    Directorio padre = (Directorio) objetoPadre;
+                    System.out.println("Eliminando archivo " + archivo.getNombre() + " del directorio " + padre.getNombre());
+
+                    sistema.eliminarArchivo(padre.getNombre(), archivo.getNombre());
+
+                    // Eliminar nodo del árbol
+                    DefaultTreeModel model = (DefaultTreeModel) jTree1.getModel();
+                    model.removeNodeFromParent(nodoSeleccionado);
+                    model.reload();
+
+                    System.out.println("Archivo eliminado exitosamente.");
+                }
+            }
+        } else {
+            System.out.println("Seleccione un archivo válido.");
+        }
+    }//GEN-LAST:event_btnEliminarActionPerformed
+
+    private void btnEliminar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminar1ActionPerformed
+        DefaultMutableTreeNode nodoSeleccionado = (DefaultMutableTreeNode) jTree1.getLastSelectedPathComponent();
+
+    if (nodoSeleccionado != null) {
+        Object objeto = nodoSeleccionado.getUserObject();
+
+        if (objeto instanceof Directorio) {
+            Directorio dir = (Directorio) objeto;
+            DefaultMutableTreeNode nodoPadre = (DefaultMutableTreeNode) nodoSeleccionado.getParent();
+
+            if (nodoPadre != null) {
+                Object objetoPadre = nodoPadre.getUserObject();
+                if (objetoPadre instanceof Directorio) {
+                    Directorio padre = (Directorio) objetoPadre;
+
+                    // Verificar si el directorio se encuentra en el sistema
+                    Directorio directorioPadre = sistema.buscarDirectorio(padre, padre.getNombre());
+
+                    if (directorioPadre != null) {
+                        // Eliminar el directorio
+                        sistema.eliminarDirectorio(padre.getNombre(), dir.getNombre());
+
+                        // Eliminar el nodo en el JTree
+                        DefaultTreeModel model = (DefaultTreeModel) jTree1.getModel();
+                        model.removeNodeFromParent(nodoSeleccionado);
+                        model.reload();
+
+                        // Actualizar el JTree
+                        actualizarJTree();
+                        System.out.println("Directorio '" + dir.getNombre() + "' eliminado correctamente.");
+                    }
+                }
+            } else {
+                // Intentando eliminar la raíz
+                System.out.println("No se puede eliminar la raíz del sistema.");
+            }
+        } else {
+            System.out.println("Seleccione un directorio válido.");
+        }
+    } else {
+        System.out.println("No se ha seleccionado ningún directorio.");
+    }
     }//GEN-LAST:event_btnEliminar1ActionPerformed
+
+    private void btnCrearAleatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearAleatorioActionPerformed
+        // Crear 5 directorios y 10 archivos aleatorios
+        sistema.crearDirectoriosYArchivosAleatorios();
+
+        // Actualizar el JTree para reflejar los cambios
+        actualizarJTree();
+    }//GEN-LAST:event_btnCrearAleatorioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -441,6 +558,7 @@ public class Simulador extends javax.swing.JFrame {
     private javax.swing.ButtonGroup Modo;
     private javax.swing.JButton btnCrear;
     private javax.swing.JButton btnCrear1;
+    private javax.swing.JButton btnCrearAleatorio;
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnEliminar1;
     private javax.swing.JButton btnModificar1;
