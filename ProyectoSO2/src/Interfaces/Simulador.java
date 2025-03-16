@@ -612,9 +612,15 @@ public class Simulador extends javax.swing.JFrame {
     }//GEN-LAST:event_btnGuardarGSONActionPerformed
 
     private void btnCargarGSONActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargarGSONActionPerformed
-        cargarEstado();
+        sistema = SistemaArchivo.cargarEstado("sistema.json");
+
+        // Actualizar componentes visuales
         actualizarJTree();
         configurarPanelSD();
+
+        // Forzar repintado del panel SD
+        panelsd.revalidate();
+        panelsd.repaint();
     }//GEN-LAST:event_btnCargarGSONActionPerformed
 
     /**

@@ -72,6 +72,40 @@ public class MemoryManager {
         return bloquesAsignados;
     }
 
+    public void reconstruirSiguienteBloques() {
+        for (int i = 0; i < todosLosBloques.getLength(); i++) {
+            Bloque bloque = todosLosBloques.get(i);
+            if (bloque.getSiguienteId() != -1) {
+                Bloque siguiente = findBloqueById(bloque.getSiguienteId());
+                bloque.setSiguienteBloque(siguiente);
+            } else {
+                bloque.setSiguienteBloque(null);
+            }
+        }
+    }
+
+    private Bloque findBloqueById(int id) {
+        for (int i = 0; i < todosLosBloques.getLength(); i++) {
+            Bloque b = todosLosBloques.get(i);
+            if (b.getId() == id) {
+                return b;
+            }
+        }
+        return null;
+    }
+
+    public void reconstruirColaBloquesLibres() {
+        bloquesLibres.clear(); // Limpiar la cola actual
+
+        // Reconstruir la cola solo con bloques NO ocupados
+        for (int i = 0; i < todosLosBloques.getLength(); i++) {
+            Bloque bloque = todosLosBloques.get(i);
+            if (!bloque.isOcupado()) {
+                bloquesLibres.enqueue(bloque);
+            }
+        }
+    }
+
     public int bloquesDisponibles() {
         return bloquesLibres.getLength();
     }

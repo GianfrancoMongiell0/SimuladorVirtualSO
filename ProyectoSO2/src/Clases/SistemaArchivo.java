@@ -26,72 +26,51 @@ public class SistemaArchivo {
     public SistemaArchivo() {
         this.raiz = new Directorio("Raíz");
         this.memoryManager = new MemoryManager(100);
-        inicializarDatosPorDefecto(); // Datos mínimos para evitar JSON vacío
+        inicializarDatosPorDefecto();
     }
 
     private void inicializarDatosPorDefecto() {
-        // Crear un archivo y directorio de ejemplo
+        // Crear estructura mínima para evitar JSON vacío
         Directorio ejemploDir = new Directorio("Ejemplo");
         Archivo ejemploArchivo = new Archivo("init.txt");
         ejemploArchivo.setTamañoBloques(1);
+
+        // Asignar bloques reales
+        Lista<Bloque> bloques = memoryManager.asignarBloquesEncadenados(1);
+        ejemploArchivo.setBloquesAsignados(bloques);
+
         ejemploDir.agregarArchivo(ejemploArchivo);
         raiz.agregarSubdirectorio(ejemploDir);
     }
 
-    // Crear directorio
     public void crearDirectorio(String nombrePadre, String nombreDirectorio) {
         Directorio padre = buscarDirectorio(raiz, nombrePadre);
-        if (padre != null) {
-            if (!padre.buscarSubdirectorio(nombreDirectorio)) {
-                Directorio nuevo = new Directorio(nombreDirectorio);
-                padre.agregarSubdirectorio(nuevo);
-            } else {
-                JOptionPane.showMessageDialog(null, "El directorio ya existe.");
-            }
-        } else {
-            JOptionPane.showMessageDialog(null, "Directorio padre no encontrado.");
+        if (padre != null && !padre.buscarSubdirectorio(nombreDirectorio)) {
+            Directorio nuevo = new Directorio(nombreDirectorio);
+            padre.agregarSubdirectorio(nuevo);
         }
     }
 
-    // Eliminar directorio
     public void eliminarDirectorio(String nombrePadre, String nombreDirectorio) throws Exception {
         Directorio padre = buscarDirectorio(raiz, nombrePadre);
-        if (padre == null) {
-            throw new Exception("Directorio padre no encontrado.");
-        }
-        if (!padre.eliminarSubdirectorio(nombreDirectorio, memoryManager)) {
-            throw new Exception("No se pudo eliminar el directorio.");
+        if (padre != null) {
+            padre.eliminarSubdirectorio(nombreDirectorio, memoryManager);
         }
     }
 
-    // Crear archivo
     public void crearArchivo(String nombreDirectorio, String nombreArchivo, int tamano) {
         Directorio dir = buscarDirectorio(raiz, nombreDirectorio);
-        if (dir == null) {
-            JOptionPane.showMessageDialog(null, "Directorio no encontrado.");
-            return;
-        }
-
-        if (dir.buscarArchivo(nombreArchivo) != null) {
-            JOptionPane.showMessageDialog(null, "El archivo ya existe.");
-            return;
-        }
-
-        if (memoryManager.bloquesDisponibles() < tamano) {
-            JOptionPane.showMessageDialog(null, "Espacio insuficiente en el SD.");
-            return;
-        }
-
-        Lista<Bloque> bloques = memoryManager.asignarBloquesEncadenados(tamano);
-        if (bloques != null) {
-            Archivo archivo = new Archivo(nombreArchivo);
-            archivo.setBloquesAsignados(bloques);
-            archivo.setTamañoBloques(tamano);
-            dir.agregarArchivo(archivo);
+        if (dir != null && memoryManager.bloquesDisponibles() >= tamano) {
+            Lista<Bloque> bloques = memoryManager.asignarBloquesEncadenados(tamano);
+            if (bloques != null) {
+                Archivo archivo = new Archivo(nombreArchivo);
+                archivo.setTamañoBloques(tamano);
+                archivo.setBloquesAsignados(bloques);
+                dir.agregarArchivo(archivo);
+            }
         }
     }
 
-    // Eliminar archivo
     public void eliminarArchivo(String nombreDirectorio, String nombreArchivo) {
         Directorio dir = buscarDirectorio(raiz, nombreDirectorio);
         if (dir != null) {
@@ -103,7 +82,6 @@ public class SistemaArchivo {
         }
     }
 
-    // Buscar directorio recursivamente
     public Directorio buscarDirectorio(Directorio actual, String nombre) {
         if (actual.getNombre().equals(nombre)) {
             return actual;
@@ -119,19 +97,13 @@ public class SistemaArchivo {
 
     public void crearDirectoriosYArchivosAleatorios() {
         Random rand = new Random();
-        int numDirectorios = 5;
-        int numArchivosPorDirectorio = 2; // 2 archivos por directorio para el ejemplo
-
-        // Crear directorios aleatorios
-        for (int i = 1; i <= numDirectorios; i++) {
-            String nombreDirectorio = "Directorio_" + i;
-            this.crearDirectorio("Raíz", nombreDirectorio);
-
-            // Crear archivos aleatorios dentro de cada directorio
-            for (int j = 1; j <= numArchivosPorDirectorio; j++) {
-                String nombreArchivo = "Archivo_" + rand.nextInt(1000);
-                int tamaño = rand.nextInt(5) + 1; // Tamaño entre 1 y 5 bloques
-                this.crearArchivo(nombreDirectorio, nombreArchivo, tamaño);
+        for (int i = 1; i <= 5; i++) {
+            String dirName = "Directorio_" + i;
+            crearDirectorio("Raíz", dirName);
+            for (int j = 1; j <= 2; j++) {
+                String fileName = "Archivo_" + rand.nextInt(1000);
+                int tamaño = rand.nextInt(5) + 1;
+                crearArchivo(dirName, fileName, tamaño);
             }
         }
     }
@@ -140,7 +112,7 @@ public class SistemaArchivo {
         try {
             GsonManager.guardarEstado(this, rutaArchivo);
         } catch (IOException e) {
-            JOptionPane.showMessageDialog(null, "Error guardando: " + e.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al guardar: " + e.getMessage());
         }
     }
 
@@ -148,19 +120,25 @@ public class SistemaArchivo {
         File file = new File(rutaArchivo);
 
         try {
+            // Crear nuevo sistema si el archivo no existe
             if (!file.exists() || file.length() == 0) {
-                SistemaArchivo nuevo = new SistemaArchivo();
-                nuevo.guardarEstado(rutaArchivo); // Crear archivo con datos iniciales
-                return nuevo;
+                SistemaArchivo nuevoSistema = new SistemaArchivo();
+                nuevoSistema.guardarEstado(rutaArchivo);
+                return nuevoSistema;
             }
 
-            return GsonManager.cargarEstado(rutaArchivo);
-        } catch (FileNotFoundException e) {
-            JOptionPane.showMessageDialog(null, "Archivo no encontrado: " + e.getMessage());
-            return new SistemaArchivo();
+            // Cargar desde archivo
+            SistemaArchivo sistema = GsonManager.cargarEstado(rutaArchivo);
+
+            // Reconstruir enlaces entre bloques
+            sistema.getMemoryManager().reconstruirSiguienteBloques();
+            sistema.getMemoryManager().reconstruirColaBloquesLibres(); // Cola de libres
+
+            return sistema;
+
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Error cargando: " + e.getMessage());
-            return new SistemaArchivo();
+            JOptionPane.showMessageDialog(null, "Error al cargar: " + e.getMessage());
+            return new SistemaArchivo(); // Sistema limpio como fallback
         }
     }
 
