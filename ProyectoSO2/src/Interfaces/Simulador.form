@@ -99,13 +99,22 @@
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Component id="btnCrear1" min="-2" max="-2" attributes="0"/>
                                               <Component id="btnCrear" min="-2" max="-2" attributes="0"/>
+                                              <Component id="btnGuardarGSON" alignment="0" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-                                          <Component id="btnModificar1" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="btnEliminar" min="-2" max="-2" attributes="0"/>
-                                              <Component id="btnEliminar1" min="-2" max="-2" attributes="0"/>
+                                              <Group type="102" attributes="0">
+                                                  <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                                                  <Component id="btnModificar1" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="btnEliminar" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="btnEliminar1" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                              </Group>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <EmptySpace min="-2" pref="98" max="-2" attributes="0"/>
+                                                  <Component id="btnCargarGSON" min="-2" max="-2" attributes="0"/>
+                                              </Group>
                                           </Group>
                                       </Group>
                                       <Component id="btnCrearAleatorio" min="-2" pref="262" max="-2" attributes="0"/>
@@ -131,8 +140,12 @@
                       <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="jScrollPane1" min="-2" pref="196" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
                           <Component id="modoUsuario" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                           <Component id="btnCrearAleatorio" min="-2" max="-2" attributes="0"/>
@@ -153,10 +166,14 @@
                                   <Component id="btnModificar1" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="btnGuardarGSON" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnCargarGSON" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="jScrollPane1" min="-2" pref="196" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -372,6 +389,22 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCrearAleatorioActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnGuardarGSON">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Guardar en JSON"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGuardarGSONActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnCargarGSON">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Cargar JSON"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCargarGSONActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

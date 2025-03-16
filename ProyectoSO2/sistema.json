@@ -1,0 +1,1531 @@
+{
+  "raiz": {
+    "nombre": "Raíz",
+    "subdirectorios": [
+      {
+        "__type": "Clases.Directorio",
+        "data": {
+          "nombre": "Ejemplo",
+          "subdirectorios": [],
+          "archivos": [
+            {
+              "__type": "Clases.Archivo",
+              "data": {
+                "nombre": "init.txt",
+                "tamañoBloques": 1,
+                "fechaCreacion": "2025-03-16T16:03:06.1053526",
+                "bloquesAsignados": []
+              }
+            }
+          ]
+        }
+      },
+      {
+        "__type": "Clases.Directorio",
+        "data": {
+          "nombre": "Prueba",
+          "subdirectorios": [],
+          "archivos": [
+            {
+              "__type": "Clases.Archivo",
+              "data": {
+                "nombre": "Prueba",
+                "tamañoBloques": 5,
+                "fechaCreacion": "2025-03-16T16:03:30.8041849",
+                "bloquesAsignados": [
+                  {
+                    "__type": "Clases.Bloque",
+                    "data": {
+                      "id": 0,
+                      "ocupado": true,
+                      "siguienteBloque": {
+                        "id": 1,
+                        "ocupado": true,
+                        "siguienteBloque": {
+                          "id": 2,
+                          "ocupado": true,
+                          "siguienteBloque": {
+                            "id": 3,
+                            "ocupado": true,
+                            "siguienteBloque": {
+                              "id": 4,
+                              "ocupado": true
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "__type": "Clases.Bloque",
+                    "data": {
+                      "id": 1,
+                      "ocupado": true,
+                      "siguienteBloque": {
+                        "id": 2,
+                        "ocupado": true,
+                        "siguienteBloque": {
+                          "id": 3,
+                          "ocupado": true,
+                          "siguienteBloque": {
+                            "id": 4,
+                            "ocupado": true
+                          }
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "__type": "Clases.Bloque",
+                    "data": {
+                      "id": 2,
+                      "ocupado": true,
+                      "siguienteBloque": {
+                        "id": 3,
+                        "ocupado": true,
+                        "siguienteBloque": {
+                          "id": 4,
+                          "ocupado": true
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "__type": "Clases.Bloque",
+                    "data": {
+                      "id": 3,
+                      "ocupado": true,
+                      "siguienteBloque": {
+                        "id": 4,
+                        "ocupado": true
+                      }
+                    }
+                  },
+                  {
+                    "__type": "Clases.Bloque",
+                    "data": {
+                      "id": 4,
+                      "ocupado": true
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "archivos": []
+  },
+  "memoryManager": {
+    "bloquesLibres": [
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 5,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 6,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 7,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 8,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 9,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 10,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 11,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 12,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 13,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 14,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 15,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 16,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 17,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 18,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 19,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 20,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 21,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 22,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 23,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 24,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 25,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 26,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 27,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 28,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 29,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 30,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 31,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 32,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 33,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 34,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 35,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 36,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 37,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 38,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 39,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 40,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 41,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 42,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 43,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 44,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 45,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 46,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 47,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 48,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 49,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 50,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 51,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 52,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 53,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 54,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 55,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 56,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 57,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 58,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 59,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 60,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 61,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 62,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 63,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 64,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 65,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 66,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 67,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 68,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 69,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 70,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 71,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 72,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 73,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 74,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 75,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 76,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 77,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 78,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 79,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 80,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 81,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 82,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 83,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 84,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 85,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 86,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 87,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 88,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 89,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 90,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 91,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 92,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 93,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 94,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 95,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 96,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 97,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 98,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 99,
+          "ocupado": false
+        }
+      }
+    ],
+    "todosLosBloques": [
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 0,
+          "ocupado": true,
+          "siguienteBloque": {
+            "id": 1,
+            "ocupado": true,
+            "siguienteBloque": {
+              "id": 2,
+              "ocupado": true,
+              "siguienteBloque": {
+                "id": 3,
+                "ocupado": true,
+                "siguienteBloque": {
+                  "id": 4,
+                  "ocupado": true
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 1,
+          "ocupado": true,
+          "siguienteBloque": {
+            "id": 2,
+            "ocupado": true,
+            "siguienteBloque": {
+              "id": 3,
+              "ocupado": true,
+              "siguienteBloque": {
+                "id": 4,
+                "ocupado": true
+              }
+            }
+          }
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 2,
+          "ocupado": true,
+          "siguienteBloque": {
+            "id": 3,
+            "ocupado": true,
+            "siguienteBloque": {
+              "id": 4,
+              "ocupado": true
+            }
+          }
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 3,
+          "ocupado": true,
+          "siguienteBloque": {
+            "id": 4,
+            "ocupado": true
+          }
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 4,
+          "ocupado": true
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 5,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 6,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 7,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 8,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 9,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 10,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 11,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 12,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 13,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 14,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 15,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 16,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 17,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 18,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 19,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 20,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 21,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 22,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 23,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 24,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 25,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 26,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 27,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 28,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 29,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 30,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 31,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 32,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 33,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 34,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 35,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 36,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 37,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 38,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 39,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 40,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 41,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 42,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 43,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 44,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 45,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 46,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 47,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 48,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 49,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 50,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 51,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 52,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 53,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 54,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 55,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 56,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 57,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 58,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 59,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 60,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 61,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 62,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 63,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 64,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 65,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 66,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 67,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 68,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 69,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 70,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 71,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 72,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 73,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 74,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 75,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 76,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 77,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 78,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 79,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 80,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 81,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 82,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 83,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 84,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 85,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 86,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 87,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 88,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 89,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 90,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 91,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 92,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 93,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 94,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 95,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 96,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 97,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 98,
+          "ocupado": false
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 99,
+          "ocupado": false
+        }
+      }
+    ]
+  }
+}

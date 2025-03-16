@@ -36,6 +36,8 @@ public class Lista<T> {
         this.length = length;
     }
 
+   
+
     // Metodo para saber si esta vacio
     public boolean esVacio() {
         return getHead() == null;

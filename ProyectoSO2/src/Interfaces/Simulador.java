@@ -14,7 +14,9 @@ import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.IOException;
 import javax.swing.BorderFactory;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTree;
@@ -51,6 +53,23 @@ public class Simulador extends javax.swing.JFrame {
             configurarPanelSD();
         });
         timeractualizacion.start();
+
+    }
+
+    private void guardarEstado() {
+        try {
+            sistema.guardarEstado("sistema.json"); // Guarda directamente en el archivo sistema.json
+            JOptionPane.showMessageDialog(this, "Datos guardados exitosamente.");
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, "Error al guardar: " + ex.getMessage());
+        }
+    }
+
+    private void cargarEstado() {
+        sistema = SistemaArchivo.cargarEstado("sistema.json"); // Carga desde sistema.json
+        actualizarJTree();
+        configurarPanelSD();
+        JOptionPane.showMessageDialog(this, "Datos cargados exitosamente.");
     }
 
     private void configurarPanelSD() {
@@ -188,6 +207,8 @@ public class Simulador extends javax.swing.JFrame {
         btnModificar1 = new javax.swing.JButton();
         btnEliminar1 = new javax.swing.JButton();
         btnCrearAleatorio = new javax.swing.JButton();
+        btnGuardarGSON = new javax.swing.JButton();
+        btnCargarGSON = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -317,6 +338,20 @@ public class Simulador extends javax.swing.JFrame {
             }
         });
 
+        btnGuardarGSON.setText("Guardar en JSON");
+        btnGuardarGSON.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarGSONActionPerformed(evt);
+            }
+        });
+
+        btnCargarGSON.setText("Cargar JSON");
+        btnCargarGSON.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCargarGSONActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -347,13 +382,19 @@ public class Simulador extends javax.swing.JFrame {
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(btnCrear1)
-                                            .addComponent(btnCrear))
-                                        .addGap(17, 17, 17)
-                                        .addComponent(btnModificar1)
-                                        .addGap(18, 18, 18)
+                                            .addComponent(btnCrear)
+                                            .addComponent(btnGuardarGSON))
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(btnEliminar)
-                                            .addComponent(btnEliminar1)))
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addGap(17, 17, 17)
+                                                .addComponent(btnModificar1)
+                                                .addGap(18, 18, 18)
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(btnEliminar)
+                                                    .addComponent(btnEliminar1)))
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addGap(98, 98, 98)
+                                                .addComponent(btnCargarGSON))))
                                     .addComponent(btnCrearAleatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(28, 28, 28))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -368,12 +409,14 @@ public class Simulador extends javax.swing.JFrame {
                     .addComponent(modoAdmi)
                     .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(modoUsuario)
                         .addGap(8, 8, 8)
                         .addComponent(btnCrearAleatorio)
-                        .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -385,9 +428,12 @@ public class Simulador extends javax.swing.JFrame {
                                     .addComponent(btnEliminar1)))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(24, 24, 24)
-                                .addComponent(btnModificar1))))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnModificar1)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnGuardarGSON)
+                            .addComponent(btnCargarGSON))
+                        .addGap(17, 17, 17)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(jLabel2))
@@ -561,6 +607,16 @@ public class Simulador extends javax.swing.JFrame {
         btnCrearAleatorio.setEnabled(false);
     }//GEN-LAST:event_btnCrearAleatorioActionPerformed
 
+    private void btnGuardarGSONActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarGSONActionPerformed
+        guardarEstado();
+    }//GEN-LAST:event_btnGuardarGSONActionPerformed
+
+    private void btnCargarGSONActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargarGSONActionPerformed
+        cargarEstado();
+        actualizarJTree();
+        configurarPanelSD();
+    }//GEN-LAST:event_btnCargarGSONActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -599,11 +655,13 @@ public class Simulador extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup Modo;
+    private javax.swing.JButton btnCargarGSON;
     private javax.swing.JButton btnCrear;
     private javax.swing.JButton btnCrear1;
     private javax.swing.JButton btnCrearAleatorio;
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnEliminar1;
+    private javax.swing.JButton btnGuardarGSON;
     private javax.swing.JButton btnModificar1;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel1;

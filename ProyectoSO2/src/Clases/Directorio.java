@@ -18,8 +18,14 @@ public class Directorio {
 
     public Directorio(String nombre) {
         this.nombre = nombre;
-        this.archivos = new Lista<>();
         this.subdirectorios = new Lista<>();
+        this.archivos = new Lista<>();
+    }
+
+    // Constructor vacío necesario para Gson
+    public Directorio() {
+        this.subdirectorios = new Lista<>();
+        this.archivos = new Lista<>();
     }
 
     // Métodos CRUD para archivos
@@ -87,7 +93,7 @@ public class Directorio {
         }
     }
 
-    // Getters
+    // Getters y Setters
     public String getNombre() {
         return nombre;
     }
@@ -104,8 +110,16 @@ public class Directorio {
         this.nombre = nombre;
     }
 
+    public void setSubdirectorios(Lista<Directorio> subdirectorios) {
+        this.subdirectorios = subdirectorios;
+    }
+
+    public void setArchivos(Lista<Archivo> archivos) {
+        this.archivos = archivos;
+    }
+
     @Override
     public String toString() {
-        return this.nombre; // Devuelve el nombre del directorio
+        return this.nombre;
     }
 }

@@ -20,6 +20,9 @@ public class Bloque {
         this.siguienteBloque = null;
     }
 
+    public Bloque() {
+    } // Constructor vacío
+
     // Setters
     public void setOcupado(boolean ocupado) {
         this.ocupado = ocupado;
@@ -27,6 +30,10 @@ public class Bloque {
 
     public void setSiguienteBloque(Bloque siguiente) {
         this.siguienteBloque = siguiente;
+    }
+
+    public void setId(int id) {  
+        this.id = id;
     }
 
     // Getters

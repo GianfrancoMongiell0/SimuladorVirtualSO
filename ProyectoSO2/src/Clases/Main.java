@@ -16,10 +16,11 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        System.setProperty("sun.awt.shell.useDefaultFolder", "true");
         Simulador simulador = new Simulador();
-       
+
         simulador.setVisible(true);
-       
+
     }
-    
+
 }

@@ -5,6 +5,12 @@
 package Clases;
 
 import EstructurasDeDatos.Lista;
+import Gson.GsonManager;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.Reader;
 import java.util.Random;
 import javax.swing.JOptionPane;
 
@@ -20,6 +26,16 @@ public class SistemaArchivo {
     public SistemaArchivo() {
         this.raiz = new Directorio("Raíz");
         this.memoryManager = new MemoryManager(100);
+        inicializarDatosPorDefecto(); // Datos mínimos para evitar JSON vacío
+    }
+
+    private void inicializarDatosPorDefecto() {
+        // Crear un archivo y directorio de ejemplo
+        Directorio ejemploDir = new Directorio("Ejemplo");
+        Archivo ejemploArchivo = new Archivo("init.txt");
+        ejemploArchivo.setTamañoBloques(1);
+        ejemploDir.agregarArchivo(ejemploArchivo);
+        raiz.agregarSubdirectorio(ejemploDir);
     }
 
     // Crear directorio
@@ -117,6 +133,34 @@ public class SistemaArchivo {
                 int tamaño = rand.nextInt(5) + 1; // Tamaño entre 1 y 5 bloques
                 this.crearArchivo(nombreDirectorio, nombreArchivo, tamaño);
             }
+        }
+    }
+
+    public void guardarEstado(String rutaArchivo) {
+        try {
+            GsonManager.guardarEstado(this, rutaArchivo);
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(null, "Error guardando: " + e.getMessage());
+        }
+    }
+
+    public static SistemaArchivo cargarEstado(String rutaArchivo) {
+        File file = new File(rutaArchivo);
+
+        try {
+            if (!file.exists() || file.length() == 0) {
+                SistemaArchivo nuevo = new SistemaArchivo();
+                nuevo.guardarEstado(rutaArchivo); // Crear archivo con datos iniciales
+                return nuevo;
+            }
+
+            return GsonManager.cargarEstado(rutaArchivo);
+        } catch (FileNotFoundException e) {
+            JOptionPane.showMessageDialog(null, "Archivo no encontrado: " + e.getMessage());
+            return new SistemaArchivo();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error cargando: " + e.getMessage());
+            return new SistemaArchivo();
         }
     }
 

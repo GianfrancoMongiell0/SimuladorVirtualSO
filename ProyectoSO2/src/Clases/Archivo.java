@@ -19,19 +19,25 @@ public class Archivo {
     private LocalDateTime fechaCreacion;
     private Lista<Bloque> bloquesAsignados;
 
+    public Archivo() {
+    }
+
     public Archivo(String nombre) {
         this.nombre = nombre;
         this.fechaCreacion = LocalDateTime.now();
         this.bloquesAsignados = new Lista<>();
     }
 
-    // Setters para integración con MemoryManager
     public void setBloquesAsignados(Lista<Bloque> bloques) {
         this.bloquesAsignados = bloques;
     }
 
     public void setTamañoBloques(int tamaño) {
         this.tamañoBloques = tamaño;
+    }
+
+    public void setFechaCreacion(LocalDateTime fecha) {  // Setter para deserialización
+        this.fechaCreacion = fecha;
     }
 
     // Getters

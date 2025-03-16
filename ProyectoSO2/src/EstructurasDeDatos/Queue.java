@@ -1,6 +1,5 @@
 package EstructurasDeDatos;
 
-
 /**
  *
  * @author gianf
@@ -26,6 +25,14 @@ public class Queue<T> {
         return first;
     }
 
+    public void setFirst(Nodo<T> first) {
+        this.first = first;
+    }
+
+    public void setLast(Nodo<T> last) {
+        this.last = last;
+    }
+
     // Metodo para saber si es vacio
     public boolean isEmpty() {
         return length == 0;
@@ -44,8 +51,9 @@ public class Queue<T> {
         length++;
     }
 
-  /**
-     * Elimina y retorna el elemento del frente de la cola 
+    /**
+     * Elimina y retorna el elemento del frente de la cola
+     *
      * @return El dato eliminado o null si la cola está vacía.
      */
     public T dequeue() {
@@ -64,6 +72,7 @@ public class Queue<T> {
 
     /**
      * Retorna el elemento del frente sin eliminarlo (peek).
+     *
      * @return El dato en el frente de la cola o null si la cola está vacía.
      */
     public T peek() {
