@@ -495,6 +495,7 @@ public class Simulador extends javax.swing.JFrame {
                     model.reload();
 
                     System.out.println("Archivo eliminado exitosamente.");
+                    actualizarTablaAsignacion();
                 }
             }
         } else {
