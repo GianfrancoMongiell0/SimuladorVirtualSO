@@ -12,7 +12,7 @@ public class Bloque {
 
     private int id;
     private boolean ocupado;
-    private Bloque siguienteBloque; // Para asignación encadenada
+    private Bloque siguienteBloque;
 
     public Bloque(int id) {
         this.id = id;
@@ -20,7 +20,16 @@ public class Bloque {
         this.siguienteBloque = null;
     }
 
-    // Getters y Setters
+    // Setters
+    public void setOcupado(boolean ocupado) {
+        this.ocupado = ocupado;
+    }
+
+    public void setSiguienteBloque(Bloque siguiente) {
+        this.siguienteBloque = siguiente;
+    }
+
+    // Getters
     public int getId() {
         return id;
     }
@@ -29,15 +38,7 @@ public class Bloque {
         return ocupado;
     }
 
-    public void setOcupado(boolean ocupado) {
-        this.ocupado = ocupado;
-    }
-
     public Bloque getSiguienteBloque() {
         return siguienteBloque;
-    }
-
-    public void setSiguienteBloque(Bloque siguiente) {
-        this.siguienteBloque = siguiente;
     }
 }

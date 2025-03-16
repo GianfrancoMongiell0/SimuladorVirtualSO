@@ -7,14 +7,17 @@ package Interfaces;
 import Clases.Archivo;
 import Clases.Directorio;
 import Clases.SistemaArchivo;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author LENOVO
  */
 public class CrearDirectorio extends javax.swing.JFrame {
+
     private Simulador simulador;  // Referencia al simulador principal
-     private SistemaArchivo sistema; 
+    private SistemaArchivo sistema;
+
     /**
      * Creates new form CrearArchivo
      */
@@ -23,6 +26,23 @@ public class CrearDirectorio extends javax.swing.JFrame {
         this.sistema = sistema;
         initComponents();
         setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
+        cargarDirectoriosPadre();
+    }
+
+    private void cargarDirectoriosPadre() {
+        nameDirectorioPadre.removeAllItems(); // Limpiar items previos
+        listarDirectoriosEnComboBox(sistema.getRaiz()); // Cargar desde la raíz
+    }
+
+// Método recursivo para listar directorios
+    private void listarDirectoriosEnComboBox(Directorio directorio) {
+        nameDirectorioPadre.addItem(directorio.getNombre()); // Agregar nombre al combo
+
+        // Recorrer subdirectorios
+        for (int i = 0; i < directorio.getSubdirectorios().getLength(); i++) {
+            Directorio subdir = directorio.getSubdirectorios().get(i);
+            listarDirectoriosEnComboBox(subdir); // Llamada recursiva
+        }
     }
 
     private CrearDirectorio() {
@@ -45,7 +65,7 @@ public class CrearDirectorio extends javax.swing.JFrame {
         crear = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        nameDirectorioPadre = new javax.swing.JTextField();
+        nameDirectorioPadre = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -73,7 +93,13 @@ public class CrearDirectorio extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jLabel4.setText("padre:");
 
-        nameDirectorioPadre.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        nameDirectorioPadre.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        nameDirectorioPadre.setName("nameDirectorioPadre\n"); // NOI18N
+        nameDirectorioPadre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nameDirectorioPadreActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -100,8 +126,8 @@ public class CrearDirectorio extends javax.swing.JFrame {
                             .addComponent(jLabel4)
                             .addComponent(jLabel3))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(nameDirectorioPadre, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(39, 39, 39))
+                        .addComponent(nameDirectorioPadre, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(36, 36, 36))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -139,14 +165,23 @@ public class CrearDirectorio extends javax.swing.JFrame {
 
     private void crearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearActionPerformed
         String nombreDirec = nameDirectorio.getText();
-        String directorioPadre = nameDirectorioPadre.getText(); // Obtener nombre de directorio padre
+        String directorioPadre = (String) nameDirectorioPadre.getSelectedItem(); // Obtener nombre de directorio padre
+        if (directorioPadre == null || nombreDirec.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Complete todos los campos.");
+            return;
+        }
 
         // Crear subdirectorio y agregarlo al directorio padre
         sistema.crearDirectorio(directorioPadre, nombreDirec);
 
         // Actualizar el JTree después de crear el directorio
         simulador.actualizarJTree();  // Llamar al método para actualizar el JTree
+        this.dispose();
     }//GEN-LAST:event_crearActionPerformed
+
+    private void nameDirectorioPadreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameDirectorioPadreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nameDirectorioPadreActionPerformed
 
     /**
      * @param args the command line arguments
@@ -192,6 +227,6 @@ public class CrearDirectorio extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField nameDirectorio;
-    private javax.swing.JTextField nameDirectorioPadre;
+    private javax.swing.JComboBox<String> nameDirectorioPadre;
     // End of variables declaration//GEN-END:variables
 }

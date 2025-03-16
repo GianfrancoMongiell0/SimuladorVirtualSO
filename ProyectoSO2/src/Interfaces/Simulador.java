@@ -5,125 +5,159 @@
 package Interfaces;
 
 import Clases.Archivo;
+import Clases.Bloque;
 import Clases.Directorio;
 import Clases.SistemaArchivo;
+import EstructurasDeDatos.Lista;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTree;
+import javax.swing.Timer;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
+
 /**
  *
  * @author LENOVO
  */
 public class Simulador extends javax.swing.JFrame {
-    SistemaArchivo sistema= new SistemaArchivo();
+
+    private Timer timeractualizacion;
+    SistemaArchivo sistema = new SistemaArchivo();
+
     /**
      * Creates new form SistemaArchivo
      */
     public Simulador() {
         initComponents();
         setTitle("Simulador Sistema de Archivos");
-         // Configurar el JPanel donde se mostrarán los bloques
-        
-        // Inicializar el modelo de árbol para el JTree
-        DefaultMutableTreeNode raiz = new DefaultMutableTreeNode("Raíz");
-        DefaultTreeModel treeModel = new DefaultTreeModel(raiz);
-        jTree1.setModel(treeModel);  // Asignamos el modelo al JTree
-        
-         
         configurarPanelSD();
+        actualizarJTree();
+        configurarTablaAsignacion();
         btnCrear.setVisible(false);
         btnEliminar.setVisible(false);
         btnCrear1.setVisible(false);
         btnModificar1.setVisible(false);
         btnEliminar1.setVisible(false);
+        panelsd.setPreferredSize(new Dimension(300, 300));
+        timeractualizacion = new Timer(1000, e -> {
+            configurarPanelSD();
+        });
+        timeractualizacion.start();
     }
-    
+
     private void configurarPanelSD() {
-        // Establecer el Layout en el JPanel (suponiendo que se llame panelSD en el GUI)
-        panelsd.setLayout(new GridLayout(10, 10)); // 10 filas x 10 columnas
-        int totalBloques = 100; // Número de bloques en el sistema (10x10 en este caso)
-        for (int i = 0; i < totalBloques; i++) {
-            JPanel bloque = new JPanel();
-            bloque.setPreferredSize(new Dimension(50, 50));
-            bloque.setBackground(Color.GREEN); // Bloque libre por defecto
+        panelsd.removeAll();
+        panelsd.setLayout(new GridLayout(10, 10)); // 10x10 = 100 bloques
 
-            // Agregar interacción (clic para marcar como ocupado/libre)
-            bloque.addMouseListener(new MouseAdapter() {
-                @Override
-                public void mouseClicked(MouseEvent e) {
-                    if (bloque.getBackground() == Color.GREEN) {
-                        bloque.setBackground(Color.RED); // Marcar como ocupado
-                    } else {
-                        bloque.setBackground(Color.GREEN); // Liberar bloque
-                    }
-                }
-            });
-
-            panelsd.add(bloque); // Agregar cada bloque al panel
+        for (int i = 0; i < 100; i++) {
+            JPanel bloquePanel = new JPanel();
+            bloquePanel.setPreferredSize(new Dimension(30, 30)); // Tamaño fijo de 30x30 píxeles
+            bloquePanel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+            bloquePanel.setBackground(
+                    sistema.getMemoryManager().estaOcupado(i) ? Color.RED : Color.GREEN
+            );
+            panelsd.add(bloquePanel);
         }
 
-        // Refrescar la interfaz
         panelsd.revalidate();
         panelsd.repaint();
     }
-    
+
+    private void configurarTablaAsignacion() {
+        DefaultTableModel model = new DefaultTableModel(
+                new Object[]{"Nombre", "Bloques", "Primer Bloque", "Cadena de Bloques"}, 0
+        );
+        jTable1.setModel(model);
+    }
+
     public void actualizarJTree() {
-        DefaultMutableTreeNode raizNodo = new DefaultMutableTreeNode(sistema.getRaiz().getNombre());
+
+        // Usa el objeto Directorio raíz, no su nombre
+        DefaultMutableTreeNode raizNodo = new DefaultMutableTreeNode(sistema.getRaiz());
         construirArbol(sistema.getRaiz(), raizNodo);
 
         DefaultTreeModel model = (DefaultTreeModel) jTree1.getModel();
         model.setRoot(raizNodo);
         model.reload();
+        actualizarTablaAsignacion();
     }
 
     // Método recursivo para construir el árbol
     private void construirArbol(Directorio dir, DefaultMutableTreeNode nodoPadre) {
         for (int i = 0; i < dir.getSubdirectorios().getLength(); i++) {
             Directorio subdir = dir.getSubdirectorios().get(i);
-            DefaultMutableTreeNode nodoHijo = new DefaultMutableTreeNode(subdir); // Guardar el objeto Directorio
+            // Usa el objeto Directorio como UserObject
+            DefaultMutableTreeNode nodoHijo = new DefaultMutableTreeNode(subdir);
             nodoPadre.add(nodoHijo);
             construirArbol(subdir, nodoHijo);
         }
 
         for (int i = 0; i < dir.getArchivos().getLength(); i++) {
             Archivo archivo = dir.getArchivos().get(i);
-            DefaultMutableTreeNode nodoArchivo = new DefaultMutableTreeNode(archivo); // Guardar el objeto Archivo
-            nodoPadre.add(nodoArchivo);
+            // Usa el objeto Archivo como UserObject
+            nodoPadre.add(new DefaultMutableTreeNode(archivo));
         }
     }
 
-   private void modificarNombreArchivo(Archivo archivo, DefaultMutableTreeNode nodo) {
-        String nuevoNombre = JOptionPane.showInputDialog(this, "Ingrese el nuevo nombre para el archivo:", archivo.getNombre());
+    private void actualizarTablaAsignacion() {
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        model.setRowCount(0);
+        agregarArchivosATabla(sistema.getRaiz(), model);
+    }
 
+    private void agregarArchivosATabla(Directorio dir, DefaultTableModel model) {
+        for (int i = 0; i < dir.getArchivos().getLength(); i++) {
+            Archivo archivo = dir.getArchivos().get(i);
+            if (!archivo.getBloquesAsignados().esVacio()) {
+                Bloque primerBloque = archivo.getBloquesAsignados().get(0);
+                String cadena = generarCadenaEnlaces(archivo.getBloquesAsignados());
+                model.addRow(new Object[]{
+                    archivo.getNombre(),
+                    archivo.getTamañoBloques(),
+                    primerBloque.getId(),
+                    cadena
+                });
+            }
+        }
+        for (int i = 0; i < dir.getSubdirectorios().getLength(); i++) {
+            agregarArchivosATabla(dir.getSubdirectorios().get(i), model);
+        }
+    }
+
+    private void modificarNombreArchivo(Archivo archivo, DefaultMutableTreeNode nodo) {
+        String nuevoNombre = JOptionPane.showInputDialog(this, "Nuevo nombre:", archivo.getNombre());
         if (nuevoNombre != null && !nuevoNombre.trim().isEmpty()) {
             archivo.setNombre(nuevoNombre);
             ((DefaultTreeModel) jTree1.getModel()).nodeChanged(nodo);
-            JOptionPane.showMessageDialog(this, "Nombre del archivo modificado correctamente.");
-        } else {
-            JOptionPane.showMessageDialog(this, "El nombre no puede estar vacío.", "Error", JOptionPane.ERROR_MESSAGE);
         }
+    }
+
+    private String generarCadenaEnlaces(Lista<Clases.Bloque> bloques) {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < bloques.getLength(); i++) {
+            sb.append(bloques.get(i).getId());
+            if (i < bloques.getLength() - 1) {
+                sb.append(" -> ");
+            }
+        }
+        return sb.toString();
     }
 
     private void modificarNombreDirectorio(Directorio directorio, DefaultMutableTreeNode nodo) {
-        String nuevoNombre = JOptionPane.showInputDialog(this, "Ingrese el nuevo nombre para el directorio:", directorio.getNombre());
-
+        String nuevoNombre = JOptionPane.showInputDialog(this, "Nuevo nombre:", directorio.getNombre());
         if (nuevoNombre != null && !nuevoNombre.trim().isEmpty()) {
             directorio.setNombre(nuevoNombre);
             ((DefaultTreeModel) jTree1.getModel()).nodeChanged(nodo);
-            JOptionPane.showMessageDialog(this, "Nombre del directorio modificado correctamente.");
-        } else {
-            JOptionPane.showMessageDialog(this, "El nombre no puede estar vacío.", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
-    
-
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -387,7 +421,7 @@ public class Simulador extends javax.swing.JFrame {
         btnModificar1.setVisible(true);
         btnEliminar1.setVisible(true);
     }//GEN-LAST:event_modoAdmiActionPerformed
-        
+
     private void modoUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modoUsuarioActionPerformed
         btnCrear.setVisible(false);
         btnEliminar.setVisible(false);
@@ -399,6 +433,8 @@ public class Simulador extends javax.swing.JFrame {
     private void btnCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearActionPerformed
         CrearArchivo creararchivo = new CrearArchivo(this, sistema);
         creararchivo.setVisible(true);
+        actualizarJTree();
+        configurarPanelSD(); // Actualizar el SD después de crear
     }//GEN-LAST:event_btnCrearActionPerformed
 
     private void btnCrear1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrear1ActionPerformed
@@ -469,53 +505,59 @@ public class Simulador extends javax.swing.JFrame {
     private void btnEliminar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminar1ActionPerformed
         DefaultMutableTreeNode nodoSeleccionado = (DefaultMutableTreeNode) jTree1.getLastSelectedPathComponent();
 
-    if (nodoSeleccionado != null) {
+        if (nodoSeleccionado == null) {
+            JOptionPane.showMessageDialog(this, "Seleccione un directorio.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
         Object objeto = nodoSeleccionado.getUserObject();
 
-        if (objeto instanceof Directorio) {
-            Directorio dir = (Directorio) objeto;
-            DefaultMutableTreeNode nodoPadre = (DefaultMutableTreeNode) nodoSeleccionado.getParent();
-
-            if (nodoPadre != null) {
-                Object objetoPadre = nodoPadre.getUserObject();
-                if (objetoPadre instanceof Directorio) {
-                    Directorio padre = (Directorio) objetoPadre;
-
-                    // Verificar si el directorio se encuentra en el sistema
-                    Directorio directorioPadre = sistema.buscarDirectorio(padre, padre.getNombre());
-
-                    if (directorioPadre != null) {
-                        // Eliminar el directorio
-                        sistema.eliminarDirectorio(padre.getNombre(), dir.getNombre());
-
-                        // Eliminar el nodo en el JTree
-                        DefaultTreeModel model = (DefaultTreeModel) jTree1.getModel();
-                        model.removeNodeFromParent(nodoSeleccionado);
-                        model.reload();
-
-                        // Actualizar el JTree
-                        actualizarJTree();
-                        System.out.println("Directorio '" + dir.getNombre() + "' eliminado correctamente.");
-                    }
-                }
-            } else {
-                // Intentando eliminar la raíz
-                System.out.println("No se puede eliminar la raíz del sistema.");
-            }
-        } else {
-            System.out.println("Seleccione un directorio válido.");
+        if (!(objeto instanceof Directorio)) {
+            JOptionPane.showMessageDialog(this, "Seleccione un directorio válido.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
         }
-    } else {
-        System.out.println("No se ha seleccionado ningún directorio.");
-    }
+
+        Directorio dir = (Directorio) objeto;
+        DefaultMutableTreeNode nodoPadre = (DefaultMutableTreeNode) nodoSeleccionado.getParent();
+
+        if (nodoPadre == null) {
+            JOptionPane.showMessageDialog(this, "No se puede eliminar la raíz.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        Directorio padre = (Directorio) nodoPadre.getUserObject();
+
+        try {
+            sistema.eliminarDirectorio(padre.getNombre(), dir.getNombre());
+
+            // Eliminar el nodo del JTree
+            DefaultTreeModel model = (DefaultTreeModel) jTree1.getModel();
+            model.removeNodeFromParent(nodoSeleccionado);
+
+            actualizarJTree(); // Actualiza la tabla de asignación
+            JOptionPane.showMessageDialog(this, "Directorio eliminado: " + dir.getNombre());
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error al eliminar el directorio.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_btnEliminar1ActionPerformed
 
     private void btnCrearAleatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearAleatorioActionPerformed
+        // Validar si ya existen directorios creados (puedes ajustar la condición)
+        if (sistema.getRaiz().getSubdirectorios().getLength() > 0) {
+            JOptionPane.showMessageDialog(this, "Ya existen directorios creados.");
+            btnCrearAleatorio.setEnabled(false); // Deshabilitar el botón
+            return;
+        }
+
         // Crear 5 directorios y 10 archivos aleatorios
         sistema.crearDirectoriosYArchivosAleatorios();
 
         // Actualizar el JTree para reflejar los cambios
         actualizarJTree();
+
+        // Deshabilitar el botón después de usarlo
+        btnCrearAleatorio.setEnabled(false);
     }//GEN-LAST:event_btnCrearAleatorioActionPerformed
 
     /**

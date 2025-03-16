@@ -3,30 +3,29 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Clases;
+
 import EstructurasDeDatos.Lista;
+
 /**
  *
  * @author LENOVO
  */
-
 public class Directorio {
+
     private String nombre;
     private Lista<Directorio> subdirectorios;
     private Lista<Archivo> archivos;
 
-
-    // Constructor
     public Directorio(String nombre) {
         this.nombre = nombre;
         this.archivos = new Lista<>();
         this.subdirectorios = new Lista<>();
     }
 
-   public void agregarArchivo(Archivo archivo1) {
-        if (!archivos.contains(archivo1)) {
-            archivos.insertLast(archivo1);
-        } else {
-            System.out.println("El archivo '" + archivo1.getNombre() + "' ya existe en el directorio.");
+    // Métodos CRUD para archivos
+    public void agregarArchivo(Archivo archivo) {
+        if (!archivos.contains(archivo)) {
+            archivos.insertLast(archivo);
         }
     }
 
@@ -39,7 +38,6 @@ public class Directorio {
         return null;
     }
 
-
     public void eliminarArchivo(String nombreArchivo) {
         for (int i = 0; i < archivos.getLength(); i++) {
             if (archivos.get(i).getNombre().equals(nombreArchivo)) {
@@ -47,24 +45,29 @@ public class Directorio {
                 return;
             }
         }
-        System.out.println("El archivo '" + nombreArchivo + "' no existe en el directorio.");
     }
 
-
-   
-
-    // Métodos para manejar subdirectorios
+    // Métodos para subdirectorios
     public void agregarSubdirectorio(Directorio subdirectorio) {
         if (!subdirectorios.contains(subdirectorio)) {
             subdirectorios.insertLast(subdirectorio);
-        } else {
-            System.out.println("El subdirectorio '" + subdirectorio.getNombre() + "' ya existe.");
         }
     }
 
-    public boolean eliminarSubdirectorio(String nombreSubdirectorio) {
+    public boolean buscarSubdirectorio(String nombre) {
         for (int i = 0; i < subdirectorios.getLength(); i++) {
-            if (subdirectorios.get(i).getNombre().equals(nombreSubdirectorio)) {
+            if (subdirectorios.get(i).getNombre().equals(nombre)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean eliminarSubdirectorio(String nombre, MemoryManager memoryManager) {
+        for (int i = 0; i < subdirectorios.getLength(); i++) {
+            Directorio subdir = subdirectorios.get(i);
+            if (subdir.getNombre().equals(nombre)) {
+                liberarRecursos(subdir, memoryManager);
                 subdirectorios.deleteIndex(i);
                 return true;
             }
@@ -72,35 +75,22 @@ public class Directorio {
         return false;
     }
 
-    public boolean buscarSubdirectorio(String nombreSubdirectorio) {
-        for (int i = 0; i < subdirectorios.getLength(); i++) {
-            if (subdirectorios.get(i).getNombre().equals(nombreSubdirectorio)) {
-                return true;
-            }
+    private void liberarRecursos(Directorio dir, MemoryManager memoryManager) {
+        // Liberar archivos
+        for (int i = 0; i < dir.getArchivos().getLength(); i++) {
+            Archivo archivo = dir.getArchivos().get(i);
+            memoryManager.liberarBloques(archivo.getBloquesAsignados());
         }
-        return false;
-    }
-
-    // Método para listar el contenido del directorio
-    public void listarContenido() {
-        System.out.println("Directorio: " + nombre);
-        System.out.println("Archivos:");
-        archivos.imprimir();
-        System.out.println("Subdirectorios:");
-        for (int i = 0; i < subdirectorios.getLength(); i++) {
-            System.out.println("- " + subdirectorios.get(i).getNombre());
+        // Liberar subdirectorios recursivamente
+        for (int i = 0; i < dir.getSubdirectorios().getLength(); i++) {
+            liberarRecursos(dir.getSubdirectorios().get(i), memoryManager);
         }
     }
 
-    // Getters y Setters
+    // Getters
     public String getNombre() {
         return nombre;
     }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
 
     public Lista<Directorio> getSubdirectorios() {
         return subdirectorios;
@@ -109,10 +99,13 @@ public class Directorio {
     public Lista<Archivo> getArchivos() {
         return archivos;
     }
-    
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
     @Override
     public String toString() {
         return this.nombre; // Devuelve el nombre del directorio
     }
-
 }

@@ -1,0 +1,83 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package Clases;
+
+import EstructurasDeDatos.Lista;
+import EstructurasDeDatos.Queue;
+
+/**
+ *
+ * @author gianf
+ */
+public class MemoryManager {
+
+    private Queue<Bloque> bloquesLibres;
+    private Lista<Bloque> todosLosBloques;  // Nueva lista para rastrear todos los bloques
+
+    public MemoryManager(int totalBloques) {
+        this.todosLosBloques = new Lista<>();
+        this.bloquesLibres = new Queue<>();
+        inicializarBloques(totalBloques);
+    }
+
+    private void inicializarBloques(int total) {
+        for (int i = 0; i < total; i++) {
+            Bloque bloque = new Bloque(i);
+            todosLosBloques.insertLast(bloque);  // Guardar en lista general
+            bloquesLibres.enqueue(bloque);       // Agregar a la cola de libres
+        }
+    }
+
+    public void liberarBloques(Lista<Bloque> bloques) {
+        for (int i = 0; i < bloques.getLength(); i++) {
+            Bloque bloque = bloques.get(i);
+            bloque.setOcupado(false);
+            bloque.setSiguienteBloque(null); // Eliminar enlaces
+            bloquesLibres.enqueue(bloque);
+        }
+    }
+
+    public boolean estaOcupado(int idBloque) {
+        for (int i = 0; i < todosLosBloques.getLength(); i++) {
+            Bloque bloque = todosLosBloques.get(i);
+            if (bloque.getId() == idBloque) {
+                return bloque.isOcupado();
+            }
+        }
+        return false;
+    }
+
+    public Lista<Bloque> asignarBloquesEncadenados(int cantidad) {
+        if (bloquesLibres.getLength() < cantidad) {
+            return null;
+        }
+
+        Lista<Bloque> bloquesAsignados = new Lista<>();
+        Bloque anterior = null;
+
+        for (int i = 0; i < cantidad; i++) {
+            Bloque bloque = bloquesLibres.dequeue();
+            bloque.setOcupado(true);
+
+            if (anterior != null) {
+                anterior.setSiguienteBloque(bloque); // Enlazar bloques
+            }
+
+            bloquesAsignados.insertLast(bloque);
+            anterior = bloque;
+        }
+
+        return bloquesAsignados;
+    }
+
+    public int bloquesDisponibles() {
+        return bloquesLibres.getLength();
+    }
+
+    public Bloque getBloque(int id) {
+        // Implementar si se necesita acceso directo (opcional)
+        return null;
+    }
+}

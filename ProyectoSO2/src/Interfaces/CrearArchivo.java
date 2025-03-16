@@ -13,8 +13,10 @@ import Clases.SistemaArchivo;
  * @author LENOVO
  */
 public class CrearArchivo extends javax.swing.JFrame {
+
     private Simulador simulador;  // Referencia al simulador principal
     private SistemaArchivo sistema;
+
     /**
      * Creates new form CrearArchivo
      */
@@ -38,6 +40,7 @@ public class CrearArchivo extends javax.swing.JFrame {
             listarDirectorios(dir.getSubdirectorios().get(i)); // Recorrer subdirectorios
         }
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -68,9 +71,16 @@ public class CrearArchivo extends javax.swing.JFrame {
         jLabel2.setText("Nombre del archivo:");
 
         nameArchivo.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        nameArchivo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nameArchivoActionPerformed(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jLabel3.setText("Tamaño de bloques:");
+
+        tamañoBloque.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 1));
 
         crear.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         crear.setText("Crear");
@@ -162,18 +172,24 @@ public class CrearArchivo extends javax.swing.JFrame {
         String nombreArchivo = nameArchivo.getText();
         int tamañoBloques = (int) tamañoBloque.getValue();
         String nombreDirectorio = (String) directorios.getSelectedItem();  // Obtener el directorio seleccionado
-    
-    if (nombreDirectorio != null) {
-        simulador.sistema.crearArchivo(nombreDirectorio, nombreArchivo, tamañoBloques);
-        simulador.actualizarJTree();  // Actualizar la interfaz
-    } else {
-        System.out.println("Seleccione un directorio antes de crear el archivo.");
-    }
+
+        if (nombreDirectorio != null) {
+            simulador.sistema.crearArchivo(nombreDirectorio, nombreArchivo, tamañoBloques);
+            simulador.actualizarJTree();  // Actualizar la interfaz
+        } else {
+            System.out.println("Seleccione un directorio antes de crear el archivo.");
+        }
+        this.dispose();
+        
     }//GEN-LAST:event_crearActionPerformed
 
     private void directoriosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_directoriosActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_directoriosActionPerformed
+
+    private void nameArchivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameArchivoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nameArchivoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -202,7 +218,6 @@ public class CrearArchivo extends javax.swing.JFrame {
         }
         //</editor-fold>
 
-        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

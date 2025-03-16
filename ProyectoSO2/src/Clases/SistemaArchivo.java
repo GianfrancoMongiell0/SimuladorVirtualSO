@@ -4,83 +4,90 @@
  */
 package Clases;
 
+import EstructurasDeDatos.Lista;
 import java.util.Random;
-
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author LENOVO
  */
-
 public class SistemaArchivo {
+
     private Directorio raiz;
-    
+    private MemoryManager memoryManager;
+
     public SistemaArchivo() {
-        this.raiz = new Directorio("Raíz" );
+        this.raiz = new Directorio("Raíz");
+        this.memoryManager = new MemoryManager(100);
     }
 
-    public Directorio getRaiz() {
-        return raiz;
-    }
-    
-
-    
-   // Crear un archivo en un directorio dado
-    public void crearArchivo(String nombreDirectorio, String nombreArchivo, int tamano) {
-        Directorio dir = buscarDirectorio(raiz, nombreDirectorio);
-        if (dir != null) {
-            Archivo archivo = new Archivo(nombreArchivo, tamano);
-            dir.agregarArchivo(archivo); // Pasar el objeto Archivo en lugar de un String
-            System.out.println("Archivo '" + nombreArchivo + "' creado en '" + nombreDirectorio + "'.");
-        } else {
-            System.out.println("Directorio no encontrado: " + nombreDirectorio);
-        }
-    }
-
-    // Eliminar un archivo de un directorio dado
-    public void eliminarArchivo(String nombreDirectorio, String nombreArchivo) {
-        Directorio dir = buscarDirectorio(raiz, nombreDirectorio);
-        if (dir != null) {
-            dir.eliminarArchivo(nombreArchivo);
-            System.out.println("Archivo '" + nombreArchivo + "' eliminado de '" + nombreDirectorio + "'.");
-        } else {
-            System.out.println("Directorio no encontrado: " + nombreDirectorio);
-        }
-    }
-    
-   public Archivo buscarArchivo(String nombreDirectorio, String nombreArchivo) {
-        Directorio dir = buscarDirectorio(raiz, nombreDirectorio);
-        return (dir != null) ? dir.buscarArchivo(nombreArchivo) : null;
-    }
-
-    // Crear un subdirectorio dentro de otro
+    // Crear directorio
     public void crearDirectorio(String nombrePadre, String nombreDirectorio) {
         Directorio padre = buscarDirectorio(raiz, nombrePadre);
         if (padre != null) {
-            Directorio nuevo = new Directorio(nombreDirectorio);
-            padre.agregarSubdirectorio(nuevo);
-            System.out.println("Directorio '" + nombreDirectorio + "' creado dentro de '" + nombrePadre + "'.");
-        } else {
-            System.out.println("Directorio padre no encontrado: " + nombrePadre);
-        }
-    }
-    
-    // Eliminar un subdirectorio
-   public void eliminarDirectorio(String nombrePadre, String nombreDirectorio) {
-        Directorio padre = buscarDirectorio(raiz, nombrePadre);
-        if (padre != null) {
-            boolean eliminado = padre.eliminarSubdirectorio(nombreDirectorio);
-            if (eliminado) {
-                System.out.println("Directorio '" + nombreDirectorio + "' eliminado de '" + nombrePadre + "'.");
+            if (!padre.buscarSubdirectorio(nombreDirectorio)) {
+                Directorio nuevo = new Directorio(nombreDirectorio);
+                padre.agregarSubdirectorio(nuevo);
             } else {
-                System.out.println("No se pudo eliminar el directorio '" + nombreDirectorio + "'.");
+                JOptionPane.showMessageDialog(null, "El directorio ya existe.");
             }
         } else {
-            System.out.println("Directorio padre no encontrado: " + nombrePadre);
+            JOptionPane.showMessageDialog(null, "Directorio padre no encontrado.");
         }
     }
-    
-    // Buscar un directorio por su nombre en la estructura jerárquica
+
+    // Eliminar directorio
+    public void eliminarDirectorio(String nombrePadre, String nombreDirectorio) throws Exception {
+        Directorio padre = buscarDirectorio(raiz, nombrePadre);
+        if (padre == null) {
+            throw new Exception("Directorio padre no encontrado.");
+        }
+        if (!padre.eliminarSubdirectorio(nombreDirectorio, memoryManager)) {
+            throw new Exception("No se pudo eliminar el directorio.");
+        }
+    }
+
+    // Crear archivo
+    public void crearArchivo(String nombreDirectorio, String nombreArchivo, int tamano) {
+        Directorio dir = buscarDirectorio(raiz, nombreDirectorio);
+        if (dir == null) {
+            JOptionPane.showMessageDialog(null, "Directorio no encontrado.");
+            return;
+        }
+
+        if (dir.buscarArchivo(nombreArchivo) != null) {
+            JOptionPane.showMessageDialog(null, "El archivo ya existe.");
+            return;
+        }
+
+        if (memoryManager.bloquesDisponibles() < tamano) {
+            JOptionPane.showMessageDialog(null, "Espacio insuficiente en el SD.");
+            return;
+        }
+
+        Lista<Bloque> bloques = memoryManager.asignarBloquesEncadenados(tamano);
+        if (bloques != null) {
+            Archivo archivo = new Archivo(nombreArchivo);
+            archivo.setBloquesAsignados(bloques);
+            archivo.setTamañoBloques(tamano);
+            dir.agregarArchivo(archivo);
+        }
+    }
+
+    // Eliminar archivo
+    public void eliminarArchivo(String nombreDirectorio, String nombreArchivo) {
+        Directorio dir = buscarDirectorio(raiz, nombreDirectorio);
+        if (dir != null) {
+            Archivo archivo = dir.buscarArchivo(nombreArchivo);
+            if (archivo != null) {
+                memoryManager.liberarBloques(archivo.getBloquesAsignados());
+                dir.eliminarArchivo(nombreArchivo);
+            }
+        }
+    }
+
+    // Buscar directorio recursivamente
     public Directorio buscarDirectorio(Directorio actual, String nombre) {
         if (actual.getNombre().equals(nombre)) {
             return actual;
@@ -93,35 +100,32 @@ public class SistemaArchivo {
         }
         return null;
     }
-    
-    // Listar el contenido de un directorio específico
-    public void listarContenido(String nombreDirectorio) {
-        Directorio dir = buscarDirectorio(raiz, nombreDirectorio);
-        if (dir != null) {
-            dir.listarContenido();
-        } else {
-            System.out.println("Directorio no encontrado: " + nombreDirectorio);
-        }
-    }
-    
-    // Método para crear 5 directorios y 10 archivos aleatorios
+
     public void crearDirectoriosYArchivosAleatorios() {
         Random rand = new Random();
+        int numDirectorios = 5;
+        int numArchivosPorDirectorio = 2; // 2 archivos por directorio para el ejemplo
 
-        // Crear 5 directorios aleatorios
-        for (int i = 1; i <= 5; i++) {
+        // Crear directorios aleatorios
+        for (int i = 1; i <= numDirectorios; i++) {
             String nombreDirectorio = "Directorio_" + i;
-            // Crear directorio en la raíz
-            crearDirectorio("Raíz", nombreDirectorio);
+            this.crearDirectorio("Raíz", nombreDirectorio);
 
-            // Crear entre 1 y 3 archivos aleatorios por directorio
-            int numArchivos = rand.nextInt(3) + 1;
-            for (int j = 1; j <= numArchivos; j++) {
+            // Crear archivos aleatorios dentro de cada directorio
+            for (int j = 1; j <= numArchivosPorDirectorio; j++) {
                 String nombreArchivo = "Archivo_" + rand.nextInt(1000);
-                int tamano = rand.nextInt(500) + 1;  // Tamaño aleatorio entre 1 y 500 KB
-                crearArchivo(nombreDirectorio, nombreArchivo, tamano);
+                int tamaño = rand.nextInt(5) + 1; // Tamaño entre 1 y 5 bloques
+                this.crearArchivo(nombreDirectorio, nombreArchivo, tamaño);
             }
         }
     }
 
+    // Getters
+    public Directorio getRaiz() {
+        return raiz;
+    }
+
+    public MemoryManager getMemoryManager() {
+        return memoryManager;
+    }
 }
