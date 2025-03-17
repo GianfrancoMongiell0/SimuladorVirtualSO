@@ -39,6 +39,8 @@ public class Simulador extends javax.swing.JFrame {
      */
     public Simulador() {
         initComponents();
+        // Centrar la ventana
+        setLocationRelativeTo(null);
         setTitle("Simulador Sistema de Archivos");
         configurarPanelSD();
         actualizarJTree();
@@ -53,6 +55,8 @@ public class Simulador extends javax.swing.JFrame {
             configurarPanelSD();
         });
         timeractualizacion.start();
+        jTree1.addTreeSelectionListener(e -> mostrarInformacionNodoSeleccionado());
+        modoUsuario.setSelected(true); 
 
     }
 
@@ -156,6 +160,7 @@ public class Simulador extends javax.swing.JFrame {
         if (nuevoNombre != null && !nuevoNombre.trim().isEmpty()) {
             archivo.setNombre(nuevoNombre);
             ((DefaultTreeModel) jTree1.getModel()).nodeChanged(nodo);
+            actualizarTablaAsignacion();
         }
     }
 
@@ -175,9 +180,46 @@ public class Simulador extends javax.swing.JFrame {
         if (nuevoNombre != null && !nuevoNombre.trim().isEmpty()) {
             directorio.setNombre(nuevoNombre);
             ((DefaultTreeModel) jTree1.getModel()).nodeChanged(nodo);
+            actualizarTablaAsignacion();
         }
     }
+    
+    private void mostrarInformacionNodoSeleccionado() {
+        DefaultMutableTreeNode nodoSeleccionado = (DefaultMutableTreeNode) jTree1.getLastSelectedPathComponent();
+        if (nodoSeleccionado == null) {
+            info.setText("");
+            return;
+        }
 
+        Object objeto = nodoSeleccionado.getUserObject();
+        if (objeto instanceof Archivo) {
+            Archivo archivo = (Archivo) objeto;
+            info.setText("Nombre: " + archivo.getNombre() + "\nTamaño: " + archivo.getTamañoBloques() + " bloques");
+        } else if (objeto instanceof Directorio) {
+            Directorio directorio = (Directorio) objeto;
+            mostrarContenidoDirectorio(directorio);
+        } else {
+            info.setText("Raíz");
+        }
+    }
+    
+    private void mostrarContenidoDirectorio(Directorio directorio) {
+        StringBuilder contenido = new StringBuilder();
+        contenido.append("Directorio: ").append(directorio.getNombre()).append("\n");
+
+        contenido.append("\nSubdirectorios:\n");
+        for (int i = 0; i < directorio.getSubdirectorios().getLength(); i++) {
+            contenido.append("- ").append(directorio.getSubdirectorios().get(i).getNombre()).append("\n");
+        }
+
+        contenido.append("\nArchivos:\n");
+        for (int i = 0; i < directorio.getArchivos().getLength(); i++) {
+            Archivo archivo = directorio.getArchivos().get(i);
+            contenido.append("- ").append(archivo.getNombre()).append(" (").append(archivo.getTamañoBloques()).append(" bloques)\n");
+        }
+
+        info.setText(contenido.toString());
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -209,6 +251,8 @@ public class Simulador extends javax.swing.JFrame {
         btnCrearAleatorio = new javax.swing.JButton();
         btnGuardarGSON = new javax.swing.JButton();
         btnCargarGSON = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        info = new javax.swing.JTextArea();
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -283,11 +327,11 @@ public class Simulador extends javax.swing.JFrame {
         panelsd.setLayout(panelsdLayout);
         panelsdLayout.setHorizontalGroup(
             panelsdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 304, Short.MAX_VALUE)
         );
         panelsdLayout.setVerticalGroup(
             panelsdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 403, Short.MAX_VALUE)
+            .addGap(0, 305, Short.MAX_VALUE)
         );
 
         btnCrear.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
@@ -352,6 +396,10 @@ public class Simulador extends javax.swing.JFrame {
             }
         });
 
+        info.setColumns(20);
+        info.setRows(5);
+        jScrollPane3.setViewportView(info);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -360,63 +408,69 @@ public class Simulador extends javax.swing.JFrame {
                 .addGap(36, 36, 36)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(49, 49, 49)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(panelsd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 106, Short.MAX_VALUE)
+                            .addComponent(panelsd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(92, 92, 92)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(27, 27, 27))
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(btnGuardarGSON)
+                                    .addGap(284, 284, 284))
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane1)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(297, 297, 297)
+                                .addComponent(btnCrearAleatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(37, 37, 37)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(modoAdmi)
-                                    .addComponent(modoUsuario)))
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(btnCargarGSON)
+                                        .addComponent(modoUsuario))))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(52, 52, 52)
+                                .addGap(31, 31, 31)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(btnCrear1)
-                                            .addComponent(btnCrear)
-                                            .addComponent(btnGuardarGSON))
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addGap(17, 17, 17)
-                                                .addComponent(btnModificar1)
-                                                .addGap(18, 18, 18)
-                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(btnEliminar)
-                                                    .addComponent(btnEliminar1)))
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addGap(98, 98, 98)
-                                                .addComponent(btnCargarGSON))))
-                                    .addComponent(btnCrearAleatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(28, 28, 28))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                    .addComponent(btnCrear1)
+                                    .addComponent(btnCrear))
+                                .addGap(17, 17, 17)
+                                .addComponent(btnModificar1)
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnEliminar)
+                                    .addComponent(btnEliminar1)))))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(modoAdmi)
-                    .addComponent(jLabel1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                        .addGap(16, 16, 16)
+                        .addComponent(jLabel1)
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jScrollPane3)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(modoUsuario)
-                        .addGap(8, 8, 8)
-                        .addComponent(btnCrearAleatorio)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(27, 27, 27)
+                                .addComponent(modoAdmi)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(modoUsuario))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(39, 39, 39)
+                                .addComponent(btnCrearAleatorio)))
+                        .addGap(32, 32, 32)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -434,13 +488,15 @@ public class Simulador extends javax.swing.JFrame {
                             .addComponent(btnGuardarGSON)
                             .addComponent(btnCargarGSON))
                         .addGap(17, 17, 17)))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel2))
+                .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(panelsd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 403, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(panelsd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -503,6 +559,7 @@ public class Simulador extends javax.swing.JFrame {
         if (objeto instanceof Archivo) {
             Archivo archivo = (Archivo) objeto;
             modificarNombreArchivo(archivo, nodoSeleccionado);
+            
         } else if (objeto instanceof Directorio) {
             Directorio directorio = (Directorio) objeto;
             modificarNombreDirectorio(directorio, nodoSeleccionado);
@@ -590,13 +647,7 @@ public class Simulador extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEliminar1ActionPerformed
 
     private void btnCrearAleatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearAleatorioActionPerformed
-        // Validar si ya existen directorios creados (puedes ajustar la condición)
-        if (sistema.getRaiz().getSubdirectorios().getLength() > 0) {
-            JOptionPane.showMessageDialog(this, "Ya existen directorios creados.");
-            btnCrearAleatorio.setEnabled(false); // Deshabilitar el botón
-            return;
-        }
-
+        
         // Crear 5 directorios y 10 archivos aleatorios
         sistema.crearDirectoriosYArchivosAleatorios();
 
@@ -617,7 +668,7 @@ public class Simulador extends javax.swing.JFrame {
         // Actualizar componentes visuales
         actualizarJTree();
         configurarPanelSD();
-
+        btnCrearAleatorio.setEnabled(false);
         // Forzar repintado del panel SD
         panelsd.revalidate();
         panelsd.repaint();
@@ -670,6 +721,7 @@ public class Simulador extends javax.swing.JFrame {
     private javax.swing.JButton btnGuardarGSON;
     private javax.swing.JButton btnModificar1;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JTextArea info;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -677,6 +729,7 @@ public class Simulador extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jTable1;
     public javax.swing.JTree jTree1;
     private javax.swing.JRadioButton modoAdmi;

@@ -25,6 +25,8 @@ public class CrearDirectorio extends javax.swing.JFrame {
         this.simulador = simulador;
         this.sistema = sistema;
         initComponents();
+        // Centrar la ventana
+        setLocationRelativeTo(null);
         setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
         cargarDirectoriosPadre();
     }

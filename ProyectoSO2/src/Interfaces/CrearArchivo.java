@@ -7,6 +7,7 @@ package Interfaces;
 import Clases.Archivo;
 import Clases.Directorio;
 import Clases.SistemaArchivo;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -24,6 +25,8 @@ public class CrearArchivo extends javax.swing.JFrame {
         this.simulador = simulador;
         this.sistema = sistema;
         initComponents();
+        // Centrar la ventana
+        setLocationRelativeTo(null);
         setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
         cargarDirectorios();
     }
@@ -174,12 +177,21 @@ public class CrearArchivo extends javax.swing.JFrame {
         String nombreDirectorio = (String) directorios.getSelectedItem();  // Obtener el directorio seleccionado
 
         if (nombreDirectorio != null) {
-            simulador.sistema.crearArchivo(nombreDirectorio, nombreArchivo, tamañoBloques);
-            simulador.actualizarJTree();  // Actualizar la interfaz
-        } else {
-            System.out.println("Seleccione un directorio antes de crear el archivo.");
-        }
-        this.dispose();
+            // Verificar si hay suficiente espacio antes de crear el archivo
+            if (simulador.sistema.getMemoryManager().haySuficienteEspacio(tamañoBloques)) {
+                simulador.sistema.crearArchivo(nombreDirectorio, nombreArchivo, tamañoBloques);
+                simulador.actualizarJTree();
+                this.dispose();
+            } else {
+                if (simulador.sistema.getMemoryManager().bloquesDisponibles() == 0) {
+                    JOptionPane.showMessageDialog(this, "Memoria llena. No se pueden crear más archivos.", "Error", JOptionPane.ERROR_MESSAGE);
+                } else {
+                    JOptionPane.showMessageDialog(this, "Memoria insuficiente. No hay suficientes bloques disponibles.", "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        }else {
+                JOptionPane.showMessageDialog(this, "Seleccione un directorio antes de crear el archivo.", "Error", JOptionPane.ERROR_MESSAGE);
+            }
         
     }//GEN-LAST:event_crearActionPerformed
 

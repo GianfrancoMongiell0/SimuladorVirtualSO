@@ -102,7 +102,7 @@ public class SistemaArchivo {
             crearDirectorio("Raíz", dirName);
             for (int j = 1; j <= 2; j++) {
                 String fileName = "Archivo_" + rand.nextInt(1000);
-                int tamaño = rand.nextInt(5) + 1;
+                int tamaño = rand.nextInt(15) + 1;
                 crearArchivo(dirName, fileName, tamaño);
             }
         }

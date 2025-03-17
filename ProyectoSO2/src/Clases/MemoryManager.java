@@ -114,4 +114,9 @@ public class MemoryManager {
         // Implementar si se necesita acceso directo (opcional)
         return null;
     }
+    
+    public boolean haySuficienteEspacio(int cantidad) {
+        return bloquesLibres.getLength() >= cantidad;
+    }
+    
 }
