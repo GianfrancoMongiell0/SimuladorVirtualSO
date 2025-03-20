@@ -44,7 +44,6 @@ public class Simulador extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         setTitle("Simulador Sistema de Archivos");
         configurarPanelSD();
-        actualizarJTree();
         configurarTablaAsignacion();
         btnCrear.setVisible(false);
         btnEliminar.setVisible(false);
@@ -139,7 +138,7 @@ public class Simulador extends javax.swing.JFrame {
 
     private void actualizarTablaAsignacion() {
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-        model.setRowCount(0);
+        model.setRowCount(0); // Limpiar todas las filas
         agregarArchivosATabla(sistema.getRaiz(), model);
     }
 

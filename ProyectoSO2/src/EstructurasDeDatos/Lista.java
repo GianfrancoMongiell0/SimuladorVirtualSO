@@ -36,8 +36,6 @@ public class Lista<T> {
         this.length = length;
     }
 
-   
-
     // Metodo para saber si esta vacio
     public boolean esVacio() {
         return getHead() == null;
@@ -119,18 +117,30 @@ public class Lista<T> {
         if (position < 0 || position >= length) {
             throw new IndexOutOfBoundsException("Posición inválida");
         }
-        if (!esVacio()) {
-            Nodo pointer = getHead();
+        if (esVacio()) {
+            return;
+        }
+
+        // Caso 1: Eliminar el primer nodo (posición 0)
+        if (position == 0) {
+            Nodo temp = head;
+            head = head.getNext(); // Actualizar la cabeza
+            temp.setNext(null);    // Desconectar el nodo
+        } // Caso 2: Eliminar nodos en posición > 0
+        else {
+            Nodo pointer = head;
             int count = 0;
-            while (count < (position - 1) && pointer.getNext() != null) {
+            // Avanzar hasta el nodo anterior al que se eliminará (position - 1)
+            while (count < position - 1) {
                 pointer = pointer.getNext();
                 count++;
             }
-            Nodo aux = pointer.getNext();
-            pointer.setNext(aux.getNext());
-            aux.setNext(null);
-            length--;
+            Nodo nodoAEliminar = pointer.getNext();
+            pointer.setNext(nodoAEliminar.getNext()); // Saltar el nodo a eliminar
+            nodoAEliminar.setNext(null);              // Desconectar el nodo
         }
+
+        length--; // Actualizar la longitud
     }
 
     public void deleteContent(T data) {
