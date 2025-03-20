@@ -5,6 +5,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import java.io.*;
 import java.time.LocalDateTime;
+import javax.swing.JOptionPane;
 
 public class GsonManager {
 
@@ -32,8 +33,10 @@ public class GsonManager {
         }
         try (Reader reader = new FileReader(file)) {
             return gson.fromJson(reader, SistemaArchivo.class);
-        } catch (IOException e) {
-            throw new RuntimeException("Error al cargar el estado: " + e.getMessage(), e);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error al cargar: " + e.getMessage());
+            e.printStackTrace();
+            return new SistemaArchivo();
         }
     }
 }

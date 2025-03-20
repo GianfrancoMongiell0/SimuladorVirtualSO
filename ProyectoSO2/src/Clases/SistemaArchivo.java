@@ -64,7 +64,7 @@ public class SistemaArchivo {
             Lista<Bloque> bloques = memoryManager.asignarBloquesEncadenados(tamano);
             if (bloques != null) {
                 Archivo archivo = new Archivo(nombreArchivo);
-                archivo.setTamañoBloques(tamano);
+                archivo.setTamañoBloques(bloques.getLength());
                 archivo.setBloquesAsignados(bloques);
                 dir.agregarArchivo(archivo);
             }
@@ -134,11 +134,32 @@ public class SistemaArchivo {
             sistema.getMemoryManager().reconstruirSiguienteBloques();
             sistema.getMemoryManager().reconstruirColaBloquesLibres(); // Cola de libres
 
+            reemplazarBloquesEnArchivos(sistema.getRaiz(), sistema.getMemoryManager());
             return sistema;
 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error al cargar: " + e.getMessage());
             return new SistemaArchivo(); // Sistema limpio como fallback
+        }
+    }
+
+    private static void reemplazarBloquesEnArchivos(Directorio dir, MemoryManager mm) {
+        // Reemplazar bloques en archivos del directorio
+        for (int i = 0; i < dir.getArchivos().getLength(); i++) {
+            Archivo archivo = dir.getArchivos().get(i);
+            Lista<Bloque> nuevosBloques = new Lista<>();
+            for (int j = 0; j < archivo.getBloquesAsignados().getLength(); j++) {
+                Bloque bloqueOriginal = archivo.getBloquesAsignados().get(j);
+                Bloque bloqueReal = mm.findBloqueById(bloqueOriginal.getId());
+                if (bloqueReal != null) {
+                    nuevosBloques.insertLast(bloqueReal);
+                }
+            }
+            archivo.setBloquesAsignados(nuevosBloques);
+        }
+        // Procesar subdirectorios recursivamente
+        for (int i = 0; i < dir.getSubdirectorios().getLength(); i++) {
+            reemplazarBloquesEnArchivos(dir.getSubdirectorios().get(i), mm);
         }
     }
 
