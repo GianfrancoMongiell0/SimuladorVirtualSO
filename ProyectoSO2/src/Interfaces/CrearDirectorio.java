@@ -6,6 +6,7 @@ package Interfaces;
 
 import Clases.Archivo;
 import Clases.Directorio;
+import Clases.LoggerSistema;
 import Clases.SistemaArchivo;
 import javax.swing.JOptionPane;
 
@@ -175,7 +176,7 @@ public class CrearDirectorio extends javax.swing.JFrame {
 
         // Crear subdirectorio y agregarlo al directorio padre
         sistema.crearDirectorio(directorioPadre, nombreDirec);
-
+          LoggerSistema.registrarAccion(simulador.getUsuarioActual(), "Creó un directorio llamado "+ nombreDirec +" en el directorio padre " + directorioPadre );
         // Actualizar el JTree después de crear el directorio
         simulador.actualizarJTree();  // Llamar al método para actualizar el JTree
         this.dispose();

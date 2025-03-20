@@ -6,6 +6,7 @@ package Interfaces;
 
 import Clases.Archivo;
 import Clases.Directorio;
+import Clases.LoggerSistema;
 import Clases.SistemaArchivo;
 import javax.swing.JOptionPane;
 
@@ -181,6 +182,8 @@ public class CrearArchivo extends javax.swing.JFrame {
             if (simulador.sistema.getMemoryManager().haySuficienteEspacio(tamañoBloques)) {
                 simulador.sistema.crearArchivo(nombreDirectorio, nombreArchivo, tamañoBloques);
                 simulador.actualizarJTree();
+                // Registrar acción en el log
+                LoggerSistema.registrarAccion(simulador.getUsuarioActual(), "Creó un archivo llamado "+nombreArchivo+" con "+tamañoBloques+ " bloques " + " en el directorio "+nombreDirectorio);
                 this.dispose();
             } else {
                 if (simulador.sistema.getMemoryManager().bloquesDisponibles() == 0) {

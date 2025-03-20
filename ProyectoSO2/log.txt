@@ -1,0 +1,26 @@
+[2025-03-20 17:21:34] Usuario: Modo Administrador - Acción: Cambió a Modo Administrador.
+[2025-03-20 17:22:26] Usuario: Modo Administrador - Acción: Creó un archivo
+[2025-03-20 17:22:34] Usuario: Modo Administrador - Acción: Creó un directorio
+[2025-03-20 17:22:46] Usuario: Modo Administrador - Acción: Modificó el nombre del archivo a: AS
+[2025-03-20 17:23:05] Usuario: Modo Administrador - Acción: Eliminó el directorio: ASA
+[2025-03-20 17:23:17] Usuario: Modo Administrador - Acción: Eliminó el archivo: Archivo_544 del directorio Directorio_4
+[2025-03-20 17:23:21] Usuario: Modo Usuario - Acción: Cambió a Modo Usuario.
+[2025-03-20 17:23:22] Usuario: Modo Usuario - Acción: Cargó el estado del sistema.
+[2025-03-20 17:23:25] Usuario: Modo Usuario - Acción: Guardó el estado del sistema.
+[2025-03-20 17:39:59] Usuario:Usuario - Acción: Genero archivos y directorios aleatorios
+[2025-03-20 17:40:04] Usuario:Usuario - Acción: Cargó el estado del sistema.
+[2025-03-20 17:40:51] Usuario:Usuario - Acción: Guardó el estado del sistema.
+[2025-03-20 17:40:52] Usuario:Administrador - Acción: Cambió a Modo Administrador.
+[2025-03-20 17:41:05] Usuario:Administrador - Acción: Creó un archivo llamado Pruebacon 3bloquesen el directorioDirectorio_1
+[2025-03-20 17:42:04] Usuario:Administrador - Acción: Creó un directorio llamado D1en el directorio padre Directorio_1
+[2025-03-20 17:42:23] Usuario:Administrador - Acción: Modificó el nombre del directorio de Holaa: Hola
+[2025-03-20 17:42:30] Usuario:Administrador - Acción: Eliminó el archivo: Archivo_818 del directorio Directorio_1
+[2025-03-20 17:42:36] Usuario:Administrador - Acción: Eliminó el directorio: Directorio_1
+[2025-03-20 17:44:57] Usuario - Acción: Genero archivos y directorios aleatorios
+[2025-03-20 17:44:59] Administrador - Acción: Cambió a Modo Administrador.
+[2025-03-20 17:45:20] Administrador - Acción: Creó un archivo llamado A1 con 2 bloques  en el directorio Directorio_3
+[2025-03-20 17:51:27] Usuario - Acción: Genero archivos y directorios aleatorios
+[2025-03-20 17:51:28] Usuario - Acción: Seleccionó el directorio: Directorio_2
+[2025-03-20 17:51:35] Usuario - Acción: Seleccionó el archivo: Archivo_515
+[2025-03-20 17:51:41] Administrador - Acción: Cambió a Modo Administrador.
+[2025-03-20 17:51:44] Administrador - Acción: Seleccionó el directorio: Directorio_4
