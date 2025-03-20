@@ -181,6 +181,7 @@ public class Simulador extends javax.swing.JFrame {
             directorio.setNombre(nuevoNombre);
             ((DefaultTreeModel) jTree1.getModel()).nodeChanged(nodo);
             actualizarTablaAsignacion();
+            
         }
     }
     
@@ -602,7 +603,7 @@ public class Simulador extends javax.swing.JFrame {
                 }
             }
         } else {
-            System.out.println("Seleccione un archivo válido.");
+            JOptionPane.showMessageDialog(this, "Seleccione un archivo válido.", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnEliminarActionPerformed
 
