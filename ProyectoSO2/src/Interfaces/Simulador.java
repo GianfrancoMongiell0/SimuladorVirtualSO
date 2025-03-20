@@ -56,7 +56,7 @@ public class Simulador extends javax.swing.JFrame {
         });
         timeractualizacion.start();
         jTree1.addTreeSelectionListener(e -> mostrarInformacionNodoSeleccionado());
-        modoUsuario.setSelected(true); 
+        modoUsuario.setSelected(true);
 
     }
 
@@ -183,7 +183,7 @@ public class Simulador extends javax.swing.JFrame {
             actualizarTablaAsignacion();
         }
     }
-    
+
     private void mostrarInformacionNodoSeleccionado() {
         DefaultMutableTreeNode nodoSeleccionado = (DefaultMutableTreeNode) jTree1.getLastSelectedPathComponent();
         if (nodoSeleccionado == null) {
@@ -202,7 +202,7 @@ public class Simulador extends javax.swing.JFrame {
             info.setText("Raíz");
         }
     }
-    
+
     private void mostrarContenidoDirectorio(Directorio directorio) {
         StringBuilder contenido = new StringBuilder();
         contenido.append("Directorio: ").append(directorio.getNombre()).append("\n");
@@ -220,6 +220,7 @@ public class Simulador extends javax.swing.JFrame {
 
         info.setText(contenido.toString());
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -559,7 +560,7 @@ public class Simulador extends javax.swing.JFrame {
         if (objeto instanceof Archivo) {
             Archivo archivo = (Archivo) objeto;
             modificarNombreArchivo(archivo, nodoSeleccionado);
-            
+
         } else if (objeto instanceof Directorio) {
             Directorio directorio = (Directorio) objeto;
             modificarNombreDirectorio(directorio, nodoSeleccionado);
@@ -599,6 +600,7 @@ public class Simulador extends javax.swing.JFrame {
 
                     System.out.println("Archivo eliminado exitosamente.");
                     actualizarTablaAsignacion();
+                    configurarPanelSD();
                 }
             }
         } else {
@@ -640,14 +642,15 @@ public class Simulador extends javax.swing.JFrame {
 
             actualizarJTree(); // Actualiza la tabla de asignación
             JOptionPane.showMessageDialog(this, "Directorio eliminado: " + dir.getNombre());
-
+            configurarPanelSD();
+            actualizarTablaAsignacion();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Error al eliminar el directorio.", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnEliminar1ActionPerformed
 
     private void btnCrearAleatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearAleatorioActionPerformed
-        
+
         // Crear 5 directorios y 10 archivos aleatorios
         sistema.crearDirectoriosYArchivosAleatorios();
 
@@ -664,12 +667,14 @@ public class Simulador extends javax.swing.JFrame {
 
     private void btnCargarGSONActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargarGSONActionPerformed
         sistema = SistemaArchivo.cargarEstado("sistema.json");
-
-        // Actualizar componentes visuales
         actualizarJTree();
         configurarPanelSD();
-        btnCrearAleatorio.setEnabled(false);
-        // Forzar repintado del panel SD
+
+        // Forzar una actualización inmediata del Timer
+        timeractualizacion.stop();
+        configurarPanelSD(); // Actualización manual
+        timeractualizacion.start();
+
         panelsd.revalidate();
         panelsd.repaint();
     }//GEN-LAST:event_btnCargarGSONActionPerformed

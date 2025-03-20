@@ -34,9 +34,10 @@ public class MemoryManager {
         for (int i = 0; i < bloques.getLength(); i++) {
             Bloque bloque = bloques.get(i);
             bloque.setOcupado(false);
-            bloque.setSiguienteBloque(null); // Eliminar enlaces
-            bloquesLibres.enqueue(bloque);
+            bloque.setSiguienteBloque(null);
         }
+        // Reconstruir la cola de libres después de liberar
+        reconstruirColaBloquesLibres(); // <-- Añadir esta línea
     }
 
     public boolean estaOcupado(int idBloque) {
@@ -77,14 +78,14 @@ public class MemoryManager {
             Bloque bloque = todosLosBloques.get(i);
             if (bloque.getSiguienteId() != -1) {
                 Bloque siguiente = findBloqueById(bloque.getSiguienteId());
-                bloque.setSiguienteBloque(siguiente);
+                bloque.setSiguienteBloque(siguiente); // Enlazar
             } else {
                 bloque.setSiguienteBloque(null);
             }
         }
     }
 
-    private Bloque findBloqueById(int id) {
+    Bloque findBloqueById(int id) {
         for (int i = 0; i < todosLosBloques.getLength(); i++) {
             Bloque b = todosLosBloques.get(i);
             if (b.getId() == id) {
@@ -111,12 +112,12 @@ public class MemoryManager {
     }
 
     public Bloque getBloque(int id) {
-        // Implementar si se necesita acceso directo (opcional)
+        // Implementar si se necesita acceso directo (opcional)re
         return null;
     }
-    
+
     public boolean haySuficienteEspacio(int cantidad) {
         return bloquesLibres.getLength() >= cantidad;
     }
-    
+
 }

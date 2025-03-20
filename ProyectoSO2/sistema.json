@@ -13,7 +13,7 @@
               "data": {
                 "nombre": "init.txt",
                 "tamañoBloques": 1,
-                "fechaCreacion": "2025-03-17T19:37:52.9187889",
+                "fechaCreacion": "2025-03-20T16:32:24.156792",
                 "bloquesAsignados": [
                   {
                     "__type": "Clases.Bloque",
@@ -38,9 +38,9 @@
             {
               "__type": "Clases.Archivo",
               "data": {
-                "nombre": "Archivo_386",
-                "tamañoBloques": 9,
-                "fechaCreacion": "2025-03-17T19:37:54.4584991",
+                "nombre": "Archivo_818",
+                "tamañoBloques": 8,
+                "fechaCreacion": "2025-03-20T16:32:27.3775705",
                 "bloquesAsignados": [
                   {
                     "__type": "Clases.Bloque",
@@ -68,12 +68,7 @@
                                   "siguienteBloque": {
                                     "id": 8,
                                     "ocupado": true,
-                                    "siguienteBloque": {
-                                      "id": 9,
-                                      "ocupado": true,
-                                      "siguienteId": 0
-                                    },
-                                    "siguienteId": 9
+                                    "siguienteId": 0
                                   },
                                   "siguienteId": 8
                                 },
@@ -113,12 +108,7 @@
                                 "siguienteBloque": {
                                   "id": 8,
                                   "ocupado": true,
-                                  "siguienteBloque": {
-                                    "id": 9,
-                                    "ocupado": true,
-                                    "siguienteId": 0
-                                  },
-                                  "siguienteId": 9
+                                  "siguienteId": 0
                                 },
                                 "siguienteId": 8
                               },
@@ -153,12 +143,7 @@
                               "siguienteBloque": {
                                 "id": 8,
                                 "ocupado": true,
-                                "siguienteBloque": {
-                                  "id": 9,
-                                  "ocupado": true,
-                                  "siguienteId": 0
-                                },
-                                "siguienteId": 9
+                                "siguienteId": 0
                               },
                               "siguienteId": 8
                             },
@@ -188,12 +173,7 @@
                             "siguienteBloque": {
                               "id": 8,
                               "ocupado": true,
-                              "siguienteBloque": {
-                                "id": 9,
-                                "ocupado": true,
-                                "siguienteId": 0
-                              },
-                              "siguienteId": 9
+                              "siguienteId": 0
                             },
                             "siguienteId": 8
                           },
@@ -218,12 +198,7 @@
                           "siguienteBloque": {
                             "id": 8,
                             "ocupado": true,
-                            "siguienteBloque": {
-                              "id": 9,
-                              "ocupado": true,
-                              "siguienteId": 0
-                            },
-                            "siguienteId": 9
+                            "siguienteId": 0
                           },
                           "siguienteId": 8
                         },
@@ -243,12 +218,7 @@
                         "siguienteBloque": {
                           "id": 8,
                           "ocupado": true,
-                          "siguienteBloque": {
-                            "id": 9,
-                            "ocupado": true,
-                            "siguienteId": 0
-                          },
-                          "siguienteId": 9
+                          "siguienteId": 0
                         },
                         "siguienteId": 8
                       },
@@ -263,12 +233,7 @@
                       "siguienteBloque": {
                         "id": 8,
                         "ocupado": true,
-                        "siguienteBloque": {
-                          "id": 9,
-                          "ocupado": true,
-                          "siguienteId": 0
-                        },
-                        "siguienteId": 9
+                        "siguienteId": 0
                       },
                       "siguienteId": 8
                     }
@@ -277,19 +242,6 @@
                     "__type": "Clases.Bloque",
                     "data": {
                       "id": 8,
-                      "ocupado": true,
-                      "siguienteBloque": {
-                        "id": 9,
-                        "ocupado": true,
-                        "siguienteId": 0
-                      },
-                      "siguienteId": 9
-                    }
-                  },
-                  {
-                    "__type": "Clases.Bloque",
-                    "data": {
-                      "id": 9,
                       "ocupado": true,
                       "siguienteId": 0
                     }
@@ -300,10 +252,43 @@
             {
               "__type": "Clases.Archivo",
               "data": {
-                "nombre": "Archivo_985",
-                "tamañoBloques": 14,
-                "fechaCreacion": "2025-03-17T19:37:54.4584991",
+                "nombre": "Archivo_93",
+                "tamañoBloques": 6,
+                "fechaCreacion": "2025-03-20T16:32:27.3775705",
                 "bloquesAsignados": [
+                  {
+                    "__type": "Clases.Bloque",
+                    "data": {
+                      "id": 9,
+                      "ocupado": true,
+                      "siguienteBloque": {
+                        "id": 10,
+                        "ocupado": true,
+                        "siguienteBloque": {
+                          "id": 11,
+                          "ocupado": true,
+                          "siguienteBloque": {
+                            "id": 12,
+                            "ocupado": true,
+                            "siguienteBloque": {
+                              "id": 13,
+                              "ocupado": true,
+                              "siguienteBloque": {
+                                "id": 14,
+                                "ocupado": true,
+                                "siguienteId": 0
+                              },
+                              "siguienteId": 14
+                            },
+                            "siguienteId": 13
+                          },
+                          "siguienteId": 12
+                        },
+                        "siguienteId": 11
+                      },
+                      "siguienteId": 10
+                    }
+                  },
                   {
                     "__type": "Clases.Bloque",
                     "data": {
@@ -321,52 +306,7 @@
                             "siguienteBloque": {
                               "id": 14,
                               "ocupado": true,
-                              "siguienteBloque": {
-                                "id": 15,
-                                "ocupado": true,
-                                "siguienteBloque": {
-                                  "id": 16,
-                                  "ocupado": true,
-                                  "siguienteBloque": {
-                                    "id": 17,
-                                    "ocupado": true,
-                                    "siguienteBloque": {
-                                      "id": 18,
-                                      "ocupado": true,
-                                      "siguienteBloque": {
-                                        "id": 19,
-                                        "ocupado": true,
-                                        "siguienteBloque": {
-                                          "id": 20,
-                                          "ocupado": true,
-                                          "siguienteBloque": {
-                                            "id": 21,
-                                            "ocupado": true,
-                                            "siguienteBloque": {
-                                              "id": 22,
-                                              "ocupado": true,
-                                              "siguienteBloque": {
-                                                "id": 23,
-                                                "ocupado": true,
-                                                "siguienteId": 0
-                                              },
-                                              "siguienteId": 23
-                                            },
-                                            "siguienteId": 22
-                                          },
-                                          "siguienteId": 21
-                                        },
-                                        "siguienteId": 20
-                                      },
-                                      "siguienteId": 19
-                                    },
-                                    "siguienteId": 18
-                                  },
-                                  "siguienteId": 17
-                                },
-                                "siguienteId": 16
-                              },
-                              "siguienteId": 15
+                              "siguienteId": 0
                             },
                             "siguienteId": 14
                           },
@@ -391,52 +331,7 @@
                           "siguienteBloque": {
                             "id": 14,
                             "ocupado": true,
-                            "siguienteBloque": {
-                              "id": 15,
-                              "ocupado": true,
-                              "siguienteBloque": {
-                                "id": 16,
-                                "ocupado": true,
-                                "siguienteBloque": {
-                                  "id": 17,
-                                  "ocupado": true,
-                                  "siguienteBloque": {
-                                    "id": 18,
-                                    "ocupado": true,
-                                    "siguienteBloque": {
-                                      "id": 19,
-                                      "ocupado": true,
-                                      "siguienteBloque": {
-                                        "id": 20,
-                                        "ocupado": true,
-                                        "siguienteBloque": {
-                                          "id": 21,
-                                          "ocupado": true,
-                                          "siguienteBloque": {
-                                            "id": 22,
-                                            "ocupado": true,
-                                            "siguienteBloque": {
-                                              "id": 23,
-                                              "ocupado": true,
-                                              "siguienteId": 0
-                                            },
-                                            "siguienteId": 23
-                                          },
-                                          "siguienteId": 22
-                                        },
-                                        "siguienteId": 21
-                                      },
-                                      "siguienteId": 20
-                                    },
-                                    "siguienteId": 19
-                                  },
-                                  "siguienteId": 18
-                                },
-                                "siguienteId": 17
-                              },
-                              "siguienteId": 16
-                            },
-                            "siguienteId": 15
+                            "siguienteId": 0
                           },
                           "siguienteId": 14
                         },
@@ -456,52 +351,7 @@
                         "siguienteBloque": {
                           "id": 14,
                           "ocupado": true,
-                          "siguienteBloque": {
-                            "id": 15,
-                            "ocupado": true,
-                            "siguienteBloque": {
-                              "id": 16,
-                              "ocupado": true,
-                              "siguienteBloque": {
-                                "id": 17,
-                                "ocupado": true,
-                                "siguienteBloque": {
-                                  "id": 18,
-                                  "ocupado": true,
-                                  "siguienteBloque": {
-                                    "id": 19,
-                                    "ocupado": true,
-                                    "siguienteBloque": {
-                                      "id": 20,
-                                      "ocupado": true,
-                                      "siguienteBloque": {
-                                        "id": 21,
-                                        "ocupado": true,
-                                        "siguienteBloque": {
-                                          "id": 22,
-                                          "ocupado": true,
-                                          "siguienteBloque": {
-                                            "id": 23,
-                                            "ocupado": true,
-                                            "siguienteId": 0
-                                          },
-                                          "siguienteId": 23
-                                        },
-                                        "siguienteId": 22
-                                      },
-                                      "siguienteId": 21
-                                    },
-                                    "siguienteId": 20
-                                  },
-                                  "siguienteId": 19
-                                },
-                                "siguienteId": 18
-                              },
-                              "siguienteId": 17
-                            },
-                            "siguienteId": 16
-                          },
-                          "siguienteId": 15
+                          "siguienteId": 0
                         },
                         "siguienteId": 14
                       },
@@ -516,52 +366,7 @@
                       "siguienteBloque": {
                         "id": 14,
                         "ocupado": true,
-                        "siguienteBloque": {
-                          "id": 15,
-                          "ocupado": true,
-                          "siguienteBloque": {
-                            "id": 16,
-                            "ocupado": true,
-                            "siguienteBloque": {
-                              "id": 17,
-                              "ocupado": true,
-                              "siguienteBloque": {
-                                "id": 18,
-                                "ocupado": true,
-                                "siguienteBloque": {
-                                  "id": 19,
-                                  "ocupado": true,
-                                  "siguienteBloque": {
-                                    "id": 20,
-                                    "ocupado": true,
-                                    "siguienteBloque": {
-                                      "id": 21,
-                                      "ocupado": true,
-                                      "siguienteBloque": {
-                                        "id": 22,
-                                        "ocupado": true,
-                                        "siguienteBloque": {
-                                          "id": 23,
-                                          "ocupado": true,
-                                          "siguienteId": 0
-                                        },
-                                        "siguienteId": 23
-                                      },
-                                      "siguienteId": 22
-                                    },
-                                    "siguienteId": 21
-                                  },
-                                  "siguienteId": 20
-                                },
-                                "siguienteId": 19
-                              },
-                              "siguienteId": 18
-                            },
-                            "siguienteId": 17
-                          },
-                          "siguienteId": 16
-                        },
-                        "siguienteId": 15
+                        "siguienteId": 0
                       },
                       "siguienteId": 14
                     }
@@ -571,54 +376,28 @@
                     "data": {
                       "id": 14,
                       "ocupado": true,
-                      "siguienteBloque": {
-                        "id": 15,
-                        "ocupado": true,
-                        "siguienteBloque": {
-                          "id": 16,
-                          "ocupado": true,
-                          "siguienteBloque": {
-                            "id": 17,
-                            "ocupado": true,
-                            "siguienteBloque": {
-                              "id": 18,
-                              "ocupado": true,
-                              "siguienteBloque": {
-                                "id": 19,
-                                "ocupado": true,
-                                "siguienteBloque": {
-                                  "id": 20,
-                                  "ocupado": true,
-                                  "siguienteBloque": {
-                                    "id": 21,
-                                    "ocupado": true,
-                                    "siguienteBloque": {
-                                      "id": 22,
-                                      "ocupado": true,
-                                      "siguienteBloque": {
-                                        "id": 23,
-                                        "ocupado": true,
-                                        "siguienteId": 0
-                                      },
-                                      "siguienteId": 23
-                                    },
-                                    "siguienteId": 22
-                                  },
-                                  "siguienteId": 21
-                                },
-                                "siguienteId": 20
-                              },
-                              "siguienteId": 19
-                            },
-                            "siguienteId": 18
-                          },
-                          "siguienteId": 17
-                        },
-                        "siguienteId": 16
-                      },
-                      "siguienteId": 15
+                      "siguienteId": 0
                     }
-                  },
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "__type": "Clases.Directorio",
+        "data": {
+          "nombre": "Directorio_2",
+          "subdirectorios": [],
+          "archivos": [
+            {
+              "__type": "Clases.Archivo",
+              "data": {
+                "nombre": "Archivo_102",
+                "tamañoBloques": 13,
+                "fechaCreacion": "2025-03-20T16:32:27.3775705",
+                "bloquesAsignados": [
                   {
                     "__type": "Clases.Bloque",
                     "data": {
@@ -648,7 +427,27 @@
                                     "siguienteBloque": {
                                       "id": 23,
                                       "ocupado": true,
-                                      "siguienteId": 0
+                                      "siguienteBloque": {
+                                        "id": 24,
+                                        "ocupado": true,
+                                        "siguienteBloque": {
+                                          "id": 25,
+                                          "ocupado": true,
+                                          "siguienteBloque": {
+                                            "id": 26,
+                                            "ocupado": true,
+                                            "siguienteBloque": {
+                                              "id": 27,
+                                              "ocupado": true,
+                                              "siguienteId": 0
+                                            },
+                                            "siguienteId": 27
+                                          },
+                                          "siguienteId": 26
+                                        },
+                                        "siguienteId": 25
+                                      },
+                                      "siguienteId": 24
                                     },
                                     "siguienteId": 23
                                   },
@@ -693,7 +492,27 @@
                                   "siguienteBloque": {
                                     "id": 23,
                                     "ocupado": true,
-                                    "siguienteId": 0
+                                    "siguienteBloque": {
+                                      "id": 24,
+                                      "ocupado": true,
+                                      "siguienteBloque": {
+                                        "id": 25,
+                                        "ocupado": true,
+                                        "siguienteBloque": {
+                                          "id": 26,
+                                          "ocupado": true,
+                                          "siguienteBloque": {
+                                            "id": 27,
+                                            "ocupado": true,
+                                            "siguienteId": 0
+                                          },
+                                          "siguienteId": 27
+                                        },
+                                        "siguienteId": 26
+                                      },
+                                      "siguienteId": 25
+                                    },
+                                    "siguienteId": 24
                                   },
                                   "siguienteId": 23
                                 },
@@ -733,7 +552,27 @@
                                 "siguienteBloque": {
                                   "id": 23,
                                   "ocupado": true,
-                                  "siguienteId": 0
+                                  "siguienteBloque": {
+                                    "id": 24,
+                                    "ocupado": true,
+                                    "siguienteBloque": {
+                                      "id": 25,
+                                      "ocupado": true,
+                                      "siguienteBloque": {
+                                        "id": 26,
+                                        "ocupado": true,
+                                        "siguienteBloque": {
+                                          "id": 27,
+                                          "ocupado": true,
+                                          "siguienteId": 0
+                                        },
+                                        "siguienteId": 27
+                                      },
+                                      "siguienteId": 26
+                                    },
+                                    "siguienteId": 25
+                                  },
+                                  "siguienteId": 24
                                 },
                                 "siguienteId": 23
                               },
@@ -768,7 +607,27 @@
                               "siguienteBloque": {
                                 "id": 23,
                                 "ocupado": true,
-                                "siguienteId": 0
+                                "siguienteBloque": {
+                                  "id": 24,
+                                  "ocupado": true,
+                                  "siguienteBloque": {
+                                    "id": 25,
+                                    "ocupado": true,
+                                    "siguienteBloque": {
+                                      "id": 26,
+                                      "ocupado": true,
+                                      "siguienteBloque": {
+                                        "id": 27,
+                                        "ocupado": true,
+                                        "siguienteId": 0
+                                      },
+                                      "siguienteId": 27
+                                    },
+                                    "siguienteId": 26
+                                  },
+                                  "siguienteId": 25
+                                },
+                                "siguienteId": 24
                               },
                               "siguienteId": 23
                             },
@@ -798,7 +657,27 @@
                             "siguienteBloque": {
                               "id": 23,
                               "ocupado": true,
-                              "siguienteId": 0
+                              "siguienteBloque": {
+                                "id": 24,
+                                "ocupado": true,
+                                "siguienteBloque": {
+                                  "id": 25,
+                                  "ocupado": true,
+                                  "siguienteBloque": {
+                                    "id": 26,
+                                    "ocupado": true,
+                                    "siguienteBloque": {
+                                      "id": 27,
+                                      "ocupado": true,
+                                      "siguienteId": 0
+                                    },
+                                    "siguienteId": 27
+                                  },
+                                  "siguienteId": 26
+                                },
+                                "siguienteId": 25
+                              },
+                              "siguienteId": 24
                             },
                             "siguienteId": 23
                           },
@@ -823,7 +702,27 @@
                           "siguienteBloque": {
                             "id": 23,
                             "ocupado": true,
-                            "siguienteId": 0
+                            "siguienteBloque": {
+                              "id": 24,
+                              "ocupado": true,
+                              "siguienteBloque": {
+                                "id": 25,
+                                "ocupado": true,
+                                "siguienteBloque": {
+                                  "id": 26,
+                                  "ocupado": true,
+                                  "siguienteBloque": {
+                                    "id": 27,
+                                    "ocupado": true,
+                                    "siguienteId": 0
+                                  },
+                                  "siguienteId": 27
+                                },
+                                "siguienteId": 26
+                              },
+                              "siguienteId": 25
+                            },
+                            "siguienteId": 24
                           },
                           "siguienteId": 23
                         },
@@ -843,7 +742,27 @@
                         "siguienteBloque": {
                           "id": 23,
                           "ocupado": true,
-                          "siguienteId": 0
+                          "siguienteBloque": {
+                            "id": 24,
+                            "ocupado": true,
+                            "siguienteBloque": {
+                              "id": 25,
+                              "ocupado": true,
+                              "siguienteBloque": {
+                                "id": 26,
+                                "ocupado": true,
+                                "siguienteBloque": {
+                                  "id": 27,
+                                  "ocupado": true,
+                                  "siguienteId": 0
+                                },
+                                "siguienteId": 27
+                              },
+                              "siguienteId": 26
+                            },
+                            "siguienteId": 25
+                          },
+                          "siguienteId": 24
                         },
                         "siguienteId": 23
                       },
@@ -858,7 +777,27 @@
                       "siguienteBloque": {
                         "id": 23,
                         "ocupado": true,
-                        "siguienteId": 0
+                        "siguienteBloque": {
+                          "id": 24,
+                          "ocupado": true,
+                          "siguienteBloque": {
+                            "id": 25,
+                            "ocupado": true,
+                            "siguienteBloque": {
+                              "id": 26,
+                              "ocupado": true,
+                              "siguienteBloque": {
+                                "id": 27,
+                                "ocupado": true,
+                                "siguienteId": 0
+                              },
+                              "siguienteId": 27
+                            },
+                            "siguienteId": 26
+                          },
+                          "siguienteId": 25
+                        },
+                        "siguienteId": 24
                       },
                       "siguienteId": 23
                     }
@@ -868,28 +807,29 @@
                     "data": {
                       "id": 23,
                       "ocupado": true,
-                      "siguienteId": 0
+                      "siguienteBloque": {
+                        "id": 24,
+                        "ocupado": true,
+                        "siguienteBloque": {
+                          "id": 25,
+                          "ocupado": true,
+                          "siguienteBloque": {
+                            "id": 26,
+                            "ocupado": true,
+                            "siguienteBloque": {
+                              "id": 27,
+                              "ocupado": true,
+                              "siguienteId": 0
+                            },
+                            "siguienteId": 27
+                          },
+                          "siguienteId": 26
+                        },
+                        "siguienteId": 25
+                      },
+                      "siguienteId": 24
                     }
-                  }
-                ]
-              }
-            }
-          ]
-        }
-      },
-      {
-        "__type": "Clases.Directorio",
-        "data": {
-          "nombre": "Directorio_2",
-          "subdirectorios": [],
-          "archivos": [
-            {
-              "__type": "Clases.Archivo",
-              "data": {
-                "nombre": "Archivo_690",
-                "tamañoBloques": 15,
-                "fechaCreacion": "2025-03-17T19:37:54.4584991",
-                "bloquesAsignados": [
+                  },
                   {
                     "__type": "Clases.Bloque",
                     "data": {
@@ -904,62 +844,7 @@
                           "siguienteBloque": {
                             "id": 27,
                             "ocupado": true,
-                            "siguienteBloque": {
-                              "id": 28,
-                              "ocupado": true,
-                              "siguienteBloque": {
-                                "id": 29,
-                                "ocupado": true,
-                                "siguienteBloque": {
-                                  "id": 30,
-                                  "ocupado": true,
-                                  "siguienteBloque": {
-                                    "id": 31,
-                                    "ocupado": true,
-                                    "siguienteBloque": {
-                                      "id": 32,
-                                      "ocupado": true,
-                                      "siguienteBloque": {
-                                        "id": 33,
-                                        "ocupado": true,
-                                        "siguienteBloque": {
-                                          "id": 34,
-                                          "ocupado": true,
-                                          "siguienteBloque": {
-                                            "id": 35,
-                                            "ocupado": true,
-                                            "siguienteBloque": {
-                                              "id": 36,
-                                              "ocupado": true,
-                                              "siguienteBloque": {
-                                                "id": 37,
-                                                "ocupado": true,
-                                                "siguienteBloque": {
-                                                  "id": 38,
-                                                  "ocupado": true,
-                                                  "siguienteId": 0
-                                                },
-                                                "siguienteId": 38
-                                              },
-                                              "siguienteId": 37
-                                            },
-                                            "siguienteId": 36
-                                          },
-                                          "siguienteId": 35
-                                        },
-                                        "siguienteId": 34
-                                      },
-                                      "siguienteId": 33
-                                    },
-                                    "siguienteId": 32
-                                  },
-                                  "siguienteId": 31
-                                },
-                                "siguienteId": 30
-                              },
-                              "siguienteId": 29
-                            },
-                            "siguienteId": 28
+                            "siguienteId": 0
                           },
                           "siguienteId": 27
                         },
@@ -979,62 +864,7 @@
                         "siguienteBloque": {
                           "id": 27,
                           "ocupado": true,
-                          "siguienteBloque": {
-                            "id": 28,
-                            "ocupado": true,
-                            "siguienteBloque": {
-                              "id": 29,
-                              "ocupado": true,
-                              "siguienteBloque": {
-                                "id": 30,
-                                "ocupado": true,
-                                "siguienteBloque": {
-                                  "id": 31,
-                                  "ocupado": true,
-                                  "siguienteBloque": {
-                                    "id": 32,
-                                    "ocupado": true,
-                                    "siguienteBloque": {
-                                      "id": 33,
-                                      "ocupado": true,
-                                      "siguienteBloque": {
-                                        "id": 34,
-                                        "ocupado": true,
-                                        "siguienteBloque": {
-                                          "id": 35,
-                                          "ocupado": true,
-                                          "siguienteBloque": {
-                                            "id": 36,
-                                            "ocupado": true,
-                                            "siguienteBloque": {
-                                              "id": 37,
-                                              "ocupado": true,
-                                              "siguienteBloque": {
-                                                "id": 38,
-                                                "ocupado": true,
-                                                "siguienteId": 0
-                                              },
-                                              "siguienteId": 38
-                                            },
-                                            "siguienteId": 37
-                                          },
-                                          "siguienteId": 36
-                                        },
-                                        "siguienteId": 35
-                                      },
-                                      "siguienteId": 34
-                                    },
-                                    "siguienteId": 33
-                                  },
-                                  "siguienteId": 32
-                                },
-                                "siguienteId": 31
-                              },
-                              "siguienteId": 30
-                            },
-                            "siguienteId": 29
-                          },
-                          "siguienteId": 28
+                          "siguienteId": 0
                         },
                         "siguienteId": 27
                       },
@@ -1049,62 +879,7 @@
                       "siguienteBloque": {
                         "id": 27,
                         "ocupado": true,
-                        "siguienteBloque": {
-                          "id": 28,
-                          "ocupado": true,
-                          "siguienteBloque": {
-                            "id": 29,
-                            "ocupado": true,
-                            "siguienteBloque": {
-                              "id": 30,
-                              "ocupado": true,
-                              "siguienteBloque": {
-                                "id": 31,
-                                "ocupado": true,
-                                "siguienteBloque": {
-                                  "id": 32,
-                                  "ocupado": true,
-                                  "siguienteBloque": {
-                                    "id": 33,
-                                    "ocupado": true,
-                                    "siguienteBloque": {
-                                      "id": 34,
-                                      "ocupado": true,
-                                      "siguienteBloque": {
-                                        "id": 35,
-                                        "ocupado": true,
-                                        "siguienteBloque": {
-                                          "id": 36,
-                                          "ocupado": true,
-                                          "siguienteBloque": {
-                                            "id": 37,
-                                            "ocupado": true,
-                                            "siguienteBloque": {
-                                              "id": 38,
-                                              "ocupado": true,
-                                              "siguienteId": 0
-                                            },
-                                            "siguienteId": 38
-                                          },
-                                          "siguienteId": 37
-                                        },
-                                        "siguienteId": 36
-                                      },
-                                      "siguienteId": 35
-                                    },
-                                    "siguienteId": 34
-                                  },
-                                  "siguienteId": 33
-                                },
-                                "siguienteId": 32
-                              },
-                              "siguienteId": 31
-                            },
-                            "siguienteId": 30
-                          },
-                          "siguienteId": 29
-                        },
-                        "siguienteId": 28
+                        "siguienteId": 0
                       },
                       "siguienteId": 27
                     }
@@ -1114,122 +889,46 @@
                     "data": {
                       "id": 27,
                       "ocupado": true,
-                      "siguienteBloque": {
-                        "id": 28,
-                        "ocupado": true,
-                        "siguienteBloque": {
-                          "id": 29,
-                          "ocupado": true,
-                          "siguienteBloque": {
-                            "id": 30,
-                            "ocupado": true,
-                            "siguienteBloque": {
-                              "id": 31,
-                              "ocupado": true,
-                              "siguienteBloque": {
-                                "id": 32,
-                                "ocupado": true,
-                                "siguienteBloque": {
-                                  "id": 33,
-                                  "ocupado": true,
-                                  "siguienteBloque": {
-                                    "id": 34,
-                                    "ocupado": true,
-                                    "siguienteBloque": {
-                                      "id": 35,
-                                      "ocupado": true,
-                                      "siguienteBloque": {
-                                        "id": 36,
-                                        "ocupado": true,
-                                        "siguienteBloque": {
-                                          "id": 37,
-                                          "ocupado": true,
-                                          "siguienteBloque": {
-                                            "id": 38,
-                                            "ocupado": true,
-                                            "siguienteId": 0
-                                          },
-                                          "siguienteId": 38
-                                        },
-                                        "siguienteId": 37
-                                      },
-                                      "siguienteId": 36
-                                    },
-                                    "siguienteId": 35
-                                  },
-                                  "siguienteId": 34
-                                },
-                                "siguienteId": 33
-                              },
-                              "siguienteId": 32
-                            },
-                            "siguienteId": 31
-                          },
-                          "siguienteId": 30
-                        },
-                        "siguienteId": 29
-                      },
-                      "siguienteId": 28
+                      "siguienteId": 0
                     }
-                  },
+                  }
+                ]
+              }
+            },
+            {
+              "__type": "Clases.Archivo",
+              "data": {
+                "nombre": "Archivo_192",
+                "tamañoBloques": 1,
+                "fechaCreacion": "2025-03-20T16:32:27.3775705",
+                "bloquesAsignados": [
                   {
                     "__type": "Clases.Bloque",
                     "data": {
                       "id": 28,
                       "ocupado": true,
-                      "siguienteBloque": {
-                        "id": 29,
-                        "ocupado": true,
-                        "siguienteBloque": {
-                          "id": 30,
-                          "ocupado": true,
-                          "siguienteBloque": {
-                            "id": 31,
-                            "ocupado": true,
-                            "siguienteBloque": {
-                              "id": 32,
-                              "ocupado": true,
-                              "siguienteBloque": {
-                                "id": 33,
-                                "ocupado": true,
-                                "siguienteBloque": {
-                                  "id": 34,
-                                  "ocupado": true,
-                                  "siguienteBloque": {
-                                    "id": 35,
-                                    "ocupado": true,
-                                    "siguienteBloque": {
-                                      "id": 36,
-                                      "ocupado": true,
-                                      "siguienteBloque": {
-                                        "id": 37,
-                                        "ocupado": true,
-                                        "siguienteBloque": {
-                                          "id": 38,
-                                          "ocupado": true,
-                                          "siguienteId": 0
-                                        },
-                                        "siguienteId": 38
-                                      },
-                                      "siguienteId": 37
-                                    },
-                                    "siguienteId": 36
-                                  },
-                                  "siguienteId": 35
-                                },
-                                "siguienteId": 34
-                              },
-                              "siguienteId": 33
-                            },
-                            "siguienteId": 32
-                          },
-                          "siguienteId": 31
-                        },
-                        "siguienteId": 30
-                      },
-                      "siguienteId": 29
+                      "siguienteId": 0
                     }
-                  },
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "__type": "Clases.Directorio",
+        "data": {
+          "nombre": "Directorio_3",
+          "subdirectorios": [],
+          "archivos": [
+            {
+              "__type": "Clases.Archivo",
+              "data": {
+                "nombre": "Archivo_62",
+                "tamañoBloques": 6,
+                "fechaCreacion": "2025-03-20T16:32:27.3775705",
+                "bloquesAsignados": [
                   {
                     "__type": "Clases.Bloque",
                     "data": {
@@ -1250,27 +949,7 @@
                               "siguienteBloque": {
                                 "id": 34,
                                 "ocupado": true,
-                                "siguienteBloque": {
-                                  "id": 35,
-                                  "ocupado": true,
-                                  "siguienteBloque": {
-                                    "id": 36,
-                                    "ocupado": true,
-                                    "siguienteBloque": {
-                                      "id": 37,
-                                      "ocupado": true,
-                                      "siguienteBloque": {
-                                        "id": 38,
-                                        "ocupado": true,
-                                        "siguienteId": 0
-                                      },
-                                      "siguienteId": 38
-                                    },
-                                    "siguienteId": 37
-                                  },
-                                  "siguienteId": 36
-                                },
-                                "siguienteId": 35
+                                "siguienteId": 0
                               },
                               "siguienteId": 34
                             },
@@ -1300,27 +979,7 @@
                             "siguienteBloque": {
                               "id": 34,
                               "ocupado": true,
-                              "siguienteBloque": {
-                                "id": 35,
-                                "ocupado": true,
-                                "siguienteBloque": {
-                                  "id": 36,
-                                  "ocupado": true,
-                                  "siguienteBloque": {
-                                    "id": 37,
-                                    "ocupado": true,
-                                    "siguienteBloque": {
-                                      "id": 38,
-                                      "ocupado": true,
-                                      "siguienteId": 0
-                                    },
-                                    "siguienteId": 38
-                                  },
-                                  "siguienteId": 37
-                                },
-                                "siguienteId": 36
-                              },
-                              "siguienteId": 35
+                              "siguienteId": 0
                             },
                             "siguienteId": 34
                           },
@@ -1345,27 +1004,7 @@
                           "siguienteBloque": {
                             "id": 34,
                             "ocupado": true,
-                            "siguienteBloque": {
-                              "id": 35,
-                              "ocupado": true,
-                              "siguienteBloque": {
-                                "id": 36,
-                                "ocupado": true,
-                                "siguienteBloque": {
-                                  "id": 37,
-                                  "ocupado": true,
-                                  "siguienteBloque": {
-                                    "id": 38,
-                                    "ocupado": true,
-                                    "siguienteId": 0
-                                  },
-                                  "siguienteId": 38
-                                },
-                                "siguienteId": 37
-                              },
-                              "siguienteId": 36
-                            },
-                            "siguienteId": 35
+                            "siguienteId": 0
                           },
                           "siguienteId": 34
                         },
@@ -1385,27 +1024,7 @@
                         "siguienteBloque": {
                           "id": 34,
                           "ocupado": true,
-                          "siguienteBloque": {
-                            "id": 35,
-                            "ocupado": true,
-                            "siguienteBloque": {
-                              "id": 36,
-                              "ocupado": true,
-                              "siguienteBloque": {
-                                "id": 37,
-                                "ocupado": true,
-                                "siguienteBloque": {
-                                  "id": 38,
-                                  "ocupado": true,
-                                  "siguienteId": 0
-                                },
-                                "siguienteId": 38
-                              },
-                              "siguienteId": 37
-                            },
-                            "siguienteId": 36
-                          },
-                          "siguienteId": 35
+                          "siguienteId": 0
                         },
                         "siguienteId": 34
                       },
@@ -1420,27 +1039,7 @@
                       "siguienteBloque": {
                         "id": 34,
                         "ocupado": true,
-                        "siguienteBloque": {
-                          "id": 35,
-                          "ocupado": true,
-                          "siguienteBloque": {
-                            "id": 36,
-                            "ocupado": true,
-                            "siguienteBloque": {
-                              "id": 37,
-                              "ocupado": true,
-                              "siguienteBloque": {
-                                "id": 38,
-                                "ocupado": true,
-                                "siguienteId": 0
-                              },
-                              "siguienteId": 38
-                            },
-                            "siguienteId": 37
-                          },
-                          "siguienteId": 36
-                        },
-                        "siguienteId": 35
+                        "siguienteId": 0
                       },
                       "siguienteId": 34
                     }
@@ -1450,29 +1049,19 @@
                     "data": {
                       "id": 34,
                       "ocupado": true,
-                      "siguienteBloque": {
-                        "id": 35,
-                        "ocupado": true,
-                        "siguienteBloque": {
-                          "id": 36,
-                          "ocupado": true,
-                          "siguienteBloque": {
-                            "id": 37,
-                            "ocupado": true,
-                            "siguienteBloque": {
-                              "id": 38,
-                              "ocupado": true,
-                              "siguienteId": 0
-                            },
-                            "siguienteId": 38
-                          },
-                          "siguienteId": 37
-                        },
-                        "siguienteId": 36
-                      },
-                      "siguienteId": 35
+                      "siguienteId": 0
                     }
-                  },
+                  }
+                ]
+              }
+            },
+            {
+              "__type": "Clases.Archivo",
+              "data": {
+                "nombre": "Archivo_154",
+                "tamañoBloques": 12,
+                "fechaCreacion": "2025-03-20T16:32:27.3775705",
+                "bloquesAsignados": [
                   {
                     "__type": "Clases.Bloque",
                     "data": {
@@ -1487,7 +1076,47 @@
                           "siguienteBloque": {
                             "id": 38,
                             "ocupado": true,
-                            "siguienteId": 0
+                            "siguienteBloque": {
+                              "id": 39,
+                              "ocupado": true,
+                              "siguienteBloque": {
+                                "id": 40,
+                                "ocupado": true,
+                                "siguienteBloque": {
+                                  "id": 41,
+                                  "ocupado": true,
+                                  "siguienteBloque": {
+                                    "id": 42,
+                                    "ocupado": true,
+                                    "siguienteBloque": {
+                                      "id": 43,
+                                      "ocupado": true,
+                                      "siguienteBloque": {
+                                        "id": 44,
+                                        "ocupado": true,
+                                        "siguienteBloque": {
+                                          "id": 45,
+                                          "ocupado": true,
+                                          "siguienteBloque": {
+                                            "id": 46,
+                                            "ocupado": true,
+                                            "siguienteId": 0
+                                          },
+                                          "siguienteId": 46
+                                        },
+                                        "siguienteId": 45
+                                      },
+                                      "siguienteId": 44
+                                    },
+                                    "siguienteId": 43
+                                  },
+                                  "siguienteId": 42
+                                },
+                                "siguienteId": 41
+                              },
+                              "siguienteId": 40
+                            },
+                            "siguienteId": 39
                           },
                           "siguienteId": 38
                         },
@@ -1507,7 +1136,47 @@
                         "siguienteBloque": {
                           "id": 38,
                           "ocupado": true,
-                          "siguienteId": 0
+                          "siguienteBloque": {
+                            "id": 39,
+                            "ocupado": true,
+                            "siguienteBloque": {
+                              "id": 40,
+                              "ocupado": true,
+                              "siguienteBloque": {
+                                "id": 41,
+                                "ocupado": true,
+                                "siguienteBloque": {
+                                  "id": 42,
+                                  "ocupado": true,
+                                  "siguienteBloque": {
+                                    "id": 43,
+                                    "ocupado": true,
+                                    "siguienteBloque": {
+                                      "id": 44,
+                                      "ocupado": true,
+                                      "siguienteBloque": {
+                                        "id": 45,
+                                        "ocupado": true,
+                                        "siguienteBloque": {
+                                          "id": 46,
+                                          "ocupado": true,
+                                          "siguienteId": 0
+                                        },
+                                        "siguienteId": 46
+                                      },
+                                      "siguienteId": 45
+                                    },
+                                    "siguienteId": 44
+                                  },
+                                  "siguienteId": 43
+                                },
+                                "siguienteId": 42
+                              },
+                              "siguienteId": 41
+                            },
+                            "siguienteId": 40
+                          },
+                          "siguienteId": 39
                         },
                         "siguienteId": 38
                       },
@@ -1522,7 +1191,47 @@
                       "siguienteBloque": {
                         "id": 38,
                         "ocupado": true,
-                        "siguienteId": 0
+                        "siguienteBloque": {
+                          "id": 39,
+                          "ocupado": true,
+                          "siguienteBloque": {
+                            "id": 40,
+                            "ocupado": true,
+                            "siguienteBloque": {
+                              "id": 41,
+                              "ocupado": true,
+                              "siguienteBloque": {
+                                "id": 42,
+                                "ocupado": true,
+                                "siguienteBloque": {
+                                  "id": 43,
+                                  "ocupado": true,
+                                  "siguienteBloque": {
+                                    "id": 44,
+                                    "ocupado": true,
+                                    "siguienteBloque": {
+                                      "id": 45,
+                                      "ocupado": true,
+                                      "siguienteBloque": {
+                                        "id": 46,
+                                        "ocupado": true,
+                                        "siguienteId": 0
+                                      },
+                                      "siguienteId": 46
+                                    },
+                                    "siguienteId": 45
+                                  },
+                                  "siguienteId": 44
+                                },
+                                "siguienteId": 43
+                              },
+                              "siguienteId": 42
+                            },
+                            "siguienteId": 41
+                          },
+                          "siguienteId": 40
+                        },
+                        "siguienteId": 39
                       },
                       "siguienteId": 38
                     }
@@ -1532,19 +1241,49 @@
                     "data": {
                       "id": 38,
                       "ocupado": true,
-                      "siguienteId": 0
+                      "siguienteBloque": {
+                        "id": 39,
+                        "ocupado": true,
+                        "siguienteBloque": {
+                          "id": 40,
+                          "ocupado": true,
+                          "siguienteBloque": {
+                            "id": 41,
+                            "ocupado": true,
+                            "siguienteBloque": {
+                              "id": 42,
+                              "ocupado": true,
+                              "siguienteBloque": {
+                                "id": 43,
+                                "ocupado": true,
+                                "siguienteBloque": {
+                                  "id": 44,
+                                  "ocupado": true,
+                                  "siguienteBloque": {
+                                    "id": 45,
+                                    "ocupado": true,
+                                    "siguienteBloque": {
+                                      "id": 46,
+                                      "ocupado": true,
+                                      "siguienteId": 0
+                                    },
+                                    "siguienteId": 46
+                                  },
+                                  "siguienteId": 45
+                                },
+                                "siguienteId": 44
+                              },
+                              "siguienteId": 43
+                            },
+                            "siguienteId": 42
+                          },
+                          "siguienteId": 41
+                        },
+                        "siguienteId": 40
+                      },
+                      "siguienteId": 39
                     }
-                  }
-                ]
-              }
-            },
-            {
-              "__type": "Clases.Archivo",
-              "data": {
-                "nombre": "Archivo_115",
-                "tamañoBloques": 8,
-                "fechaCreacion": "2025-03-17T19:37:54.4584991",
-                "bloquesAsignados": [
+                  },
                   {
                     "__type": "Clases.Bloque",
                     "data": {
@@ -1758,15 +1497,15 @@
       {
         "__type": "Clases.Directorio",
         "data": {
-          "nombre": "Directorio_3",
+          "nombre": "Directorio_4",
           "subdirectorios": [],
           "archivos": [
             {
               "__type": "Clases.Archivo",
               "data": {
-                "nombre": "Archivo_164",
-                "tamañoBloques": 3,
-                "fechaCreacion": "2025-03-17T19:37:54.4584991",
+                "nombre": "Archivo_542",
+                "tamañoBloques": 8,
+                "fechaCreacion": "2025-03-20T16:32:27.3775705",
                 "bloquesAsignados": [
                   {
                     "__type": "Clases.Bloque",
@@ -1779,7 +1518,32 @@
                         "siguienteBloque": {
                           "id": 49,
                           "ocupado": true,
-                          "siguienteId": 0
+                          "siguienteBloque": {
+                            "id": 50,
+                            "ocupado": true,
+                            "siguienteBloque": {
+                              "id": 51,
+                              "ocupado": true,
+                              "siguienteBloque": {
+                                "id": 52,
+                                "ocupado": true,
+                                "siguienteBloque": {
+                                  "id": 53,
+                                  "ocupado": true,
+                                  "siguienteBloque": {
+                                    "id": 54,
+                                    "ocupado": true,
+                                    "siguienteId": 0
+                                  },
+                                  "siguienteId": 54
+                                },
+                                "siguienteId": 53
+                              },
+                              "siguienteId": 52
+                            },
+                            "siguienteId": 51
+                          },
+                          "siguienteId": 50
                         },
                         "siguienteId": 49
                       },
@@ -1794,7 +1558,32 @@
                       "siguienteBloque": {
                         "id": 49,
                         "ocupado": true,
-                        "siguienteId": 0
+                        "siguienteBloque": {
+                          "id": 50,
+                          "ocupado": true,
+                          "siguienteBloque": {
+                            "id": 51,
+                            "ocupado": true,
+                            "siguienteBloque": {
+                              "id": 52,
+                              "ocupado": true,
+                              "siguienteBloque": {
+                                "id": 53,
+                                "ocupado": true,
+                                "siguienteBloque": {
+                                  "id": 54,
+                                  "ocupado": true,
+                                  "siguienteId": 0
+                                },
+                                "siguienteId": 54
+                              },
+                              "siguienteId": 53
+                            },
+                            "siguienteId": 52
+                          },
+                          "siguienteId": 51
+                        },
+                        "siguienteId": 50
                       },
                       "siguienteId": 49
                     }
@@ -1804,19 +1593,34 @@
                     "data": {
                       "id": 49,
                       "ocupado": true,
-                      "siguienteId": 0
+                      "siguienteBloque": {
+                        "id": 50,
+                        "ocupado": true,
+                        "siguienteBloque": {
+                          "id": 51,
+                          "ocupado": true,
+                          "siguienteBloque": {
+                            "id": 52,
+                            "ocupado": true,
+                            "siguienteBloque": {
+                              "id": 53,
+                              "ocupado": true,
+                              "siguienteBloque": {
+                                "id": 54,
+                                "ocupado": true,
+                                "siguienteId": 0
+                              },
+                              "siguienteId": 54
+                            },
+                            "siguienteId": 53
+                          },
+                          "siguienteId": 52
+                        },
+                        "siguienteId": 51
+                      },
+                      "siguienteId": 50
                     }
-                  }
-                ]
-              }
-            },
-            {
-              "__type": "Clases.Archivo",
-              "data": {
-                "nombre": "Archivo_164",
-                "tamañoBloques": 4,
-                "fechaCreacion": "2025-03-17T19:37:54.4584991",
-                "bloquesAsignados": [
+                  },
                   {
                     "__type": "Clases.Bloque",
                     "data": {
@@ -1831,7 +1635,12 @@
                           "siguienteBloque": {
                             "id": 53,
                             "ocupado": true,
-                            "siguienteId": 0
+                            "siguienteBloque": {
+                              "id": 54,
+                              "ocupado": true,
+                              "siguienteId": 0
+                            },
+                            "siguienteId": 54
                           },
                           "siguienteId": 53
                         },
@@ -1851,7 +1660,12 @@
                         "siguienteBloque": {
                           "id": 53,
                           "ocupado": true,
-                          "siguienteId": 0
+                          "siguienteBloque": {
+                            "id": 54,
+                            "ocupado": true,
+                            "siguienteId": 0
+                          },
+                          "siguienteId": 54
                         },
                         "siguienteId": 53
                       },
@@ -1866,7 +1680,12 @@
                       "siguienteBloque": {
                         "id": 53,
                         "ocupado": true,
-                        "siguienteId": 0
+                        "siguienteBloque": {
+                          "id": 54,
+                          "ocupado": true,
+                          "siguienteId": 0
+                        },
+                        "siguienteId": 54
                       },
                       "siguienteId": 53
                     }
@@ -1876,56 +1695,32 @@
                     "data": {
                       "id": 53,
                       "ocupado": true,
-                      "siguienteId": 0
+                      "siguienteBloque": {
+                        "id": 54,
+                        "ocupado": true,
+                        "siguienteId": 0
+                      },
+                      "siguienteId": 54
                     }
-                  }
-                ]
-              }
-            }
-          ]
-        }
-      },
-      {
-        "__type": "Clases.Directorio",
-        "data": {
-          "nombre": "Directorio_4",
-          "subdirectorios": [],
-          "archivos": [
-            {
-              "__type": "Clases.Archivo",
-              "data": {
-                "nombre": "Archivo_127",
-                "tamañoBloques": 5,
-                "fechaCreacion": "2025-03-17T19:37:54.4584991",
-                "bloquesAsignados": [
+                  },
                   {
                     "__type": "Clases.Bloque",
                     "data": {
                       "id": 54,
                       "ocupado": true,
-                      "siguienteBloque": {
-                        "id": 55,
-                        "ocupado": true,
-                        "siguienteBloque": {
-                          "id": 56,
-                          "ocupado": true,
-                          "siguienteBloque": {
-                            "id": 57,
-                            "ocupado": true,
-                            "siguienteBloque": {
-                              "id": 58,
-                              "ocupado": true,
-                              "siguienteId": 0
-                            },
-                            "siguienteId": 58
-                          },
-                          "siguienteId": 57
-                        },
-                        "siguienteId": 56
-                      },
-                      "siguienteId": 55
+                      "siguienteId": 0
                     }
-                  },
+                  }
+                ]
+              }
+            },
+            {
+              "__type": "Clases.Archivo",
+              "data": {
+                "nombre": "Archivo_305",
+                "tamañoBloques": 15,
+                "fechaCreacion": "2025-03-20T16:32:27.3775705",
+                "bloquesAsignados": [
                   {
                     "__type": "Clases.Bloque",
                     "data": {
@@ -1940,7 +1735,62 @@
                           "siguienteBloque": {
                             "id": 58,
                             "ocupado": true,
-                            "siguienteId": 0
+                            "siguienteBloque": {
+                              "id": 59,
+                              "ocupado": true,
+                              "siguienteBloque": {
+                                "id": 60,
+                                "ocupado": true,
+                                "siguienteBloque": {
+                                  "id": 61,
+                                  "ocupado": true,
+                                  "siguienteBloque": {
+                                    "id": 62,
+                                    "ocupado": true,
+                                    "siguienteBloque": {
+                                      "id": 63,
+                                      "ocupado": true,
+                                      "siguienteBloque": {
+                                        "id": 64,
+                                        "ocupado": true,
+                                        "siguienteBloque": {
+                                          "id": 65,
+                                          "ocupado": true,
+                                          "siguienteBloque": {
+                                            "id": 66,
+                                            "ocupado": true,
+                                            "siguienteBloque": {
+                                              "id": 67,
+                                              "ocupado": true,
+                                              "siguienteBloque": {
+                                                "id": 68,
+                                                "ocupado": true,
+                                                "siguienteBloque": {
+                                                  "id": 69,
+                                                  "ocupado": true,
+                                                  "siguienteId": 0
+                                                },
+                                                "siguienteId": 69
+                                              },
+                                              "siguienteId": 68
+                                            },
+                                            "siguienteId": 67
+                                          },
+                                          "siguienteId": 66
+                                        },
+                                        "siguienteId": 65
+                                      },
+                                      "siguienteId": 64
+                                    },
+                                    "siguienteId": 63
+                                  },
+                                  "siguienteId": 62
+                                },
+                                "siguienteId": 61
+                              },
+                              "siguienteId": 60
+                            },
+                            "siguienteId": 59
                           },
                           "siguienteId": 58
                         },
@@ -1960,7 +1810,62 @@
                         "siguienteBloque": {
                           "id": 58,
                           "ocupado": true,
-                          "siguienteId": 0
+                          "siguienteBloque": {
+                            "id": 59,
+                            "ocupado": true,
+                            "siguienteBloque": {
+                              "id": 60,
+                              "ocupado": true,
+                              "siguienteBloque": {
+                                "id": 61,
+                                "ocupado": true,
+                                "siguienteBloque": {
+                                  "id": 62,
+                                  "ocupado": true,
+                                  "siguienteBloque": {
+                                    "id": 63,
+                                    "ocupado": true,
+                                    "siguienteBloque": {
+                                      "id": 64,
+                                      "ocupado": true,
+                                      "siguienteBloque": {
+                                        "id": 65,
+                                        "ocupado": true,
+                                        "siguienteBloque": {
+                                          "id": 66,
+                                          "ocupado": true,
+                                          "siguienteBloque": {
+                                            "id": 67,
+                                            "ocupado": true,
+                                            "siguienteBloque": {
+                                              "id": 68,
+                                              "ocupado": true,
+                                              "siguienteBloque": {
+                                                "id": 69,
+                                                "ocupado": true,
+                                                "siguienteId": 0
+                                              },
+                                              "siguienteId": 69
+                                            },
+                                            "siguienteId": 68
+                                          },
+                                          "siguienteId": 67
+                                        },
+                                        "siguienteId": 66
+                                      },
+                                      "siguienteId": 65
+                                    },
+                                    "siguienteId": 64
+                                  },
+                                  "siguienteId": 63
+                                },
+                                "siguienteId": 62
+                              },
+                              "siguienteId": 61
+                            },
+                            "siguienteId": 60
+                          },
+                          "siguienteId": 59
                         },
                         "siguienteId": 58
                       },
@@ -1975,7 +1880,62 @@
                       "siguienteBloque": {
                         "id": 58,
                         "ocupado": true,
-                        "siguienteId": 0
+                        "siguienteBloque": {
+                          "id": 59,
+                          "ocupado": true,
+                          "siguienteBloque": {
+                            "id": 60,
+                            "ocupado": true,
+                            "siguienteBloque": {
+                              "id": 61,
+                              "ocupado": true,
+                              "siguienteBloque": {
+                                "id": 62,
+                                "ocupado": true,
+                                "siguienteBloque": {
+                                  "id": 63,
+                                  "ocupado": true,
+                                  "siguienteBloque": {
+                                    "id": 64,
+                                    "ocupado": true,
+                                    "siguienteBloque": {
+                                      "id": 65,
+                                      "ocupado": true,
+                                      "siguienteBloque": {
+                                        "id": 66,
+                                        "ocupado": true,
+                                        "siguienteBloque": {
+                                          "id": 67,
+                                          "ocupado": true,
+                                          "siguienteBloque": {
+                                            "id": 68,
+                                            "ocupado": true,
+                                            "siguienteBloque": {
+                                              "id": 69,
+                                              "ocupado": true,
+                                              "siguienteId": 0
+                                            },
+                                            "siguienteId": 69
+                                          },
+                                          "siguienteId": 68
+                                        },
+                                        "siguienteId": 67
+                                      },
+                                      "siguienteId": 66
+                                    },
+                                    "siguienteId": 65
+                                  },
+                                  "siguienteId": 64
+                                },
+                                "siguienteId": 63
+                              },
+                              "siguienteId": 62
+                            },
+                            "siguienteId": 61
+                          },
+                          "siguienteId": 60
+                        },
+                        "siguienteId": 59
                       },
                       "siguienteId": 58
                     }
@@ -1985,19 +1945,64 @@
                     "data": {
                       "id": 58,
                       "ocupado": true,
-                      "siguienteId": 0
+                      "siguienteBloque": {
+                        "id": 59,
+                        "ocupado": true,
+                        "siguienteBloque": {
+                          "id": 60,
+                          "ocupado": true,
+                          "siguienteBloque": {
+                            "id": 61,
+                            "ocupado": true,
+                            "siguienteBloque": {
+                              "id": 62,
+                              "ocupado": true,
+                              "siguienteBloque": {
+                                "id": 63,
+                                "ocupado": true,
+                                "siguienteBloque": {
+                                  "id": 64,
+                                  "ocupado": true,
+                                  "siguienteBloque": {
+                                    "id": 65,
+                                    "ocupado": true,
+                                    "siguienteBloque": {
+                                      "id": 66,
+                                      "ocupado": true,
+                                      "siguienteBloque": {
+                                        "id": 67,
+                                        "ocupado": true,
+                                        "siguienteBloque": {
+                                          "id": 68,
+                                          "ocupado": true,
+                                          "siguienteBloque": {
+                                            "id": 69,
+                                            "ocupado": true,
+                                            "siguienteId": 0
+                                          },
+                                          "siguienteId": 69
+                                        },
+                                        "siguienteId": 68
+                                      },
+                                      "siguienteId": 67
+                                    },
+                                    "siguienteId": 66
+                                  },
+                                  "siguienteId": 65
+                                },
+                                "siguienteId": 64
+                              },
+                              "siguienteId": 63
+                            },
+                            "siguienteId": 62
+                          },
+                          "siguienteId": 61
+                        },
+                        "siguienteId": 60
+                      },
+                      "siguienteId": 59
                     }
-                  }
-                ]
-              }
-            },
-            {
-              "__type": "Clases.Archivo",
-              "data": {
-                "nombre": "Archivo_675",
-                "tamañoBloques": 13,
-                "fechaCreacion": "2025-03-17T19:37:54.4584991",
-                "bloquesAsignados": [
+                  },
                   {
                     "__type": "Clases.Bloque",
                     "data": {
@@ -2033,17 +2038,7 @@
                                         "siguienteBloque": {
                                           "id": 69,
                                           "ocupado": true,
-                                          "siguienteBloque": {
-                                            "id": 70,
-                                            "ocupado": true,
-                                            "siguienteBloque": {
-                                              "id": 71,
-                                              "ocupado": true,
-                                              "siguienteId": 0
-                                            },
-                                            "siguienteId": 71
-                                          },
-                                          "siguienteId": 70
+                                          "siguienteId": 0
                                         },
                                         "siguienteId": 69
                                       },
@@ -2098,17 +2093,7 @@
                                       "siguienteBloque": {
                                         "id": 69,
                                         "ocupado": true,
-                                        "siguienteBloque": {
-                                          "id": 70,
-                                          "ocupado": true,
-                                          "siguienteBloque": {
-                                            "id": 71,
-                                            "ocupado": true,
-                                            "siguienteId": 0
-                                          },
-                                          "siguienteId": 71
-                                        },
-                                        "siguienteId": 70
+                                        "siguienteId": 0
                                       },
                                       "siguienteId": 69
                                     },
@@ -2158,17 +2143,7 @@
                                     "siguienteBloque": {
                                       "id": 69,
                                       "ocupado": true,
-                                      "siguienteBloque": {
-                                        "id": 70,
-                                        "ocupado": true,
-                                        "siguienteBloque": {
-                                          "id": 71,
-                                          "ocupado": true,
-                                          "siguienteId": 0
-                                        },
-                                        "siguienteId": 71
-                                      },
-                                      "siguienteId": 70
+                                      "siguienteId": 0
                                     },
                                     "siguienteId": 69
                                   },
@@ -2213,17 +2188,7 @@
                                   "siguienteBloque": {
                                     "id": 69,
                                     "ocupado": true,
-                                    "siguienteBloque": {
-                                      "id": 70,
-                                      "ocupado": true,
-                                      "siguienteBloque": {
-                                        "id": 71,
-                                        "ocupado": true,
-                                        "siguienteId": 0
-                                      },
-                                      "siguienteId": 71
-                                    },
-                                    "siguienteId": 70
+                                    "siguienteId": 0
                                   },
                                   "siguienteId": 69
                                 },
@@ -2263,17 +2228,7 @@
                                 "siguienteBloque": {
                                   "id": 69,
                                   "ocupado": true,
-                                  "siguienteBloque": {
-                                    "id": 70,
-                                    "ocupado": true,
-                                    "siguienteBloque": {
-                                      "id": 71,
-                                      "ocupado": true,
-                                      "siguienteId": 0
-                                    },
-                                    "siguienteId": 71
-                                  },
-                                  "siguienteId": 70
+                                  "siguienteId": 0
                                 },
                                 "siguienteId": 69
                               },
@@ -2308,17 +2263,7 @@
                               "siguienteBloque": {
                                 "id": 69,
                                 "ocupado": true,
-                                "siguienteBloque": {
-                                  "id": 70,
-                                  "ocupado": true,
-                                  "siguienteBloque": {
-                                    "id": 71,
-                                    "ocupado": true,
-                                    "siguienteId": 0
-                                  },
-                                  "siguienteId": 71
-                                },
-                                "siguienteId": 70
+                                "siguienteId": 0
                               },
                               "siguienteId": 69
                             },
@@ -2348,17 +2293,7 @@
                             "siguienteBloque": {
                               "id": 69,
                               "ocupado": true,
-                              "siguienteBloque": {
-                                "id": 70,
-                                "ocupado": true,
-                                "siguienteBloque": {
-                                  "id": 71,
-                                  "ocupado": true,
-                                  "siguienteId": 0
-                                },
-                                "siguienteId": 71
-                              },
-                              "siguienteId": 70
+                              "siguienteId": 0
                             },
                             "siguienteId": 69
                           },
@@ -2383,17 +2318,7 @@
                           "siguienteBloque": {
                             "id": 69,
                             "ocupado": true,
-                            "siguienteBloque": {
-                              "id": 70,
-                              "ocupado": true,
-                              "siguienteBloque": {
-                                "id": 71,
-                                "ocupado": true,
-                                "siguienteId": 0
-                              },
-                              "siguienteId": 71
-                            },
-                            "siguienteId": 70
+                            "siguienteId": 0
                           },
                           "siguienteId": 69
                         },
@@ -2413,17 +2338,7 @@
                         "siguienteBloque": {
                           "id": 69,
                           "ocupado": true,
-                          "siguienteBloque": {
-                            "id": 70,
-                            "ocupado": true,
-                            "siguienteBloque": {
-                              "id": 71,
-                              "ocupado": true,
-                              "siguienteId": 0
-                            },
-                            "siguienteId": 71
-                          },
-                          "siguienteId": 70
+                          "siguienteId": 0
                         },
                         "siguienteId": 69
                       },
@@ -2438,17 +2353,7 @@
                       "siguienteBloque": {
                         "id": 69,
                         "ocupado": true,
-                        "siguienteBloque": {
-                          "id": 70,
-                          "ocupado": true,
-                          "siguienteBloque": {
-                            "id": 71,
-                            "ocupado": true,
-                            "siguienteId": 0
-                          },
-                          "siguienteId": 71
-                        },
-                        "siguienteId": 70
+                        "siguienteId": 0
                       },
                       "siguienteId": 69
                     }
@@ -2457,37 +2362,6 @@
                     "__type": "Clases.Bloque",
                     "data": {
                       "id": 69,
-                      "ocupado": true,
-                      "siguienteBloque": {
-                        "id": 70,
-                        "ocupado": true,
-                        "siguienteBloque": {
-                          "id": 71,
-                          "ocupado": true,
-                          "siguienteId": 0
-                        },
-                        "siguienteId": 71
-                      },
-                      "siguienteId": 70
-                    }
-                  },
-                  {
-                    "__type": "Clases.Bloque",
-                    "data": {
-                      "id": 70,
-                      "ocupado": true,
-                      "siguienteBloque": {
-                        "id": 71,
-                        "ocupado": true,
-                        "siguienteId": 0
-                      },
-                      "siguienteId": 71
-                    }
-                  },
-                  {
-                    "__type": "Clases.Bloque",
-                    "data": {
-                      "id": 71,
                       "ocupado": true,
                       "siguienteId": 0
                     }
@@ -2507,10 +2381,66 @@
             {
               "__type": "Clases.Archivo",
               "data": {
-                "nombre": "Archivo_54",
-                "tamañoBloques": 8,
-                "fechaCreacion": "2025-03-17T19:37:54.4584991",
+                "nombre": "Archivo_302",
+                "tamañoBloques": 1,
+                "fechaCreacion": "2025-03-20T16:32:27.3775705",
                 "bloquesAsignados": [
+                  {
+                    "__type": "Clases.Bloque",
+                    "data": {
+                      "id": 70,
+                      "ocupado": true,
+                      "siguienteId": 0
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "__type": "Clases.Archivo",
+              "data": {
+                "nombre": "Archivo_150",
+                "tamañoBloques": 7,
+                "fechaCreacion": "2025-03-20T16:32:27.3775705",
+                "bloquesAsignados": [
+                  {
+                    "__type": "Clases.Bloque",
+                    "data": {
+                      "id": 71,
+                      "ocupado": true,
+                      "siguienteBloque": {
+                        "id": 72,
+                        "ocupado": true,
+                        "siguienteBloque": {
+                          "id": 73,
+                          "ocupado": true,
+                          "siguienteBloque": {
+                            "id": 74,
+                            "ocupado": true,
+                            "siguienteBloque": {
+                              "id": 75,
+                              "ocupado": true,
+                              "siguienteBloque": {
+                                "id": 76,
+                                "ocupado": true,
+                                "siguienteBloque": {
+                                  "id": 77,
+                                  "ocupado": true,
+                                  "siguienteId": 0
+                                },
+                                "siguienteId": 77
+                              },
+                              "siguienteId": 76
+                            },
+                            "siguienteId": 75
+                          },
+                          "siguienteId": 74
+                        },
+                        "siguienteId": 73
+                      },
+                      "siguienteId": 72
+                    }
+                  },
                   {
                     "__type": "Clases.Bloque",
                     "data": {
@@ -2531,17 +2461,7 @@
                               "siguienteBloque": {
                                 "id": 77,
                                 "ocupado": true,
-                                "siguienteBloque": {
-                                  "id": 78,
-                                  "ocupado": true,
-                                  "siguienteBloque": {
-                                    "id": 79,
-                                    "ocupado": true,
-                                    "siguienteId": 0
-                                  },
-                                  "siguienteId": 79
-                                },
-                                "siguienteId": 78
+                                "siguienteId": 0
                               },
                               "siguienteId": 77
                             },
@@ -2571,17 +2491,7 @@
                             "siguienteBloque": {
                               "id": 77,
                               "ocupado": true,
-                              "siguienteBloque": {
-                                "id": 78,
-                                "ocupado": true,
-                                "siguienteBloque": {
-                                  "id": 79,
-                                  "ocupado": true,
-                                  "siguienteId": 0
-                                },
-                                "siguienteId": 79
-                              },
-                              "siguienteId": 78
+                              "siguienteId": 0
                             },
                             "siguienteId": 77
                           },
@@ -2606,17 +2516,7 @@
                           "siguienteBloque": {
                             "id": 77,
                             "ocupado": true,
-                            "siguienteBloque": {
-                              "id": 78,
-                              "ocupado": true,
-                              "siguienteBloque": {
-                                "id": 79,
-                                "ocupado": true,
-                                "siguienteId": 0
-                              },
-                              "siguienteId": 79
-                            },
-                            "siguienteId": 78
+                            "siguienteId": 0
                           },
                           "siguienteId": 77
                         },
@@ -2636,17 +2536,7 @@
                         "siguienteBloque": {
                           "id": 77,
                           "ocupado": true,
-                          "siguienteBloque": {
-                            "id": 78,
-                            "ocupado": true,
-                            "siguienteBloque": {
-                              "id": 79,
-                              "ocupado": true,
-                              "siguienteId": 0
-                            },
-                            "siguienteId": 79
-                          },
-                          "siguienteId": 78
+                          "siguienteId": 0
                         },
                         "siguienteId": 77
                       },
@@ -2661,17 +2551,7 @@
                       "siguienteBloque": {
                         "id": 77,
                         "ocupado": true,
-                        "siguienteBloque": {
-                          "id": 78,
-                          "ocupado": true,
-                          "siguienteBloque": {
-                            "id": 79,
-                            "ocupado": true,
-                            "siguienteId": 0
-                          },
-                          "siguienteId": 79
-                        },
-                        "siguienteId": 78
+                        "siguienteId": 0
                       },
                       "siguienteId": 77
                     }
@@ -2680,208 +2560,6 @@
                     "__type": "Clases.Bloque",
                     "data": {
                       "id": 77,
-                      "ocupado": true,
-                      "siguienteBloque": {
-                        "id": 78,
-                        "ocupado": true,
-                        "siguienteBloque": {
-                          "id": 79,
-                          "ocupado": true,
-                          "siguienteId": 0
-                        },
-                        "siguienteId": 79
-                      },
-                      "siguienteId": 78
-                    }
-                  },
-                  {
-                    "__type": "Clases.Bloque",
-                    "data": {
-                      "id": 78,
-                      "ocupado": true,
-                      "siguienteBloque": {
-                        "id": 79,
-                        "ocupado": true,
-                        "siguienteId": 0
-                      },
-                      "siguienteId": 79
-                    }
-                  },
-                  {
-                    "__type": "Clases.Bloque",
-                    "data": {
-                      "id": 79,
-                      "ocupado": true,
-                      "siguienteId": 0
-                    }
-                  }
-                ]
-              }
-            },
-            {
-              "__type": "Clases.Archivo",
-              "data": {
-                "nombre": "Archivo_623",
-                "tamañoBloques": 7,
-                "fechaCreacion": "2025-03-17T19:37:54.4584991",
-                "bloquesAsignados": [
-                  {
-                    "__type": "Clases.Bloque",
-                    "data": {
-                      "id": 80,
-                      "ocupado": true,
-                      "siguienteBloque": {
-                        "id": 81,
-                        "ocupado": true,
-                        "siguienteBloque": {
-                          "id": 82,
-                          "ocupado": true,
-                          "siguienteBloque": {
-                            "id": 83,
-                            "ocupado": true,
-                            "siguienteBloque": {
-                              "id": 84,
-                              "ocupado": true,
-                              "siguienteBloque": {
-                                "id": 85,
-                                "ocupado": true,
-                                "siguienteBloque": {
-                                  "id": 86,
-                                  "ocupado": true,
-                                  "siguienteId": 0
-                                },
-                                "siguienteId": 86
-                              },
-                              "siguienteId": 85
-                            },
-                            "siguienteId": 84
-                          },
-                          "siguienteId": 83
-                        },
-                        "siguienteId": 82
-                      },
-                      "siguienteId": 81
-                    }
-                  },
-                  {
-                    "__type": "Clases.Bloque",
-                    "data": {
-                      "id": 81,
-                      "ocupado": true,
-                      "siguienteBloque": {
-                        "id": 82,
-                        "ocupado": true,
-                        "siguienteBloque": {
-                          "id": 83,
-                          "ocupado": true,
-                          "siguienteBloque": {
-                            "id": 84,
-                            "ocupado": true,
-                            "siguienteBloque": {
-                              "id": 85,
-                              "ocupado": true,
-                              "siguienteBloque": {
-                                "id": 86,
-                                "ocupado": true,
-                                "siguienteId": 0
-                              },
-                              "siguienteId": 86
-                            },
-                            "siguienteId": 85
-                          },
-                          "siguienteId": 84
-                        },
-                        "siguienteId": 83
-                      },
-                      "siguienteId": 82
-                    }
-                  },
-                  {
-                    "__type": "Clases.Bloque",
-                    "data": {
-                      "id": 82,
-                      "ocupado": true,
-                      "siguienteBloque": {
-                        "id": 83,
-                        "ocupado": true,
-                        "siguienteBloque": {
-                          "id": 84,
-                          "ocupado": true,
-                          "siguienteBloque": {
-                            "id": 85,
-                            "ocupado": true,
-                            "siguienteBloque": {
-                              "id": 86,
-                              "ocupado": true,
-                              "siguienteId": 0
-                            },
-                            "siguienteId": 86
-                          },
-                          "siguienteId": 85
-                        },
-                        "siguienteId": 84
-                      },
-                      "siguienteId": 83
-                    }
-                  },
-                  {
-                    "__type": "Clases.Bloque",
-                    "data": {
-                      "id": 83,
-                      "ocupado": true,
-                      "siguienteBloque": {
-                        "id": 84,
-                        "ocupado": true,
-                        "siguienteBloque": {
-                          "id": 85,
-                          "ocupado": true,
-                          "siguienteBloque": {
-                            "id": 86,
-                            "ocupado": true,
-                            "siguienteId": 0
-                          },
-                          "siguienteId": 86
-                        },
-                        "siguienteId": 85
-                      },
-                      "siguienteId": 84
-                    }
-                  },
-                  {
-                    "__type": "Clases.Bloque",
-                    "data": {
-                      "id": 84,
-                      "ocupado": true,
-                      "siguienteBloque": {
-                        "id": 85,
-                        "ocupado": true,
-                        "siguienteBloque": {
-                          "id": 86,
-                          "ocupado": true,
-                          "siguienteId": 0
-                        },
-                        "siguienteId": 86
-                      },
-                      "siguienteId": 85
-                    }
-                  },
-                  {
-                    "__type": "Clases.Bloque",
-                    "data": {
-                      "id": 85,
-                      "ocupado": true,
-                      "siguienteBloque": {
-                        "id": 86,
-                        "ocupado": true,
-                        "siguienteId": 0
-                      },
-                      "siguienteId": 86
-                    }
-                  },
-                  {
-                    "__type": "Clases.Bloque",
-                    "data": {
-                      "id": 86,
                       "ocupado": true,
                       "siguienteId": 0
                     }
@@ -2897,6 +2575,78 @@
   },
   "memoryManager": {
     "bloquesLibres": [
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 78,
+          "ocupado": false,
+          "siguienteId": 0
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 79,
+          "ocupado": false,
+          "siguienteId": 0
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 80,
+          "ocupado": false,
+          "siguienteId": 0
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 81,
+          "ocupado": false,
+          "siguienteId": 0
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 82,
+          "ocupado": false,
+          "siguienteId": 0
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 83,
+          "ocupado": false,
+          "siguienteId": 0
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 84,
+          "ocupado": false,
+          "siguienteId": 0
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 85,
+          "ocupado": false,
+          "siguienteId": 0
+        }
+      },
+      {
+        "__type": "Clases.Bloque",
+        "data": {
+          "id": 86,
+          "ocupado": false,
+          "siguienteId": 0
+        }
+      },
       {
         "__type": "Clases.Bloque",
         "data": {
@@ -3037,12 +2787,7 @@
                       "siguienteBloque": {
                         "id": 8,
                         "ocupado": true,
-                        "siguienteBloque": {
-                          "id": 9,
-                          "ocupado": true,
-                          "siguienteId": 0
-                        },
-                        "siguienteId": 9
+                        "siguienteId": 0
                       },
                       "siguienteId": 8
                     },
@@ -3082,12 +2827,7 @@
                     "siguienteBloque": {
                       "id": 8,
                       "ocupado": true,
-                      "siguienteBloque": {
-                        "id": 9,
-                        "ocupado": true,
-                        "siguienteId": 0
-                      },
-                      "siguienteId": 9
+                      "siguienteId": 0
                     },
                     "siguienteId": 8
                   },
@@ -3122,12 +2862,7 @@
                   "siguienteBloque": {
                     "id": 8,
                     "ocupado": true,
-                    "siguienteBloque": {
-                      "id": 9,
-                      "ocupado": true,
-                      "siguienteId": 0
-                    },
-                    "siguienteId": 9
+                    "siguienteId": 0
                   },
                   "siguienteId": 8
                 },
@@ -3157,12 +2892,7 @@
                 "siguienteBloque": {
                   "id": 8,
                   "ocupado": true,
-                  "siguienteBloque": {
-                    "id": 9,
-                    "ocupado": true,
-                    "siguienteId": 0
-                  },
-                  "siguienteId": 9
+                  "siguienteId": 0
                 },
                 "siguienteId": 8
               },
@@ -3187,12 +2917,7 @@
               "siguienteBloque": {
                 "id": 8,
                 "ocupado": true,
-                "siguienteBloque": {
-                  "id": 9,
-                  "ocupado": true,
-                  "siguienteId": 0
-                },
-                "siguienteId": 9
+                "siguienteId": 0
               },
               "siguienteId": 8
             },
@@ -3212,12 +2937,7 @@
             "siguienteBloque": {
               "id": 8,
               "ocupado": true,
-              "siguienteBloque": {
-                "id": 9,
-                "ocupado": true,
-                "siguienteId": 0
-              },
-              "siguienteId": 9
+              "siguienteId": 0
             },
             "siguienteId": 8
           },
@@ -3232,12 +2952,7 @@
           "siguienteBloque": {
             "id": 8,
             "ocupado": true,
-            "siguienteBloque": {
-              "id": 9,
-              "ocupado": true,
-              "siguienteId": 0
-            },
-            "siguienteId": 9
+            "siguienteId": 0
           },
           "siguienteId": 8
         }
@@ -3247,12 +2962,7 @@
         "data": {
           "id": 8,
           "ocupado": true,
-          "siguienteBloque": {
-            "id": 9,
-            "ocupado": true,
-            "siguienteId": 0
-          },
-          "siguienteId": 9
+          "siguienteId": 0
         }
       },
       {
@@ -3260,7 +2970,32 @@
         "data": {
           "id": 9,
           "ocupado": true,
-          "siguienteId": 0
+          "siguienteBloque": {
+            "id": 10,
+            "ocupado": true,
+            "siguienteBloque": {
+              "id": 11,
+              "ocupado": true,
+              "siguienteBloque": {
+                "id": 12,
+                "ocupado": true,
+                "siguienteBloque": {
+                  "id": 13,
+                  "ocupado": true,
+                  "siguienteBloque": {
+                    "id": 14,
+                    "ocupado": true,
+                    "siguienteId": 0
+                  },
+                  "siguienteId": 14
+                },
+                "siguienteId": 13
+              },
+              "siguienteId": 12
+            },
+            "siguienteId": 11
+          },
+          "siguienteId": 10
         }
       },
       {
@@ -3280,52 +3015,7 @@
                 "siguienteBloque": {
                   "id": 14,
                   "ocupado": true,
-                  "siguienteBloque": {
-                    "id": 15,
-                    "ocupado": true,
-                    "siguienteBloque": {
-                      "id": 16,
-                      "ocupado": true,
-                      "siguienteBloque": {
-                        "id": 17,
-                        "ocupado": true,
-                        "siguienteBloque": {
-                          "id": 18,
-                          "ocupado": true,
-                          "siguienteBloque": {
-                            "id": 19,
-                            "ocupado": true,
-                            "siguienteBloque": {
-                              "id": 20,
-                              "ocupado": true,
-                              "siguienteBloque": {
-                                "id": 21,
-                                "ocupado": true,
-                                "siguienteBloque": {
-                                  "id": 22,
-                                  "ocupado": true,
-                                  "siguienteBloque": {
-                                    "id": 23,
-                                    "ocupado": true,
-                                    "siguienteId": 0
-                                  },
-                                  "siguienteId": 23
-                                },
-                                "siguienteId": 22
-                              },
-                              "siguienteId": 21
-                            },
-                            "siguienteId": 20
-                          },
-                          "siguienteId": 19
-                        },
-                        "siguienteId": 18
-                      },
-                      "siguienteId": 17
-                    },
-                    "siguienteId": 16
-                  },
-                  "siguienteId": 15
+                  "siguienteId": 0
                 },
                 "siguienteId": 14
               },
@@ -3350,52 +3040,7 @@
               "siguienteBloque": {
                 "id": 14,
                 "ocupado": true,
-                "siguienteBloque": {
-                  "id": 15,
-                  "ocupado": true,
-                  "siguienteBloque": {
-                    "id": 16,
-                    "ocupado": true,
-                    "siguienteBloque": {
-                      "id": 17,
-                      "ocupado": true,
-                      "siguienteBloque": {
-                        "id": 18,
-                        "ocupado": true,
-                        "siguienteBloque": {
-                          "id": 19,
-                          "ocupado": true,
-                          "siguienteBloque": {
-                            "id": 20,
-                            "ocupado": true,
-                            "siguienteBloque": {
-                              "id": 21,
-                              "ocupado": true,
-                              "siguienteBloque": {
-                                "id": 22,
-                                "ocupado": true,
-                                "siguienteBloque": {
-                                  "id": 23,
-                                  "ocupado": true,
-                                  "siguienteId": 0
-                                },
-                                "siguienteId": 23
-                              },
-                              "siguienteId": 22
-                            },
-                            "siguienteId": 21
-                          },
-                          "siguienteId": 20
-                        },
-                        "siguienteId": 19
-                      },
-                      "siguienteId": 18
-                    },
-                    "siguienteId": 17
-                  },
-                  "siguienteId": 16
-                },
-                "siguienteId": 15
+                "siguienteId": 0
               },
               "siguienteId": 14
             },
@@ -3415,52 +3060,7 @@
             "siguienteBloque": {
               "id": 14,
               "ocupado": true,
-              "siguienteBloque": {
-                "id": 15,
-                "ocupado": true,
-                "siguienteBloque": {
-                  "id": 16,
-                  "ocupado": true,
-                  "siguienteBloque": {
-                    "id": 17,
-                    "ocupado": true,
-                    "siguienteBloque": {
-                      "id": 18,
-                      "ocupado": true,
-                      "siguienteBloque": {
-                        "id": 19,
-                        "ocupado": true,
-                        "siguienteBloque": {
-                          "id": 20,
-                          "ocupado": true,
-                          "siguienteBloque": {
-                            "id": 21,
-                            "ocupado": true,
-                            "siguienteBloque": {
-                              "id": 22,
-                              "ocupado": true,
-                              "siguienteBloque": {
-                                "id": 23,
-                                "ocupado": true,
-                                "siguienteId": 0
-                              },
-                              "siguienteId": 23
-                            },
-                            "siguienteId": 22
-                          },
-                          "siguienteId": 21
-                        },
-                        "siguienteId": 20
-                      },
-                      "siguienteId": 19
-                    },
-                    "siguienteId": 18
-                  },
-                  "siguienteId": 17
-                },
-                "siguienteId": 16
-              },
-              "siguienteId": 15
+              "siguienteId": 0
             },
             "siguienteId": 14
           },
@@ -3475,52 +3075,7 @@
           "siguienteBloque": {
             "id": 14,
             "ocupado": true,
-            "siguienteBloque": {
-              "id": 15,
-              "ocupado": true,
-              "siguienteBloque": {
-                "id": 16,
-                "ocupado": true,
-                "siguienteBloque": {
-                  "id": 17,
-                  "ocupado": true,
-                  "siguienteBloque": {
-                    "id": 18,
-                    "ocupado": true,
-                    "siguienteBloque": {
-                      "id": 19,
-                      "ocupado": true,
-                      "siguienteBloque": {
-                        "id": 20,
-                        "ocupado": true,
-                        "siguienteBloque": {
-                          "id": 21,
-                          "ocupado": true,
-                          "siguienteBloque": {
-                            "id": 22,
-                            "ocupado": true,
-                            "siguienteBloque": {
-                              "id": 23,
-                              "ocupado": true,
-                              "siguienteId": 0
-                            },
-                            "siguienteId": 23
-                          },
-                          "siguienteId": 22
-                        },
-                        "siguienteId": 21
-                      },
-                      "siguienteId": 20
-                    },
-                    "siguienteId": 19
-                  },
-                  "siguienteId": 18
-                },
-                "siguienteId": 17
-              },
-              "siguienteId": 16
-            },
-            "siguienteId": 15
+            "siguienteId": 0
           },
           "siguienteId": 14
         }
@@ -3530,52 +3085,7 @@
         "data": {
           "id": 14,
           "ocupado": true,
-          "siguienteBloque": {
-            "id": 15,
-            "ocupado": true,
-            "siguienteBloque": {
-              "id": 16,
-              "ocupado": true,
-              "siguienteBloque": {
-                "id": 17,
-                "ocupado": true,
-                "siguienteBloque": {
-                  "id": 18,
-                  "ocupado": true,
-                  "siguienteBloque": {
-                    "id": 19,
-                    "ocupado": true,
-                    "siguienteBloque": {
-                      "id": 20,
-                      "ocupado": true,
-                      "siguienteBloque": {
-                        "id": 21,
-                        "ocupado": true,
-                        "siguienteBloque": {
-                          "id": 22,
-                          "ocupado": true,
-                          "siguienteBloque": {
-                            "id": 23,
-                            "ocupado": true,
-                            "siguienteId": 0
-                          },
-                          "siguienteId": 23
-                        },
-                        "siguienteId": 22
-                      },
-                      "siguienteId": 21
-                    },
-                    "siguienteId": 20
-                  },
-                  "siguienteId": 19
-                },
-                "siguienteId": 18
-              },
-              "siguienteId": 17
-            },
-            "siguienteId": 16
-          },
-          "siguienteId": 15
+          "siguienteId": 0
         }
       },
       {
@@ -3607,7 +3117,27 @@
                         "siguienteBloque": {
                           "id": 23,
                           "ocupado": true,
-                          "siguienteId": 0
+                          "siguienteBloque": {
+                            "id": 24,
+                            "ocupado": true,
+                            "siguienteBloque": {
+                              "id": 25,
+                              "ocupado": true,
+                              "siguienteBloque": {
+                                "id": 26,
+                                "ocupado": true,
+                                "siguienteBloque": {
+                                  "id": 27,
+                                  "ocupado": true,
+                                  "siguienteId": 0
+                                },
+                                "siguienteId": 27
+                              },
+                              "siguienteId": 26
+                            },
+                            "siguienteId": 25
+                          },
+                          "siguienteId": 24
                         },
                         "siguienteId": 23
                       },
@@ -3652,7 +3182,27 @@
                       "siguienteBloque": {
                         "id": 23,
                         "ocupado": true,
-                        "siguienteId": 0
+                        "siguienteBloque": {
+                          "id": 24,
+                          "ocupado": true,
+                          "siguienteBloque": {
+                            "id": 25,
+                            "ocupado": true,
+                            "siguienteBloque": {
+                              "id": 26,
+                              "ocupado": true,
+                              "siguienteBloque": {
+                                "id": 27,
+                                "ocupado": true,
+                                "siguienteId": 0
+                              },
+                              "siguienteId": 27
+                            },
+                            "siguienteId": 26
+                          },
+                          "siguienteId": 25
+                        },
+                        "siguienteId": 24
                       },
                       "siguienteId": 23
                     },
@@ -3692,7 +3242,27 @@
                     "siguienteBloque": {
                       "id": 23,
                       "ocupado": true,
-                      "siguienteId": 0
+                      "siguienteBloque": {
+                        "id": 24,
+                        "ocupado": true,
+                        "siguienteBloque": {
+                          "id": 25,
+                          "ocupado": true,
+                          "siguienteBloque": {
+                            "id": 26,
+                            "ocupado": true,
+                            "siguienteBloque": {
+                              "id": 27,
+                              "ocupado": true,
+                              "siguienteId": 0
+                            },
+                            "siguienteId": 27
+                          },
+                          "siguienteId": 26
+                        },
+                        "siguienteId": 25
+                      },
+                      "siguienteId": 24
                     },
                     "siguienteId": 23
                   },
@@ -3727,7 +3297,27 @@
                   "siguienteBloque": {
                     "id": 23,
                     "ocupado": true,
-                    "siguienteId": 0
+                    "siguienteBloque": {
+                      "id": 24,
+                      "ocupado": true,
+                      "siguienteBloque": {
+                        "id": 25,
+                        "ocupado": true,
+                        "siguienteBloque": {
+                          "id": 26,
+                          "ocupado": true,
+                          "siguienteBloque": {
+                            "id": 27,
+                            "ocupado": true,
+                            "siguienteId": 0
+                          },
+                          "siguienteId": 27
+                        },
+                        "siguienteId": 26
+                      },
+                      "siguienteId": 25
+                    },
+                    "siguienteId": 24
                   },
                   "siguienteId": 23
                 },
@@ -3757,7 +3347,27 @@
                 "siguienteBloque": {
                   "id": 23,
                   "ocupado": true,
-                  "siguienteId": 0
+                  "siguienteBloque": {
+                    "id": 24,
+                    "ocupado": true,
+                    "siguienteBloque": {
+                      "id": 25,
+                      "ocupado": true,
+                      "siguienteBloque": {
+                        "id": 26,
+                        "ocupado": true,
+                        "siguienteBloque": {
+                          "id": 27,
+                          "ocupado": true,
+                          "siguienteId": 0
+                        },
+                        "siguienteId": 27
+                      },
+                      "siguienteId": 26
+                    },
+                    "siguienteId": 25
+                  },
+                  "siguienteId": 24
                 },
                 "siguienteId": 23
               },
@@ -3782,7 +3392,27 @@
               "siguienteBloque": {
                 "id": 23,
                 "ocupado": true,
-                "siguienteId": 0
+                "siguienteBloque": {
+                  "id": 24,
+                  "ocupado": true,
+                  "siguienteBloque": {
+                    "id": 25,
+                    "ocupado": true,
+                    "siguienteBloque": {
+                      "id": 26,
+                      "ocupado": true,
+                      "siguienteBloque": {
+                        "id": 27,
+                        "ocupado": true,
+                        "siguienteId": 0
+                      },
+                      "siguienteId": 27
+                    },
+                    "siguienteId": 26
+                  },
+                  "siguienteId": 25
+                },
+                "siguienteId": 24
               },
               "siguienteId": 23
             },
@@ -3802,7 +3432,27 @@
             "siguienteBloque": {
               "id": 23,
               "ocupado": true,
-              "siguienteId": 0
+              "siguienteBloque": {
+                "id": 24,
+                "ocupado": true,
+                "siguienteBloque": {
+                  "id": 25,
+                  "ocupado": true,
+                  "siguienteBloque": {
+                    "id": 26,
+                    "ocupado": true,
+                    "siguienteBloque": {
+                      "id": 27,
+                      "ocupado": true,
+                      "siguienteId": 0
+                    },
+                    "siguienteId": 27
+                  },
+                  "siguienteId": 26
+                },
+                "siguienteId": 25
+              },
+              "siguienteId": 24
             },
             "siguienteId": 23
           },
@@ -3817,7 +3467,27 @@
           "siguienteBloque": {
             "id": 23,
             "ocupado": true,
-            "siguienteId": 0
+            "siguienteBloque": {
+              "id": 24,
+              "ocupado": true,
+              "siguienteBloque": {
+                "id": 25,
+                "ocupado": true,
+                "siguienteBloque": {
+                  "id": 26,
+                  "ocupado": true,
+                  "siguienteBloque": {
+                    "id": 27,
+                    "ocupado": true,
+                    "siguienteId": 0
+                  },
+                  "siguienteId": 27
+                },
+                "siguienteId": 26
+              },
+              "siguienteId": 25
+            },
+            "siguienteId": 24
           },
           "siguienteId": 23
         }
@@ -3827,7 +3497,27 @@
         "data": {
           "id": 23,
           "ocupado": true,
-          "siguienteId": 0
+          "siguienteBloque": {
+            "id": 24,
+            "ocupado": true,
+            "siguienteBloque": {
+              "id": 25,
+              "ocupado": true,
+              "siguienteBloque": {
+                "id": 26,
+                "ocupado": true,
+                "siguienteBloque": {
+                  "id": 27,
+                  "ocupado": true,
+                  "siguienteId": 0
+                },
+                "siguienteId": 27
+              },
+              "siguienteId": 26
+            },
+            "siguienteId": 25
+          },
+          "siguienteId": 24
         }
       },
       {
@@ -3844,62 +3534,7 @@
               "siguienteBloque": {
                 "id": 27,
                 "ocupado": true,
-                "siguienteBloque": {
-                  "id": 28,
-                  "ocupado": true,
-                  "siguienteBloque": {
-                    "id": 29,
-                    "ocupado": true,
-                    "siguienteBloque": {
-                      "id": 30,
-                      "ocupado": true,
-                      "siguienteBloque": {
-                        "id": 31,
-                        "ocupado": true,
-                        "siguienteBloque": {
-                          "id": 32,
-                          "ocupado": true,
-                          "siguienteBloque": {
-                            "id": 33,
-                            "ocupado": true,
-                            "siguienteBloque": {
-                              "id": 34,
-                              "ocupado": true,
-                              "siguienteBloque": {
-                                "id": 35,
-                                "ocupado": true,
-                                "siguienteBloque": {
-                                  "id": 36,
-                                  "ocupado": true,
-                                  "siguienteBloque": {
-                                    "id": 37,
-                                    "ocupado": true,
-                                    "siguienteBloque": {
-                                      "id": 38,
-                                      "ocupado": true,
-                                      "siguienteId": 0
-                                    },
-                                    "siguienteId": 38
-                                  },
-                                  "siguienteId": 37
-                                },
-                                "siguienteId": 36
-                              },
-                              "siguienteId": 35
-                            },
-                            "siguienteId": 34
-                          },
-                          "siguienteId": 33
-                        },
-                        "siguienteId": 32
-                      },
-                      "siguienteId": 31
-                    },
-                    "siguienteId": 30
-                  },
-                  "siguienteId": 29
-                },
-                "siguienteId": 28
+                "siguienteId": 0
               },
               "siguienteId": 27
             },
@@ -3919,62 +3554,7 @@
             "siguienteBloque": {
               "id": 27,
               "ocupado": true,
-              "siguienteBloque": {
-                "id": 28,
-                "ocupado": true,
-                "siguienteBloque": {
-                  "id": 29,
-                  "ocupado": true,
-                  "siguienteBloque": {
-                    "id": 30,
-                    "ocupado": true,
-                    "siguienteBloque": {
-                      "id": 31,
-                      "ocupado": true,
-                      "siguienteBloque": {
-                        "id": 32,
-                        "ocupado": true,
-                        "siguienteBloque": {
-                          "id": 33,
-                          "ocupado": true,
-                          "siguienteBloque": {
-                            "id": 34,
-                            "ocupado": true,
-                            "siguienteBloque": {
-                              "id": 35,
-                              "ocupado": true,
-                              "siguienteBloque": {
-                                "id": 36,
-                                "ocupado": true,
-                                "siguienteBloque": {
-                                  "id": 37,
-                                  "ocupado": true,
-                                  "siguienteBloque": {
-                                    "id": 38,
-                                    "ocupado": true,
-                                    "siguienteId": 0
-                                  },
-                                  "siguienteId": 38
-                                },
-                                "siguienteId": 37
-                              },
-                              "siguienteId": 36
-                            },
-                            "siguienteId": 35
-                          },
-                          "siguienteId": 34
-                        },
-                        "siguienteId": 33
-                      },
-                      "siguienteId": 32
-                    },
-                    "siguienteId": 31
-                  },
-                  "siguienteId": 30
-                },
-                "siguienteId": 29
-              },
-              "siguienteId": 28
+              "siguienteId": 0
             },
             "siguienteId": 27
           },
@@ -3989,62 +3569,7 @@
           "siguienteBloque": {
             "id": 27,
             "ocupado": true,
-            "siguienteBloque": {
-              "id": 28,
-              "ocupado": true,
-              "siguienteBloque": {
-                "id": 29,
-                "ocupado": true,
-                "siguienteBloque": {
-                  "id": 30,
-                  "ocupado": true,
-                  "siguienteBloque": {
-                    "id": 31,
-                    "ocupado": true,
-                    "siguienteBloque": {
-                      "id": 32,
-                      "ocupado": true,
-                      "siguienteBloque": {
-                        "id": 33,
-                        "ocupado": true,
-                        "siguienteBloque": {
-                          "id": 34,
-                          "ocupado": true,
-                          "siguienteBloque": {
-                            "id": 35,
-                            "ocupado": true,
-                            "siguienteBloque": {
-                              "id": 36,
-                              "ocupado": true,
-                              "siguienteBloque": {
-                                "id": 37,
-                                "ocupado": true,
-                                "siguienteBloque": {
-                                  "id": 38,
-                                  "ocupado": true,
-                                  "siguienteId": 0
-                                },
-                                "siguienteId": 38
-                              },
-                              "siguienteId": 37
-                            },
-                            "siguienteId": 36
-                          },
-                          "siguienteId": 35
-                        },
-                        "siguienteId": 34
-                      },
-                      "siguienteId": 33
-                    },
-                    "siguienteId": 32
-                  },
-                  "siguienteId": 31
-                },
-                "siguienteId": 30
-              },
-              "siguienteId": 29
-            },
-            "siguienteId": 28
+            "siguienteId": 0
           },
           "siguienteId": 27
         }
@@ -4054,62 +3579,7 @@
         "data": {
           "id": 27,
           "ocupado": true,
-          "siguienteBloque": {
-            "id": 28,
-            "ocupado": true,
-            "siguienteBloque": {
-              "id": 29,
-              "ocupado": true,
-              "siguienteBloque": {
-                "id": 30,
-                "ocupado": true,
-                "siguienteBloque": {
-                  "id": 31,
-                  "ocupado": true,
-                  "siguienteBloque": {
-                    "id": 32,
-                    "ocupado": true,
-                    "siguienteBloque": {
-                      "id": 33,
-                      "ocupado": true,
-                      "siguienteBloque": {
-                        "id": 34,
-                        "ocupado": true,
-                        "siguienteBloque": {
-                          "id": 35,
-                          "ocupado": true,
-                          "siguienteBloque": {
-                            "id": 36,
-                            "ocupado": true,
-                            "siguienteBloque": {
-                              "id": 37,
-                              "ocupado": true,
-                              "siguienteBloque": {
-                                "id": 38,
-                                "ocupado": true,
-                                "siguienteId": 0
-                              },
-                              "siguienteId": 38
-                            },
-                            "siguienteId": 37
-                          },
-                          "siguienteId": 36
-                        },
-                        "siguienteId": 35
-                      },
-                      "siguienteId": 34
-                    },
-                    "siguienteId": 33
-                  },
-                  "siguienteId": 32
-                },
-                "siguienteId": 31
-              },
-              "siguienteId": 30
-            },
-            "siguienteId": 29
-          },
-          "siguienteId": 28
+          "siguienteId": 0
         }
       },
       {
@@ -4117,57 +3587,7 @@
         "data": {
           "id": 28,
           "ocupado": true,
-          "siguienteBloque": {
-            "id": 29,
-            "ocupado": true,
-            "siguienteBloque": {
-              "id": 30,
-              "ocupado": true,
-              "siguienteBloque": {
-                "id": 31,
-                "ocupado": true,
-                "siguienteBloque": {
-                  "id": 32,
-                  "ocupado": true,
-                  "siguienteBloque": {
-                    "id": 33,
-                    "ocupado": true,
-                    "siguienteBloque": {
-                      "id": 34,
-                      "ocupado": true,
-                      "siguienteBloque": {
-                        "id": 35,
-                        "ocupado": true,
-                        "siguienteBloque": {
-                          "id": 36,
-                          "ocupado": true,
-                          "siguienteBloque": {
-                            "id": 37,
-                            "ocupado": true,
-                            "siguienteBloque": {
-                              "id": 38,
-                              "ocupado": true,
-                              "siguienteId": 0
-                            },
-                            "siguienteId": 38
-                          },
-                          "siguienteId": 37
-                        },
-                        "siguienteId": 36
-                      },
-                      "siguienteId": 35
-                    },
-                    "siguienteId": 34
-                  },
-                  "siguienteId": 33
-                },
-                "siguienteId": 32
-              },
-              "siguienteId": 31
-            },
-            "siguienteId": 30
-          },
-          "siguienteId": 29
+          "siguienteId": 0
         }
       },
       {
@@ -4190,27 +3610,7 @@
                   "siguienteBloque": {
                     "id": 34,
                     "ocupado": true,
-                    "siguienteBloque": {
-                      "id": 35,
-                      "ocupado": true,
-                      "siguienteBloque": {
-                        "id": 36,
-                        "ocupado": true,
-                        "siguienteBloque": {
-                          "id": 37,
-                          "ocupado": true,
-                          "siguienteBloque": {
-                            "id": 38,
-                            "ocupado": true,
-                            "siguienteId": 0
-                          },
-                          "siguienteId": 38
-                        },
-                        "siguienteId": 37
-                      },
-                      "siguienteId": 36
-                    },
-                    "siguienteId": 35
+                    "siguienteId": 0
                   },
                   "siguienteId": 34
                 },
@@ -4240,27 +3640,7 @@
                 "siguienteBloque": {
                   "id": 34,
                   "ocupado": true,
-                  "siguienteBloque": {
-                    "id": 35,
-                    "ocupado": true,
-                    "siguienteBloque": {
-                      "id": 36,
-                      "ocupado": true,
-                      "siguienteBloque": {
-                        "id": 37,
-                        "ocupado": true,
-                        "siguienteBloque": {
-                          "id": 38,
-                          "ocupado": true,
-                          "siguienteId": 0
-                        },
-                        "siguienteId": 38
-                      },
-                      "siguienteId": 37
-                    },
-                    "siguienteId": 36
-                  },
-                  "siguienteId": 35
+                  "siguienteId": 0
                 },
                 "siguienteId": 34
               },
@@ -4285,27 +3665,7 @@
               "siguienteBloque": {
                 "id": 34,
                 "ocupado": true,
-                "siguienteBloque": {
-                  "id": 35,
-                  "ocupado": true,
-                  "siguienteBloque": {
-                    "id": 36,
-                    "ocupado": true,
-                    "siguienteBloque": {
-                      "id": 37,
-                      "ocupado": true,
-                      "siguienteBloque": {
-                        "id": 38,
-                        "ocupado": true,
-                        "siguienteId": 0
-                      },
-                      "siguienteId": 38
-                    },
-                    "siguienteId": 37
-                  },
-                  "siguienteId": 36
-                },
-                "siguienteId": 35
+                "siguienteId": 0
               },
               "siguienteId": 34
             },
@@ -4325,27 +3685,7 @@
             "siguienteBloque": {
               "id": 34,
               "ocupado": true,
-              "siguienteBloque": {
-                "id": 35,
-                "ocupado": true,
-                "siguienteBloque": {
-                  "id": 36,
-                  "ocupado": true,
-                  "siguienteBloque": {
-                    "id": 37,
-                    "ocupado": true,
-                    "siguienteBloque": {
-                      "id": 38,
-                      "ocupado": true,
-                      "siguienteId": 0
-                    },
-                    "siguienteId": 38
-                  },
-                  "siguienteId": 37
-                },
-                "siguienteId": 36
-              },
-              "siguienteId": 35
+              "siguienteId": 0
             },
             "siguienteId": 34
           },
@@ -4360,27 +3700,7 @@
           "siguienteBloque": {
             "id": 34,
             "ocupado": true,
-            "siguienteBloque": {
-              "id": 35,
-              "ocupado": true,
-              "siguienteBloque": {
-                "id": 36,
-                "ocupado": true,
-                "siguienteBloque": {
-                  "id": 37,
-                  "ocupado": true,
-                  "siguienteBloque": {
-                    "id": 38,
-                    "ocupado": true,
-                    "siguienteId": 0
-                  },
-                  "siguienteId": 38
-                },
-                "siguienteId": 37
-              },
-              "siguienteId": 36
-            },
-            "siguienteId": 35
+            "siguienteId": 0
           },
           "siguienteId": 34
         }
@@ -4390,27 +3710,7 @@
         "data": {
           "id": 34,
           "ocupado": true,
-          "siguienteBloque": {
-            "id": 35,
-            "ocupado": true,
-            "siguienteBloque": {
-              "id": 36,
-              "ocupado": true,
-              "siguienteBloque": {
-                "id": 37,
-                "ocupado": true,
-                "siguienteBloque": {
-                  "id": 38,
-                  "ocupado": true,
-                  "siguienteId": 0
-                },
-                "siguienteId": 38
-              },
-              "siguienteId": 37
-            },
-            "siguienteId": 36
-          },
-          "siguienteId": 35
+          "siguienteId": 0
         }
       },
       {
@@ -4427,7 +3727,47 @@
               "siguienteBloque": {
                 "id": 38,
                 "ocupado": true,
-                "siguienteId": 0
+                "siguienteBloque": {
+                  "id": 39,
+                  "ocupado": true,
+                  "siguienteBloque": {
+                    "id": 40,
+                    "ocupado": true,
+                    "siguienteBloque": {
+                      "id": 41,
+                      "ocupado": true,
+                      "siguienteBloque": {
+                        "id": 42,
+                        "ocupado": true,
+                        "siguienteBloque": {
+                          "id": 43,
+                          "ocupado": true,
+                          "siguienteBloque": {
+                            "id": 44,
+                            "ocupado": true,
+                            "siguienteBloque": {
+                              "id": 45,
+                              "ocupado": true,
+                              "siguienteBloque": {
+                                "id": 46,
+                                "ocupado": true,
+                                "siguienteId": 0
+                              },
+                              "siguienteId": 46
+                            },
+                            "siguienteId": 45
+                          },
+                          "siguienteId": 44
+                        },
+                        "siguienteId": 43
+                      },
+                      "siguienteId": 42
+                    },
+                    "siguienteId": 41
+                  },
+                  "siguienteId": 40
+                },
+                "siguienteId": 39
               },
               "siguienteId": 38
             },
@@ -4447,7 +3787,47 @@
             "siguienteBloque": {
               "id": 38,
               "ocupado": true,
-              "siguienteId": 0
+              "siguienteBloque": {
+                "id": 39,
+                "ocupado": true,
+                "siguienteBloque": {
+                  "id": 40,
+                  "ocupado": true,
+                  "siguienteBloque": {
+                    "id": 41,
+                    "ocupado": true,
+                    "siguienteBloque": {
+                      "id": 42,
+                      "ocupado": true,
+                      "siguienteBloque": {
+                        "id": 43,
+                        "ocupado": true,
+                        "siguienteBloque": {
+                          "id": 44,
+                          "ocupado": true,
+                          "siguienteBloque": {
+                            "id": 45,
+                            "ocupado": true,
+                            "siguienteBloque": {
+                              "id": 46,
+                              "ocupado": true,
+                              "siguienteId": 0
+                            },
+                            "siguienteId": 46
+                          },
+                          "siguienteId": 45
+                        },
+                        "siguienteId": 44
+                      },
+                      "siguienteId": 43
+                    },
+                    "siguienteId": 42
+                  },
+                  "siguienteId": 41
+                },
+                "siguienteId": 40
+              },
+              "siguienteId": 39
             },
             "siguienteId": 38
           },
@@ -4462,7 +3842,47 @@
           "siguienteBloque": {
             "id": 38,
             "ocupado": true,
-            "siguienteId": 0
+            "siguienteBloque": {
+              "id": 39,
+              "ocupado": true,
+              "siguienteBloque": {
+                "id": 40,
+                "ocupado": true,
+                "siguienteBloque": {
+                  "id": 41,
+                  "ocupado": true,
+                  "siguienteBloque": {
+                    "id": 42,
+                    "ocupado": true,
+                    "siguienteBloque": {
+                      "id": 43,
+                      "ocupado": true,
+                      "siguienteBloque": {
+                        "id": 44,
+                        "ocupado": true,
+                        "siguienteBloque": {
+                          "id": 45,
+                          "ocupado": true,
+                          "siguienteBloque": {
+                            "id": 46,
+                            "ocupado": true,
+                            "siguienteId": 0
+                          },
+                          "siguienteId": 46
+                        },
+                        "siguienteId": 45
+                      },
+                      "siguienteId": 44
+                    },
+                    "siguienteId": 43
+                  },
+                  "siguienteId": 42
+                },
+                "siguienteId": 41
+              },
+              "siguienteId": 40
+            },
+            "siguienteId": 39
           },
           "siguienteId": 38
         }
@@ -4472,7 +3892,47 @@
         "data": {
           "id": 38,
           "ocupado": true,
-          "siguienteId": 0
+          "siguienteBloque": {
+            "id": 39,
+            "ocupado": true,
+            "siguienteBloque": {
+              "id": 40,
+              "ocupado": true,
+              "siguienteBloque": {
+                "id": 41,
+                "ocupado": true,
+                "siguienteBloque": {
+                  "id": 42,
+                  "ocupado": true,
+                  "siguienteBloque": {
+                    "id": 43,
+                    "ocupado": true,
+                    "siguienteBloque": {
+                      "id": 44,
+                      "ocupado": true,
+                      "siguienteBloque": {
+                        "id": 45,
+                        "ocupado": true,
+                        "siguienteBloque": {
+                          "id": 46,
+                          "ocupado": true,
+                          "siguienteId": 0
+                        },
+                        "siguienteId": 46
+                      },
+                      "siguienteId": 45
+                    },
+                    "siguienteId": 44
+                  },
+                  "siguienteId": 43
+                },
+                "siguienteId": 42
+              },
+              "siguienteId": 41
+            },
+            "siguienteId": 40
+          },
+          "siguienteId": 39
         }
       },
       {
@@ -4690,7 +4150,32 @@
             "siguienteBloque": {
               "id": 49,
               "ocupado": true,
-              "siguienteId": 0
+              "siguienteBloque": {
+                "id": 50,
+                "ocupado": true,
+                "siguienteBloque": {
+                  "id": 51,
+                  "ocupado": true,
+                  "siguienteBloque": {
+                    "id": 52,
+                    "ocupado": true,
+                    "siguienteBloque": {
+                      "id": 53,
+                      "ocupado": true,
+                      "siguienteBloque": {
+                        "id": 54,
+                        "ocupado": true,
+                        "siguienteId": 0
+                      },
+                      "siguienteId": 54
+                    },
+                    "siguienteId": 53
+                  },
+                  "siguienteId": 52
+                },
+                "siguienteId": 51
+              },
+              "siguienteId": 50
             },
             "siguienteId": 49
           },
@@ -4705,7 +4190,32 @@
           "siguienteBloque": {
             "id": 49,
             "ocupado": true,
-            "siguienteId": 0
+            "siguienteBloque": {
+              "id": 50,
+              "ocupado": true,
+              "siguienteBloque": {
+                "id": 51,
+                "ocupado": true,
+                "siguienteBloque": {
+                  "id": 52,
+                  "ocupado": true,
+                  "siguienteBloque": {
+                    "id": 53,
+                    "ocupado": true,
+                    "siguienteBloque": {
+                      "id": 54,
+                      "ocupado": true,
+                      "siguienteId": 0
+                    },
+                    "siguienteId": 54
+                  },
+                  "siguienteId": 53
+                },
+                "siguienteId": 52
+              },
+              "siguienteId": 51
+            },
+            "siguienteId": 50
           },
           "siguienteId": 49
         }
@@ -4715,7 +4225,32 @@
         "data": {
           "id": 49,
           "ocupado": true,
-          "siguienteId": 0
+          "siguienteBloque": {
+            "id": 50,
+            "ocupado": true,
+            "siguienteBloque": {
+              "id": 51,
+              "ocupado": true,
+              "siguienteBloque": {
+                "id": 52,
+                "ocupado": true,
+                "siguienteBloque": {
+                  "id": 53,
+                  "ocupado": true,
+                  "siguienteBloque": {
+                    "id": 54,
+                    "ocupado": true,
+                    "siguienteId": 0
+                  },
+                  "siguienteId": 54
+                },
+                "siguienteId": 53
+              },
+              "siguienteId": 52
+            },
+            "siguienteId": 51
+          },
+          "siguienteId": 50
         }
       },
       {
@@ -4732,7 +4267,12 @@
               "siguienteBloque": {
                 "id": 53,
                 "ocupado": true,
-                "siguienteId": 0
+                "siguienteBloque": {
+                  "id": 54,
+                  "ocupado": true,
+                  "siguienteId": 0
+                },
+                "siguienteId": 54
               },
               "siguienteId": 53
             },
@@ -4752,7 +4292,12 @@
             "siguienteBloque": {
               "id": 53,
               "ocupado": true,
-              "siguienteId": 0
+              "siguienteBloque": {
+                "id": 54,
+                "ocupado": true,
+                "siguienteId": 0
+              },
+              "siguienteId": 54
             },
             "siguienteId": 53
           },
@@ -4767,7 +4312,12 @@
           "siguienteBloque": {
             "id": 53,
             "ocupado": true,
-            "siguienteId": 0
+            "siguienteBloque": {
+              "id": 54,
+              "ocupado": true,
+              "siguienteId": 0
+            },
+            "siguienteId": 54
           },
           "siguienteId": 53
         }
@@ -4777,7 +4327,12 @@
         "data": {
           "id": 53,
           "ocupado": true,
-          "siguienteId": 0
+          "siguienteBloque": {
+            "id": 54,
+            "ocupado": true,
+            "siguienteId": 0
+          },
+          "siguienteId": 54
         }
       },
       {
@@ -4785,27 +4340,7 @@
         "data": {
           "id": 54,
           "ocupado": true,
-          "siguienteBloque": {
-            "id": 55,
-            "ocupado": true,
-            "siguienteBloque": {
-              "id": 56,
-              "ocupado": true,
-              "siguienteBloque": {
-                "id": 57,
-                "ocupado": true,
-                "siguienteBloque": {
-                  "id": 58,
-                  "ocupado": true,
-                  "siguienteId": 0
-                },
-                "siguienteId": 58
-              },
-              "siguienteId": 57
-            },
-            "siguienteId": 56
-          },
-          "siguienteId": 55
+          "siguienteId": 0
         }
       },
       {
@@ -4822,7 +4357,62 @@
               "siguienteBloque": {
                 "id": 58,
                 "ocupado": true,
-                "siguienteId": 0
+                "siguienteBloque": {
+                  "id": 59,
+                  "ocupado": true,
+                  "siguienteBloque": {
+                    "id": 60,
+                    "ocupado": true,
+                    "siguienteBloque": {
+                      "id": 61,
+                      "ocupado": true,
+                      "siguienteBloque": {
+                        "id": 62,
+                        "ocupado": true,
+                        "siguienteBloque": {
+                          "id": 63,
+                          "ocupado": true,
+                          "siguienteBloque": {
+                            "id": 64,
+                            "ocupado": true,
+                            "siguienteBloque": {
+                              "id": 65,
+                              "ocupado": true,
+                              "siguienteBloque": {
+                                "id": 66,
+                                "ocupado": true,
+                                "siguienteBloque": {
+                                  "id": 67,
+                                  "ocupado": true,
+                                  "siguienteBloque": {
+                                    "id": 68,
+                                    "ocupado": true,
+                                    "siguienteBloque": {
+                                      "id": 69,
+                                      "ocupado": true,
+                                      "siguienteId": 0
+                                    },
+                                    "siguienteId": 69
+                                  },
+                                  "siguienteId": 68
+                                },
+                                "siguienteId": 67
+                              },
+                              "siguienteId": 66
+                            },
+                            "siguienteId": 65
+                          },
+                          "siguienteId": 64
+                        },
+                        "siguienteId": 63
+                      },
+                      "siguienteId": 62
+                    },
+                    "siguienteId": 61
+                  },
+                  "siguienteId": 60
+                },
+                "siguienteId": 59
               },
               "siguienteId": 58
             },
@@ -4842,7 +4432,62 @@
             "siguienteBloque": {
               "id": 58,
               "ocupado": true,
-              "siguienteId": 0
+              "siguienteBloque": {
+                "id": 59,
+                "ocupado": true,
+                "siguienteBloque": {
+                  "id": 60,
+                  "ocupado": true,
+                  "siguienteBloque": {
+                    "id": 61,
+                    "ocupado": true,
+                    "siguienteBloque": {
+                      "id": 62,
+                      "ocupado": true,
+                      "siguienteBloque": {
+                        "id": 63,
+                        "ocupado": true,
+                        "siguienteBloque": {
+                          "id": 64,
+                          "ocupado": true,
+                          "siguienteBloque": {
+                            "id": 65,
+                            "ocupado": true,
+                            "siguienteBloque": {
+                              "id": 66,
+                              "ocupado": true,
+                              "siguienteBloque": {
+                                "id": 67,
+                                "ocupado": true,
+                                "siguienteBloque": {
+                                  "id": 68,
+                                  "ocupado": true,
+                                  "siguienteBloque": {
+                                    "id": 69,
+                                    "ocupado": true,
+                                    "siguienteId": 0
+                                  },
+                                  "siguienteId": 69
+                                },
+                                "siguienteId": 68
+                              },
+                              "siguienteId": 67
+                            },
+                            "siguienteId": 66
+                          },
+                          "siguienteId": 65
+                        },
+                        "siguienteId": 64
+                      },
+                      "siguienteId": 63
+                    },
+                    "siguienteId": 62
+                  },
+                  "siguienteId": 61
+                },
+                "siguienteId": 60
+              },
+              "siguienteId": 59
             },
             "siguienteId": 58
           },
@@ -4857,7 +4502,62 @@
           "siguienteBloque": {
             "id": 58,
             "ocupado": true,
-            "siguienteId": 0
+            "siguienteBloque": {
+              "id": 59,
+              "ocupado": true,
+              "siguienteBloque": {
+                "id": 60,
+                "ocupado": true,
+                "siguienteBloque": {
+                  "id": 61,
+                  "ocupado": true,
+                  "siguienteBloque": {
+                    "id": 62,
+                    "ocupado": true,
+                    "siguienteBloque": {
+                      "id": 63,
+                      "ocupado": true,
+                      "siguienteBloque": {
+                        "id": 64,
+                        "ocupado": true,
+                        "siguienteBloque": {
+                          "id": 65,
+                          "ocupado": true,
+                          "siguienteBloque": {
+                            "id": 66,
+                            "ocupado": true,
+                            "siguienteBloque": {
+                              "id": 67,
+                              "ocupado": true,
+                              "siguienteBloque": {
+                                "id": 68,
+                                "ocupado": true,
+                                "siguienteBloque": {
+                                  "id": 69,
+                                  "ocupado": true,
+                                  "siguienteId": 0
+                                },
+                                "siguienteId": 69
+                              },
+                              "siguienteId": 68
+                            },
+                            "siguienteId": 67
+                          },
+                          "siguienteId": 66
+                        },
+                        "siguienteId": 65
+                      },
+                      "siguienteId": 64
+                    },
+                    "siguienteId": 63
+                  },
+                  "siguienteId": 62
+                },
+                "siguienteId": 61
+              },
+              "siguienteId": 60
+            },
+            "siguienteId": 59
           },
           "siguienteId": 58
         }
@@ -4867,7 +4567,62 @@
         "data": {
           "id": 58,
           "ocupado": true,
-          "siguienteId": 0
+          "siguienteBloque": {
+            "id": 59,
+            "ocupado": true,
+            "siguienteBloque": {
+              "id": 60,
+              "ocupado": true,
+              "siguienteBloque": {
+                "id": 61,
+                "ocupado": true,
+                "siguienteBloque": {
+                  "id": 62,
+                  "ocupado": true,
+                  "siguienteBloque": {
+                    "id": 63,
+                    "ocupado": true,
+                    "siguienteBloque": {
+                      "id": 64,
+                      "ocupado": true,
+                      "siguienteBloque": {
+                        "id": 65,
+                        "ocupado": true,
+                        "siguienteBloque": {
+                          "id": 66,
+                          "ocupado": true,
+                          "siguienteBloque": {
+                            "id": 67,
+                            "ocupado": true,
+                            "siguienteBloque": {
+                              "id": 68,
+                              "ocupado": true,
+                              "siguienteBloque": {
+                                "id": 69,
+                                "ocupado": true,
+                                "siguienteId": 0
+                              },
+                              "siguienteId": 69
+                            },
+                            "siguienteId": 68
+                          },
+                          "siguienteId": 67
+                        },
+                        "siguienteId": 66
+                      },
+                      "siguienteId": 65
+                    },
+                    "siguienteId": 64
+                  },
+                  "siguienteId": 63
+                },
+                "siguienteId": 62
+              },
+              "siguienteId": 61
+            },
+            "siguienteId": 60
+          },
+          "siguienteId": 59
         }
       },
       {
@@ -4905,17 +4660,7 @@
                             "siguienteBloque": {
                               "id": 69,
                               "ocupado": true,
-                              "siguienteBloque": {
-                                "id": 70,
-                                "ocupado": true,
-                                "siguienteBloque": {
-                                  "id": 71,
-                                  "ocupado": true,
-                                  "siguienteId": 0
-                                },
-                                "siguienteId": 71
-                              },
-                              "siguienteId": 70
+                              "siguienteId": 0
                             },
                             "siguienteId": 69
                           },
@@ -4970,17 +4715,7 @@
                           "siguienteBloque": {
                             "id": 69,
                             "ocupado": true,
-                            "siguienteBloque": {
-                              "id": 70,
-                              "ocupado": true,
-                              "siguienteBloque": {
-                                "id": 71,
-                                "ocupado": true,
-                                "siguienteId": 0
-                              },
-                              "siguienteId": 71
-                            },
-                            "siguienteId": 70
+                            "siguienteId": 0
                           },
                           "siguienteId": 69
                         },
@@ -5030,17 +4765,7 @@
                         "siguienteBloque": {
                           "id": 69,
                           "ocupado": true,
-                          "siguienteBloque": {
-                            "id": 70,
-                            "ocupado": true,
-                            "siguienteBloque": {
-                              "id": 71,
-                              "ocupado": true,
-                              "siguienteId": 0
-                            },
-                            "siguienteId": 71
-                          },
-                          "siguienteId": 70
+                          "siguienteId": 0
                         },
                         "siguienteId": 69
                       },
@@ -5085,17 +4810,7 @@
                       "siguienteBloque": {
                         "id": 69,
                         "ocupado": true,
-                        "siguienteBloque": {
-                          "id": 70,
-                          "ocupado": true,
-                          "siguienteBloque": {
-                            "id": 71,
-                            "ocupado": true,
-                            "siguienteId": 0
-                          },
-                          "siguienteId": 71
-                        },
-                        "siguienteId": 70
+                        "siguienteId": 0
                       },
                       "siguienteId": 69
                     },
@@ -5135,17 +4850,7 @@
                     "siguienteBloque": {
                       "id": 69,
                       "ocupado": true,
-                      "siguienteBloque": {
-                        "id": 70,
-                        "ocupado": true,
-                        "siguienteBloque": {
-                          "id": 71,
-                          "ocupado": true,
-                          "siguienteId": 0
-                        },
-                        "siguienteId": 71
-                      },
-                      "siguienteId": 70
+                      "siguienteId": 0
                     },
                     "siguienteId": 69
                   },
@@ -5180,17 +4885,7 @@
                   "siguienteBloque": {
                     "id": 69,
                     "ocupado": true,
-                    "siguienteBloque": {
-                      "id": 70,
-                      "ocupado": true,
-                      "siguienteBloque": {
-                        "id": 71,
-                        "ocupado": true,
-                        "siguienteId": 0
-                      },
-                      "siguienteId": 71
-                    },
-                    "siguienteId": 70
+                    "siguienteId": 0
                   },
                   "siguienteId": 69
                 },
@@ -5220,17 +4915,7 @@
                 "siguienteBloque": {
                   "id": 69,
                   "ocupado": true,
-                  "siguienteBloque": {
-                    "id": 70,
-                    "ocupado": true,
-                    "siguienteBloque": {
-                      "id": 71,
-                      "ocupado": true,
-                      "siguienteId": 0
-                    },
-                    "siguienteId": 71
-                  },
-                  "siguienteId": 70
+                  "siguienteId": 0
                 },
                 "siguienteId": 69
               },
@@ -5255,17 +4940,7 @@
               "siguienteBloque": {
                 "id": 69,
                 "ocupado": true,
-                "siguienteBloque": {
-                  "id": 70,
-                  "ocupado": true,
-                  "siguienteBloque": {
-                    "id": 71,
-                    "ocupado": true,
-                    "siguienteId": 0
-                  },
-                  "siguienteId": 71
-                },
-                "siguienteId": 70
+                "siguienteId": 0
               },
               "siguienteId": 69
             },
@@ -5285,17 +4960,7 @@
             "siguienteBloque": {
               "id": 69,
               "ocupado": true,
-              "siguienteBloque": {
-                "id": 70,
-                "ocupado": true,
-                "siguienteBloque": {
-                  "id": 71,
-                  "ocupado": true,
-                  "siguienteId": 0
-                },
-                "siguienteId": 71
-              },
-              "siguienteId": 70
+              "siguienteId": 0
             },
             "siguienteId": 69
           },
@@ -5310,17 +4975,7 @@
           "siguienteBloque": {
             "id": 69,
             "ocupado": true,
-            "siguienteBloque": {
-              "id": 70,
-              "ocupado": true,
-              "siguienteBloque": {
-                "id": 71,
-                "ocupado": true,
-                "siguienteId": 0
-              },
-              "siguienteId": 71
-            },
-            "siguienteId": 70
+            "siguienteId": 0
           },
           "siguienteId": 69
         }
@@ -5330,17 +4985,7 @@
         "data": {
           "id": 69,
           "ocupado": true,
-          "siguienteBloque": {
-            "id": 70,
-            "ocupado": true,
-            "siguienteBloque": {
-              "id": 71,
-              "ocupado": true,
-              "siguienteId": 0
-            },
-            "siguienteId": 71
-          },
-          "siguienteId": 70
+          "siguienteId": 0
         }
       },
       {
@@ -5348,12 +4993,7 @@
         "data": {
           "id": 70,
           "ocupado": true,
-          "siguienteBloque": {
-            "id": 71,
-            "ocupado": true,
-            "siguienteId": 0
-          },
-          "siguienteId": 71
+          "siguienteId": 0
         }
       },
       {
@@ -5361,7 +5001,37 @@
         "data": {
           "id": 71,
           "ocupado": true,
-          "siguienteId": 0
+          "siguienteBloque": {
+            "id": 72,
+            "ocupado": true,
+            "siguienteBloque": {
+              "id": 73,
+              "ocupado": true,
+              "siguienteBloque": {
+                "id": 74,
+                "ocupado": true,
+                "siguienteBloque": {
+                  "id": 75,
+                  "ocupado": true,
+                  "siguienteBloque": {
+                    "id": 76,
+                    "ocupado": true,
+                    "siguienteBloque": {
+                      "id": 77,
+                      "ocupado": true,
+                      "siguienteId": 0
+                    },
+                    "siguienteId": 77
+                  },
+                  "siguienteId": 76
+                },
+                "siguienteId": 75
+              },
+              "siguienteId": 74
+            },
+            "siguienteId": 73
+          },
+          "siguienteId": 72
         }
       },
       {
@@ -5384,17 +5054,7 @@
                   "siguienteBloque": {
                     "id": 77,
                     "ocupado": true,
-                    "siguienteBloque": {
-                      "id": 78,
-                      "ocupado": true,
-                      "siguienteBloque": {
-                        "id": 79,
-                        "ocupado": true,
-                        "siguienteId": 0
-                      },
-                      "siguienteId": 79
-                    },
-                    "siguienteId": 78
+                    "siguienteId": 0
                   },
                   "siguienteId": 77
                 },
@@ -5424,17 +5084,7 @@
                 "siguienteBloque": {
                   "id": 77,
                   "ocupado": true,
-                  "siguienteBloque": {
-                    "id": 78,
-                    "ocupado": true,
-                    "siguienteBloque": {
-                      "id": 79,
-                      "ocupado": true,
-                      "siguienteId": 0
-                    },
-                    "siguienteId": 79
-                  },
-                  "siguienteId": 78
+                  "siguienteId": 0
                 },
                 "siguienteId": 77
               },
@@ -5459,17 +5109,7 @@
               "siguienteBloque": {
                 "id": 77,
                 "ocupado": true,
-                "siguienteBloque": {
-                  "id": 78,
-                  "ocupado": true,
-                  "siguienteBloque": {
-                    "id": 79,
-                    "ocupado": true,
-                    "siguienteId": 0
-                  },
-                  "siguienteId": 79
-                },
-                "siguienteId": 78
+                "siguienteId": 0
               },
               "siguienteId": 77
             },
@@ -5489,17 +5129,7 @@
             "siguienteBloque": {
               "id": 77,
               "ocupado": true,
-              "siguienteBloque": {
-                "id": 78,
-                "ocupado": true,
-                "siguienteBloque": {
-                  "id": 79,
-                  "ocupado": true,
-                  "siguienteId": 0
-                },
-                "siguienteId": 79
-              },
-              "siguienteId": 78
+              "siguienteId": 0
             },
             "siguienteId": 77
           },
@@ -5514,17 +5144,7 @@
           "siguienteBloque": {
             "id": 77,
             "ocupado": true,
-            "siguienteBloque": {
-              "id": 78,
-              "ocupado": true,
-              "siguienteBloque": {
-                "id": 79,
-                "ocupado": true,
-                "siguienteId": 0
-              },
-              "siguienteId": 79
-            },
-            "siguienteId": 78
+            "siguienteId": 0
           },
           "siguienteId": 77
         }
@@ -5534,37 +5154,22 @@
         "data": {
           "id": 77,
           "ocupado": true,
-          "siguienteBloque": {
-            "id": 78,
-            "ocupado": true,
-            "siguienteBloque": {
-              "id": 79,
-              "ocupado": true,
-              "siguienteId": 0
-            },
-            "siguienteId": 79
-          },
-          "siguienteId": 78
+          "siguienteId": 0
         }
       },
       {
         "__type": "Clases.Bloque",
         "data": {
           "id": 78,
-          "ocupado": true,
-          "siguienteBloque": {
-            "id": 79,
-            "ocupado": true,
-            "siguienteId": 0
-          },
-          "siguienteId": 79
+          "ocupado": false,
+          "siguienteId": 0
         }
       },
       {
         "__type": "Clases.Bloque",
         "data": {
           "id": 79,
-          "ocupado": true,
+          "ocupado": false,
           "siguienteId": 0
         }
       },
@@ -5572,160 +5177,55 @@
         "__type": "Clases.Bloque",
         "data": {
           "id": 80,
-          "ocupado": true,
-          "siguienteBloque": {
-            "id": 81,
-            "ocupado": true,
-            "siguienteBloque": {
-              "id": 82,
-              "ocupado": true,
-              "siguienteBloque": {
-                "id": 83,
-                "ocupado": true,
-                "siguienteBloque": {
-                  "id": 84,
-                  "ocupado": true,
-                  "siguienteBloque": {
-                    "id": 85,
-                    "ocupado": true,
-                    "siguienteBloque": {
-                      "id": 86,
-                      "ocupado": true,
-                      "siguienteId": 0
-                    },
-                    "siguienteId": 86
-                  },
-                  "siguienteId": 85
-                },
-                "siguienteId": 84
-              },
-              "siguienteId": 83
-            },
-            "siguienteId": 82
-          },
-          "siguienteId": 81
+          "ocupado": false,
+          "siguienteId": 0
         }
       },
       {
         "__type": "Clases.Bloque",
         "data": {
           "id": 81,
-          "ocupado": true,
-          "siguienteBloque": {
-            "id": 82,
-            "ocupado": true,
-            "siguienteBloque": {
-              "id": 83,
-              "ocupado": true,
-              "siguienteBloque": {
-                "id": 84,
-                "ocupado": true,
-                "siguienteBloque": {
-                  "id": 85,
-                  "ocupado": true,
-                  "siguienteBloque": {
-                    "id": 86,
-                    "ocupado": true,
-                    "siguienteId": 0
-                  },
-                  "siguienteId": 86
-                },
-                "siguienteId": 85
-              },
-              "siguienteId": 84
-            },
-            "siguienteId": 83
-          },
-          "siguienteId": 82
+          "ocupado": false,
+          "siguienteId": 0
         }
       },
       {
         "__type": "Clases.Bloque",
         "data": {
           "id": 82,
-          "ocupado": true,
-          "siguienteBloque": {
-            "id": 83,
-            "ocupado": true,
-            "siguienteBloque": {
-              "id": 84,
-              "ocupado": true,
-              "siguienteBloque": {
-                "id": 85,
-                "ocupado": true,
-                "siguienteBloque": {
-                  "id": 86,
-                  "ocupado": true,
-                  "siguienteId": 0
-                },
-                "siguienteId": 86
-              },
-              "siguienteId": 85
-            },
-            "siguienteId": 84
-          },
-          "siguienteId": 83
+          "ocupado": false,
+          "siguienteId": 0
         }
       },
       {
         "__type": "Clases.Bloque",
         "data": {
           "id": 83,
-          "ocupado": true,
-          "siguienteBloque": {
-            "id": 84,
-            "ocupado": true,
-            "siguienteBloque": {
-              "id": 85,
-              "ocupado": true,
-              "siguienteBloque": {
-                "id": 86,
-                "ocupado": true,
-                "siguienteId": 0
-              },
-              "siguienteId": 86
-            },
-            "siguienteId": 85
-          },
-          "siguienteId": 84
+          "ocupado": false,
+          "siguienteId": 0
         }
       },
       {
         "__type": "Clases.Bloque",
         "data": {
           "id": 84,
-          "ocupado": true,
-          "siguienteBloque": {
-            "id": 85,
-            "ocupado": true,
-            "siguienteBloque": {
-              "id": 86,
-              "ocupado": true,
-              "siguienteId": 0
-            },
-            "siguienteId": 86
-          },
-          "siguienteId": 85
+          "ocupado": false,
+          "siguienteId": 0
         }
       },
       {
         "__type": "Clases.Bloque",
         "data": {
           "id": 85,
-          "ocupado": true,
-          "siguienteBloque": {
-            "id": 86,
-            "ocupado": true,
-            "siguienteId": 0
-          },
-          "siguienteId": 86
+          "ocupado": false,
+          "siguienteId": 0
         }
       },
       {
         "__type": "Clases.Bloque",
         "data": {
           "id": 86,
-          "ocupado": true,
+          "ocupado": false,
           "siguienteId": 0
         }
       },
