@@ -24,3 +24,28 @@
 [2025-03-20 17:51:35] Usuario - Acción: Seleccionó el archivo: Archivo_515
 [2025-03-20 17:51:41] Administrador - Acción: Cambió a Modo Administrador.
 [2025-03-20 17:51:44] Administrador - Acción: Seleccionó el directorio: Directorio_4
+[2025-03-20 18:51:58] Usuario - Acción: Cargó el estado del sistema.
+[2025-03-20 18:51:59] Usuario - Acción: Seleccionó el directorio: Directorio_3
+[2025-03-20 18:52:00] Administrador - Acción: Cambió a Modo Administrador.
+[2025-03-20 18:52:02] Administrador - Acción: Eliminó el directorio: Directorio_3
+[2025-03-20 18:52:12] Administrador - Acción: Seleccionó el directorio: Directorio_5
+[2025-03-20 18:52:14] Administrador - Acción: Eliminó el directorio: Directorio_5
+[2025-03-20 18:57:41] Usuario - Acción: Cargó el estado del sistema.
+[2025-03-20 18:57:42] Usuario - Acción: Seleccionó el directorio: Directorio_5
+[2025-03-20 18:57:44] Administrador - Acción: Cambió a Modo Administrador.
+[2025-03-20 18:57:47] Administrador - Acción: Eliminó el directorio: Directorio_5
+[2025-03-20 18:57:49] Administrador - Acción: Seleccionó el directorio: Directorio_2
+[2025-03-20 18:57:50] Administrador - Acción: Eliminó el directorio: Directorio_2
+[2025-03-20 18:57:51] Administrador - Acción: Seleccionó el directorio: Directorio_1
+[2025-03-20 18:57:52] Administrador - Acción: Seleccionó el archivo: Archivo_360
+[2025-03-20 18:57:55] Administrador - Acción: Eliminó el archivo: Archivo_360 del directorio Directorio_1
+[2025-03-20 18:57:56] Administrador - Acción: Seleccionó el directorio: Ejemplo
+[2025-03-20 18:57:56] Administrador - Acción: Seleccionó el directorio: Directorio_1
+[2025-03-20 18:57:57] Administrador - Acción: Seleccionó el directorio: Directorio_3
+[2025-03-20 18:57:57] Administrador - Acción: Seleccionó el archivo: Archivo_416
+[2025-03-20 18:57:59] Administrador - Acción: Eliminó el archivo: Archivo_416 del directorio Directorio_3
+[2025-03-20 18:58:02] Administrador - Acción: Seleccionó el directorio: Ejemplo
+[2025-03-20 18:58:03] Administrador - Acción: Seleccionó el archivo: init.txt
+[2025-03-20 18:58:04] Administrador - Acción: Eliminó el archivo: init.txt del directorio Ejemplo
+[2025-03-20 18:58:06] Administrador - Acción: Seleccionó el directorio: Ejemplo
+[2025-03-20 18:58:07] Administrador - Acción: Eliminó el directorio: Ejemplo
