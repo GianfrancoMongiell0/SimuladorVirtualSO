@@ -48,7 +48,7 @@ public class Directorio {
         for (int i = 0; i < archivos.getLength(); i++) {
             if (archivos.get(i).getNombre().equals(nombreArchivo)) {
                 archivos.deleteIndex(i);
-                return;
+                return; // Salir del bucle después de eliminar
             }
         }
     }
