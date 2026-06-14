@@ -2,7 +2,7 @@
 
 # 💾 Simulador de Sistema de Archivos y Memoria Virtual
 
-### Sistemas Operativos II — Universidad Metropolitana (UNIMET)
+### Sistemas Operativos I — Universidad Metropolitana (UNIMET)
 
 [![Java](https://img.shields.io/badge/Java-SE-ED8B00?style=flat-square&logo=openjdk)](https://java.com)
 [![Gson](https://img.shields.io/badge/Gson-Persistencia%20JSON-4285F4?style=flat-square)](https://github.com/google/gson)
@@ -208,4 +208,4 @@ git clone https://github.com/GianfrancoMongiell0/SimuladorVirtualSO
 ## Autores
 
 **Gianfranco Mongiello** · **Alejandra Carrera**  
-Materia: Sistemas Operativos II — Universidad Metropolitana (UNIMET), Caracas 🇻🇪
+Materia: Sistemas Operativos I — Universidad Metropolitana (UNIMET), Caracas 🇻🇪
